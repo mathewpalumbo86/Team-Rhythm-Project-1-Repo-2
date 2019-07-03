@@ -14,8 +14,12 @@ public class PlayerMovement : MonoBehaviour
     public Text xText;
     public Text yText;
     public Text zText;
+    
     // Used to indicate if the controller is pointing forward, left or right.
-    public Text controllerDirectionText;
+    public Text ctrlHoriDirectionText;
+    // Used to indicate if the controller is pointing forward, up or down.
+    public Text ctrlVertDirectionText;
+
 
     // Movement targets
     public Transform leftTarget;
@@ -51,17 +55,18 @@ public class PlayerMovement : MonoBehaviour
         yText.text = "Y: " + angles.y; 
         zText.text = "Z: " + angles.z;
 
-        // Checks the controller y rotation and assigns it a direction (forward, left, right). Moves the player vehicle accordingly.
-        if ((angles.y >=330 && angles.y<= 360) ||(angles.y >= 0 && angles.y <= 30))
+        // Checks the controller z rotation and assigns it a direction (forward, left, right). Moves the player vehicle accordingly.
+        // Move the player left or right
+        if ((angles.z >=330 && angles.z<= 360) ||(angles.z >= 0 && angles.z <= 30))
         {
-            controllerDirectionText.text = "Direction: Forward";
+            ctrlHoriDirectionText.text = "Direction: Forward";
 
             // Vehicle doesn't move when controller points forwards.
 
         }
-        else if((angles.y >= 180 && angles.y <= 330))
+        else if((angles.z <= 180 && angles.z >= 30))
         {
-            controllerDirectionText.text = "Direction: Left";
+            ctrlHoriDirectionText.text = "Direction: Left";
 
             // (x-)
             // Move our position a step closer to the target.            
@@ -69,9 +74,9 @@ public class PlayerMovement : MonoBehaviour
 
 
         }
-        else if ((angles.y >= 30 && angles.y <= 180))
+        else if ((angles.z >= 180 && angles.z <= 330))
         {
-            controllerDirectionText.text = "Direction: Right";
+            ctrlHoriDirectionText.text = "Direction: Right";
 
             // (x+)
             // Move our position a step closer to the target.            
@@ -81,16 +86,17 @@ public class PlayerMovement : MonoBehaviour
         }
 
         // Checks the controller X rotation and assigns it a direction (forward, left, right). Moves the player vehicle accordingly.
+        // Move the player up or down
         if ((angles.x >= 330 && angles.x <= 360) || (angles.x >= 0 && angles.x <= 30))
         {
-            controllerDirectionText.text = "Direction: Forward";
+            ctrlVertDirectionText.text = "Vertical Direction: Forward";
 
             // Vehicle doesn't move when controller points forwards.
 
         }
         else if ((angles.x >= 180 && angles.x <= 330))
         {
-            controllerDirectionText.text = "Direction: Left";
+            ctrlVertDirectionText.text = "Vertical Direction: Up";
 
             // (y-)
             // Move our position a step closer to the target.            
@@ -100,7 +106,7 @@ public class PlayerMovement : MonoBehaviour
         }
         else if ((angles.y >= 30 && angles.y <= 180))
         {
-            controllerDirectionText.text = "Direction: Right";
+            ctrlVertDirectionText.text = "Vertical Direction: Down ";
 
             // (y+)
             // Move our position a step closer to the target.            
