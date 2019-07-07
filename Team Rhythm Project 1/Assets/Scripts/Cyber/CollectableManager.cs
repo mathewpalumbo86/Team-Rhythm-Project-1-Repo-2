@@ -7,6 +7,10 @@ public class CollectableManager : MonoBehaviour
     // How fast the terrain moves towards the player. Accessed by ObjectMovementBehaviour.cs
     public float collectableSpeed;
 
+    // Collectable rotation speed range Accessed by ObjectMovementBehaviour.cs
+    public float randRotMin;
+    public float randRotMax;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -15,10 +19,13 @@ public class CollectableManager : MonoBehaviour
         // Places the very first terrain object. The object moves to an object activator which triggers the rest.
         GameObject thisCollectablePrefab = ObjectPooler.SharedInstance.GetPooledObject("Collectable");
         if (thisCollectablePrefab != null)
-        {
+        {            
             thisCollectablePrefab.transform.position = transform.position;
-            thisCollectablePrefab.transform.rotation = transform.rotation;
+            thisCollectablePrefab.transform.rotation= transform.rotation;
+            
             thisCollectablePrefab.SetActive(true);
+
+
         }
     }
 
