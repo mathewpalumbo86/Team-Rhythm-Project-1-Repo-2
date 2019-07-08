@@ -52,12 +52,10 @@ public class PlayerMovement : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         // calculate distance to move
         float step = speed * Time.deltaTime; 
-
-
 
         // Get the controller rotation
         controllerGO = OVRInput.GetLocalControllerRotation(OVRInput.Controller.RTrackedRemote);
@@ -82,7 +80,7 @@ public class PlayerMovement : MonoBehaviour
         else if((angles.z <= 180 && angles.z >= 30)/* keystroke input test here */)
         {
             ctrlHoriDirectionText.text = "Direction: Left";
-            
+
             // 
             // (x-)
             // Move our position a step closer to the target.            
@@ -91,8 +89,7 @@ public class PlayerMovement : MonoBehaviour
             //=====================================================================
             // Physics based movement
             //==============================================
-            thisRB.velocity = new Vector3(0, 10, 0); // specific values need testing
-
+            thisRB.velocity = new Vector3(-1 * velocityModifier, 0, 0); // move left
 
         }
         else if ((angles.z >= 180 && angles.z <= 330)/* keystroke input test here */)
@@ -101,8 +98,12 @@ public class PlayerMovement : MonoBehaviour
 
             // (x+)
             // Move our position a step closer to the target.            
-            transform.position = Vector3.MoveTowards(transform.position, rightTarget.position, step);
+            // transform.position = Vector3.MoveTowards(transform.position, rightTarget.position, step);
 
+            //=====================================================================
+            // Physics based movement
+            //==============================================
+            thisRB.velocity = new Vector3(1 * velocityModifier, 0, 0); // move right
 
         }
 
@@ -121,7 +122,12 @@ public class PlayerMovement : MonoBehaviour
 
             // (y-)
             // Move our position a step closer to the target.            
-            transform.position = Vector3.MoveTowards(transform.position, upTarget.position, step);
+            // transform.position = Vector3.MoveTowards(transform.position, upTarget.position, step);
+            
+            //=====================================================================
+            // Physics based movement
+            //==============================================
+            thisRB.velocity = new Vector3(0, 1 * velocityModifier, 0);
 
 
         }
@@ -131,12 +137,55 @@ public class PlayerMovement : MonoBehaviour
 
             // (y+)
             // Move our position a step closer to the target.            
-            transform.position = Vector3.MoveTowards(transform.position, downTarget.position, step);
+            // transform.position = Vector3.MoveTowards(transform.position, downTarget.position, step);
 
+            //=====================================================================
+            // Physics based movement
+            //==============================================
+            thisRB.velocity = new Vector3(0, -1 * velocityModifier, 0);
 
         }
 
+#if UNITY_EDITOR
+        Debug.Log("Unity Editor");
 
+        // Use keyboard to move left (physics based movement)
+        if (Input.GetKey(KeyCode.A))
+        {
+            Debug.Log("Move left");
+
+            thisRB.velocity = new Vector3(-1* velocityModifier,0,0);
+
+        }
+
+        // Use keyboard to move left (physics based movement)
+        if (Input.GetKey(KeyCode.D))
+        {
+            Debug.Log("Move right");
+
+            thisRB.velocity = new Vector3(1 * velocityModifier, 0, 0);
+
+        }
+
+        // Use keyboard to move up (physics based movement)
+        if (Input.GetKey(KeyCode.W))
+        {
+            Debug.Log("Move up");
+
+            thisRB.velocity = new Vector3(0, 1 * velocityModifier, 0);
+
+        }
+
+        // Use keyboard to move down (physics based movement)
+        if (Input.GetKey(KeyCode.S))
+        {
+            Debug.Log("Move down");
+
+            thisRB.velocity = new Vector3(0, -1 * velocityModifier, 0);
+
+        }
+
+#endif
 
 
     }

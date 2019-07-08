@@ -18,13 +18,13 @@ public class CollectableAudioEffects : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.A))
-        {
-            int index = Random.Range(0, shoot.Length);
-            shootClip = shoot[index];
-            audioSource.clip = shootClip;
-            audioSource.Play();
-        }
+        //if (Input.GetKeyDown(KeyCode.A))
+        //{
+        //    int index = Random.Range(0, shoot.Length);
+        //    shootClip = shoot[index];
+        //    audioSource.clip = shootClip;
+        //    audioSource.Play();
+        //}
     }
 
     public void PlayCollectableEffect()
