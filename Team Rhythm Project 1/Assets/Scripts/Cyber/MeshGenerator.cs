@@ -32,10 +32,15 @@ public class MeshGenerator : MonoBehaviour
         CreateShape();
         UpdateMesh();
 
+
+       
         // Creates the mesh collider
-        MeshCollider meshc = gameObject.AddComponent(typeof(MeshCollider)) as MeshCollider;
-        meshc.sharedMesh = mesh; // Gives it the mesh.
-        meshc.convex = true; // Makes sure the mesh is traversible.
+         MeshCollider meshc = gameObject.AddComponent(typeof(MeshCollider)) as MeshCollider;
+         meshc.sharedMesh = mesh; // Gives it the mesh.
+         meshc.convex = true; // Makes sure the mesh is traversible.
+
+        // Physics is currently not required for the ground mesh so is set as a trigger
+        meshc.isTrigger = true;
 
     }
 

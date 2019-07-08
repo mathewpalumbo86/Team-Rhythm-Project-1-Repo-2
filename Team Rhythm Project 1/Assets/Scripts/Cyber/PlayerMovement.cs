@@ -20,7 +20,19 @@ public class PlayerMovement : MonoBehaviour
     // Used to indicate if the controller is pointing forward, up or down.
     public Text ctrlVertDirectionText;
 
+    // ============================================================
+    // Physics based movement
+    // ============================================================
+    public Rigidbody thisRB;
+    public float velocityModifier;
 
+
+    // ============================================================
+
+
+    //=============================================================
+    // Translation based movement
+    // ============================================================
     // Movement targets
     public Transform leftTarget;
     public Transform rightTarget;
@@ -30,19 +42,20 @@ public class PlayerMovement : MonoBehaviour
     // The speed the vehicle should move.
     public float speed = 1.0f;
 
+    // ============================================================
+
 
     void Start()
     {
-         
+        // grab the players rigidbody
+        thisRB = GetComponent<Rigidbody>();
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         // calculate distance to move
         float step = speed * Time.deltaTime; 
-
-
 
         // Get the controller rotation
         controllerGO = OVRInput.GetLocalControllerRotation(OVRInput.Controller.RTrackedRemote);
@@ -57,65 +70,122 @@ public class PlayerMovement : MonoBehaviour
 
         // Checks the controller z rotation and assigns it a direction (forward, left, right). Moves the player vehicle accordingly.
         // Move the player left or right
-        if ((angles.z >=330 && angles.z<= 360) ||(angles.z >= 0 && angles.z <= 30))
+        if ((angles.z >=330 && angles.z<= 360) ||(angles.z >= 0 && angles.z <= 30) /* keystroke input test here */ )
         {
             ctrlHoriDirectionText.text = "Direction: Forward";
 
             // Vehicle doesn't move when controller points forwards.
 
         }
-        else if((angles.z <= 180 && angles.z >= 30))
+        else if((angles.z <= 180 && angles.z >= 30)/* keystroke input test here */)
         {
             ctrlHoriDirectionText.text = "Direction: Left";
 
+            // 
             // (x-)
             // Move our position a step closer to the target.            
-            transform.position = Vector3.MoveTowards(transform.position, leftTarget.position, step);
+            // transform.position = Vector3.MoveTowards(transform.position, leftTarget.position, step);
 
+            //=====================================================================
+            // Physics based movement
+            //==============================================
+            thisRB.velocity = new Vector3(-1 * velocityModifier, 0, 0); // move left
 
         }
-        else if ((angles.z >= 180 && angles.z <= 330))
+        else if ((angles.z >= 180 && angles.z <= 330)/* keystroke input test here */)
         {
             ctrlHoriDirectionText.text = "Direction: Right";
 
             // (x+)
             // Move our position a step closer to the target.            
-            transform.position = Vector3.MoveTowards(transform.position, rightTarget.position, step);
+            // transform.position = Vector3.MoveTowards(transform.position, rightTarget.position, step);
 
+            //=====================================================================
+            // Physics based movement
+            //==============================================
+            thisRB.velocity = new Vector3(1 * velocityModifier, 0, 0); // move right
 
         }
 
         // Checks the controller X rotation and assigns it a direction (forward, left, right). Moves the player vehicle accordingly.
         // Move the player up or down
-        if ((angles.x >= 330 && angles.x <= 360) || (angles.x >= 0 && angles.x <= 30))
+        if ((angles.x >= 330 && angles.x <= 360) || (angles.x >= 0 && angles.x <= 30)/* keystroke input test here */)
         {
             ctrlVertDirectionText.text = "Vertical Direction: Forward";
 
             // Vehicle doesn't move when controller points forwards.
 
         }
-        else if ((angles.x >= 180 && angles.x <= 330))
+        else if ((angles.x >= 180 && angles.x <= 330)/* keystroke input test here */)
         {
             ctrlVertDirectionText.text = "Vertical Direction: Up";
 
             // (y-)
             // Move our position a step closer to the target.            
-            transform.position = Vector3.MoveTowards(transform.position, upTarget.position, step);
+            // transform.position = Vector3.MoveTowards(transform.position, upTarget.position, step);
+            
+            //=====================================================================
+            // Physics based movement
+            //==============================================
+            thisRB.velocity = new Vector3(0, 1 * velocityModifier, 0);
 
 
         }
-        else if ((angles.y >= 30 && angles.y <= 180))
+        else if ((angles.y >= 30 && angles.y <= 180)/* keystroke input test here */)
         {
             ctrlVertDirectionText.text = "Vertical Direction: Down ";
 
             // (y+)
             // Move our position a step closer to the target.            
-            transform.position = Vector3.MoveTowards(transform.position, downTarget.position, step);
+            // transform.position = Vector3.MoveTowards(transform.position, downTarget.position, step);
 
+            //=====================================================================
+            // Physics based movement
+            //==============================================
+            thisRB.velocity = new Vector3(0, -1 * velocityModifier, 0);
 
         }
 
+#if UNITY_EDITOR
+        Debug.Log("Unity Editor");
 
+        // Use keyboard to move left (physics based movement)
+        if (Input.GetKey(KeyCode.A))
+        {
+            Debug.Log("Move left");
+
+            thisRB.velocity = new Vector3(-1* velocityModifier,0,0);
+
+        }
+
+        // Use keyboard to move left (physics based movement)
+        if (Input.GetKey(KeyCode.D))
+        {
+            Debug.Log("Move right");
+
+            thisRB.velocity = new Vector3(1 * velocityModifier, 0, 0);
+
+        }
+
+        // Use keyboard to move up (physics based movement)
+        if (Input.GetKey(KeyCode.W))
+        {
+            Debug.Log("Move up");
+
+            thisRB.velocity = new Vector3(0, 1 * velocityModifier, 0);
+
+        }
+
+        // Use keyboard to move down (physics based movement)
+        if (Input.GetKey(KeyCode.S))
+        {
+            Debug.Log("Move down");
+
+            thisRB.velocity = new Vector3(0, -1 * velocityModifier, 0);
+
+        }
+
+#endif
 
 
     }

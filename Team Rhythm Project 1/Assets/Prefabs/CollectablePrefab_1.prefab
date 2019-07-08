@@ -94,6 +94,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   collectableMovementSpeed: 0
+  randRotSpeed: 0
 --- !u!54 &7059885230643181664
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -135,4 +136,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc02a4a8c5090d946a9b05989466c407, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  collectableAudioEffects: {fileID: 0}
+  collectableAudioEffectsObj: {fileID: 0}

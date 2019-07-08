@@ -13,9 +13,19 @@ public class CollectableMovementBehaviour : MonoBehaviour
     // Stores a reference to the collectable manager.
     private GameObject collectableManager;
 
+    // Rotation speed for collectables
+    public float randRotSpeed;
+    private float thisRotMin;
+    private float thisRotMax;
+
     void Start()
     {
-        
+        // Sets the rotation speed range for this object
+        thisRotMin = collectableManager.gameObject.GetComponent<CollectableManager>().randRotMin;
+        thisRotMax = collectableManager.gameObject.GetComponent<CollectableManager>().randRotMax;
+
+        // Sets the rotation speed for this object
+        randRotSpeed = Random.Range(thisRotMin, thisRotMax);
     }
 
 
@@ -32,7 +42,11 @@ public class CollectableMovementBehaviour : MonoBehaviour
     // FixedUpdate is used for physics updates
     void FixedUpdate()
     {
-        // Move this instance of terrain.
-        transform.Translate(Vector3.back * Time.deltaTime * collectableMovementSpeed);
+        // Move this instance of collectable. (Must use space.world because of the rotation)
+        transform.Translate(Vector3.back * Time.deltaTime * collectableMovementSpeed, Space.World);
+
+        // Rotates this collectable randomly
+        transform.Rotate(randRotSpeed, randRotSpeed, randRotSpeed);
+
     }
 }

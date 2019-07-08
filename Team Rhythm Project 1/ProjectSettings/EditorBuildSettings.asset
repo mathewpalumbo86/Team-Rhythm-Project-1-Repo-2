@@ -14,7 +14,10 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/MovementPrototyping.unity
     guid: 1acea8294caf5b4448c59fdfae0c9c79
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Alpha.unity
     guid: 05c3c41af8e0e6945b36d908064ae0e7
+  - enabled: 1
+    path: Assets/Scenes/Beta.unity
+    guid: 6836747be6f03774b88963b3bad443e1
   m_configObjects: {}
