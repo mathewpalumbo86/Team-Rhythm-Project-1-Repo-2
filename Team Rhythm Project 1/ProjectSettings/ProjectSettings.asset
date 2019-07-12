@@ -153,7 +153,7 @@ PlayerSettings:
   androidSupportedAspectRatio: 1
   androidMaxAspectRatio: 2.1
   applicationIdentifier:
-    Android: com.TeamRhythm.Cyber_Surfer
+    Android: com.TeamRhythm.CyberSurfer
     Standalone: com.oculus.UnitySample
   buildNumber: {}
   AndroidBundleVersionCode: 1
@@ -241,7 +241,7 @@ PlayerSettings:
   clonedFromGUID: 5e732017669dfdd47bef175829bc547e
   templatePackageId: com.unity.template.lightweightvr@1.3.0
   templateDefaultScene: Assets/Scenes/SampleScene.unity
-  AndroidTargetArchitectures: 7
+  AndroidTargetArchitectures: 1
   AndroidSplashScreenScale: 0
   androidSplashScreen: {fileID: 0}
   AndroidKeystoreName: 
