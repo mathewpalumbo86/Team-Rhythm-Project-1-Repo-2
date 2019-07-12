@@ -44,3 +44,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   collectableSpeed: 50
+  randRotMin: 2
+  randRotMax: 4
+  randScaleMin: 0
+  randScaleMax: 5

@@ -9,7 +9,7 @@ public class CollectableManager : MonoBehaviour
 
     // Collectable rotation speed range Accessed by ObjectMovementBehaviour.cs
     public float randRotMin;
-    public float randRotMax;
+    public float randRotMax;       
 
     // Start is called before the first frame update
     void Start()
