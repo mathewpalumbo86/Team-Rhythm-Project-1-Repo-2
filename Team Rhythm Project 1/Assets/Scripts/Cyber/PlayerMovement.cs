@@ -26,19 +26,8 @@ public class PlayerMovement : MonoBehaviour
     public Rigidbody thisRB;
     public float velocityModifier;
 
-
     // ============================================================
-
-
-    //=============================================================
-    // Translation based movement
-    // ============================================================
-    // Movement targets
-    public Transform leftTarget;
-    public Transform rightTarget;
-    public Transform upTarget;
-    public Transform downTarget;
-
+    
     // The speed the vehicle should move.
     public float speed = 1.0f;
 
@@ -77,29 +66,24 @@ public class PlayerMovement : MonoBehaviour
             // Vehicle doesn't move when controller points forwards.
 
         }
-        else if((angles.z <= 180 && angles.z >= 30)/* keystroke input test here */)
+
+        if ((angles.z <= 180 && angles.z >= 30)/* keystroke input test here */)
         {
             ctrlHoriDirectionText.text = "Direction: Left";
 
-            // 
-            // (x-)
-            // Move our position a step closer to the target.            
-            // transform.position = Vector3.MoveTowards(transform.position, leftTarget.position, step);
-
+            // (x-)            
             //=====================================================================
             // Physics based movement
             //==============================================
             thisRB.velocity = new Vector3(-1 * velocityModifier, 0, 0); // move left
 
         }
-        else if ((angles.z >= 180 && angles.z <= 330)/* keystroke input test here */)
+
+        if ((angles.z >= 180 && angles.z <= 330))
         {
             ctrlHoriDirectionText.text = "Direction: Right";
 
-            // (x+)
-            // Move our position a step closer to the target.            
-            // transform.position = Vector3.MoveTowards(transform.position, rightTarget.position, step);
-
+            // (x+)   
             //=====================================================================
             // Physics based movement
             //==============================================
@@ -109,37 +93,33 @@ public class PlayerMovement : MonoBehaviour
 
         // Checks the controller X rotation and assigns it a direction (forward, left, right). Moves the player vehicle accordingly.
         // Move the player up or down
-        if ((angles.x >= 330 && angles.x <= 360) || (angles.x >= 0 && angles.x <= 30)/* keystroke input test here */)
+        if ((angles.x >= 330 && angles.x <= 360) || (angles.x >= 0 && angles.x <= 30))
         {
             ctrlVertDirectionText.text = "Vertical Direction: Forward";
 
             // Vehicle doesn't move when controller points forwards.
 
         }
-        else if ((angles.x >= 180 && angles.x <= 330)/* keystroke input test here */)
+
+        if ((angles.x >= 180 && angles.x <= 330))
         {
             ctrlVertDirectionText.text = "Vertical Direction: Up";
 
-            // (y-)
-            // Move our position a step closer to the target.            
-            // transform.position = Vector3.MoveTowards(transform.position, upTarget.position, step);
-            
-            //=====================================================================
+            // (y-)            
+            //==============================================
             // Physics based movement
             //==============================================
             thisRB.velocity = new Vector3(0, 1 * velocityModifier, 0);
 
 
         }
-        else if ((angles.y >= 30 && angles.y <= 180)/* keystroke input test here */)
+
+        if ((angles.x > 0 && angles.x < 180))
         {
             ctrlVertDirectionText.text = "Vertical Direction: Down ";
 
-            // (y+)
-            // Move our position a step closer to the target.            
-            // transform.position = Vector3.MoveTowards(transform.position, downTarget.position, step);
-
-            //=====================================================================
+            // (y+)         
+            //==============================================
             // Physics based movement
             //==============================================
             thisRB.velocity = new Vector3(0, -1 * velocityModifier, 0);
@@ -147,7 +127,8 @@ public class PlayerMovement : MonoBehaviour
         }
 
 #if UNITY_EDITOR
-        Debug.Log("Unity Editor");
+        // Movement controls in the editor
+        // Debug.Log("Unity Editor");
 
         // Use keyboard to move left (physics based movement)
         if (Input.GetKey(KeyCode.A))
