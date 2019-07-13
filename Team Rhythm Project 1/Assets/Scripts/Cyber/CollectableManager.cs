@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class CollectableManager : MonoBehaviour
 {
-    // How fast the terrain moves towards the player. Accessed by ObjectMovementBehaviour.cs
+    // How fast the collectable moves towards the player. Accessed by CollectableMovementBehaviour.cs
     public float collectableSpeed;
 
-    // Collectable rotation speed range Accessed by ObjectMovementBehaviour.cs
+    // Collectable rotation speed range Accessed by CollectableMovementBehaviour.cs
     public float randRotMin;
     public float randRotMax;       
 
