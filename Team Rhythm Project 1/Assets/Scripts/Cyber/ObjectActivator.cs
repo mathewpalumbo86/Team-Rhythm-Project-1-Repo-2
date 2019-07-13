@@ -3,26 +3,32 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class ObjectActivator : MonoBehaviour
-{       
-    
-    public string objectTag; // Used to check the tag of the object to be turned on.
+{
+
+    // public string objectTag; // Used to check the tag of the object to be turned on.
+
+    //========================= Terrain varibles ==============================
     public Transform terrainSpawnPosition; // Reference to the terrain spawn position.
     public float spawnOffset; // Offsets the objects position when spawned so they tile next to each other
-    public MeshGenerator meshGenerator; // Stores the mesh generator script attached to the object entered the trigger
+    public MeshGenerator meshGenerator; // Stores the mesh generator script attached to the object entered the trigger        
+    
+    //========================= Collectable variables =========================
+    // Collectable spawn position x and y axis is randomised
+    public float spawnPosX;
+    public float spawnRangeXMin;
+    public float spawnRangeXMax;
+    public float spawnPosY;
+    public float spawnRangeYMin;
+    public float spawnRangeYMax;
+    // Variables to randomise the delay
+    public float collectableRandMin; 
+    public float collectableRandMax;
 
     private float objectDelay; // For setting a delay between object placements
     public Transform objectSpawnPosition; // Reference to the object spawn position.
-    public float collectableRandMin;
-    public float collectableRandMax;
 
-    // Collectable spawn position x and y axis is randomised
-    public float spawnPosX;
-    public float spawnRangeXMin = 2;
-    public float spawnRangeXMax = 30;
-
-    public float spawnPosY;
-    public float spawnRangeYMin = 2;
-    public float spawnRangeYMax = 6;
+    //========================== Obstacle variables ===========================
+    public float obstacleSpawnOffset;
 
 
     private void OnTriggerEnter(Collider other)
@@ -72,6 +78,29 @@ public class ObjectActivator : MonoBehaviour
                 // Debug.Log("spawn offset = " + spawnOffset);
             }
         }
+
+        if(other.tag == "Obstacle")
+        {
+            objectDelay = Random.Range(collectableRandMin, collectableRandMax);
+            
+                        
+            // Randomise spawn position
+            spawnPosX = Random.Range(spawnRangeXMin, spawnRangeXMax);
+            // spawnPosY = Random.Range(spawnRangeYMin, spawnRangeYMax);
+
+            GameObject objectToActivate = ObjectPooler.SharedInstance.GetPooledObject("Obstacle");
+            if (objectToActivate != null)
+            {
+                // DelayObjectPlacement();
+
+                // Sets the position of each object
+                objectToActivate.transform.position = new Vector3(spawnPosX, spawnPosY, (objectSpawnPosition.transform.position.z+obstacleSpawnOffset));
+                objectToActivate.transform.rotation = objectSpawnPosition.transform.rotation;
+                objectToActivate.SetActive(true);
+                // Debug.Log("spawn offset = " + spawnOffset);
+            }
+        }
+
     }
 
     //IEnumerator DelayObjectPlacement()
