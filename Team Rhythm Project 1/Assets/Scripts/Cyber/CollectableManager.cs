@@ -24,8 +24,7 @@ public class CollectableManager : MonoBehaviour
             thisCollectablePrefab.transform.rotation= transform.rotation;
             
             thisCollectablePrefab.SetActive(true);
-
-
+            
         }
     }
 

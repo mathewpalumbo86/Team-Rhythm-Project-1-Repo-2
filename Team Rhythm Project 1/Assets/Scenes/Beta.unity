@@ -1311,11 +1311,11 @@ MonoBehaviour:
   meshGenerator: {fileID: 7668930546003554457, guid: 7424fee07a7c68b4c80be2c26e290545,
     type: 3}
   spawnPosX: 0
-  spawnRangeXMin: 4
-  spawnRangeXMax: 28
+  spawnRangeXMin: 14
+  spawnRangeXMax: 18
   spawnPosY: 0
   spawnRangeYMin: 3
-  spawnRangeYMax: 6
+  spawnRangeYMax: 5
   collectableRandMin: 10
   collectableRandMax: 20
   objectSpawnPosition: {fileID: 1123178503}
