@@ -7,8 +7,9 @@ public class CollectableOnCollision : MonoBehaviour
     // Collectable audio effects script
     public GameObject collectableAudioEffectsObj;
     // public CollectableAudioEffects collectableAudioEffectsScript;
-    
-    
+    public ParticleSystem collectableParticle;
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -17,6 +18,8 @@ public class CollectableOnCollision : MonoBehaviour
         collectableAudioEffectsObj = GameObject.FindGameObjectWithTag("CollectableEffect_1");
         // get the collectable audio effects script
         // collectableAudioEffectsScript = GetComponent<CollectableAudioEffects>();
+
+        collectableParticle = GetComponent<ParticleSystem>();
     }
 
     // Update is called once per frame
@@ -31,7 +34,29 @@ public class CollectableOnCollision : MonoBehaviour
         {
             // if the player hits this object play a collectable sound effect and set it to inactive
             collectableAudioEffectsObj.GetComponent<CollectableAudioEffects>().PlayCollectableEffect();
-            this.gameObject.SetActive(false);
+
+            // Debug.Log("collectable collided");
+
+            if(collectableParticle != null)
+            {
+                collectableParticle.Play();
+            }
+            else
+            {
+                Debug.Log("no particle attached");
+            }    
+            
+            StartCoroutine(Delay());
+
+            // this.gameObject.SetActive(false);
         }
     }
+
+    IEnumerator Delay()
+    {
+        print(Time.time);
+        yield return new WaitForSeconds(0.2f);
+        print(Time.time);
+    }
+
 }
