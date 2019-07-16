@@ -12,6 +12,8 @@ TagManager:
   - CollectableEffect_1
   - Obstacle
   - ObstacleSpawner
+  - GameManager
+  - MusicSource
   layers:
   - Default
   - TransparentFX

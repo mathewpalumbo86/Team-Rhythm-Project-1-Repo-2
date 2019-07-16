@@ -8,18 +8,19 @@ public class CollectableOnCollision : MonoBehaviour
     public GameObject collectableAudioEffectsObj;
     // public CollectableAudioEffects collectableAudioEffectsScript;
     public ParticleSystem collectableParticle;
-
-
+    // Collectable tracking script
+    public CollectableTracking collectableTracking;
+    
     // Start is called before the first frame update
     void Start()
-    {
-        
+    {        
         // get the collectable audio effects object
         collectableAudioEffectsObj = GameObject.FindGameObjectWithTag("CollectableEffect_1");
-        // get the collectable audio effects script
-        // collectableAudioEffectsScript = GetComponent<CollectableAudioEffects>();
-
+        
         collectableParticle = GetComponent<ParticleSystem>();
+
+        collectableTracking = GameObject.FindGameObjectWithTag("GameManager").GetComponent<CollectableTracking>();
+
     }
 
     // Update is called once per frame
@@ -32,10 +33,15 @@ public class CollectableOnCollision : MonoBehaviour
     {
         if(other.gameObject.tag == "Player")
         {
+            // Debug.Log("collectable collided");
+
             // if the player hits this object play a collectable sound effect and set it to inactive
             collectableAudioEffectsObj.GetComponent<CollectableAudioEffects>().PlayCollectableEffect();
 
-            // Debug.Log("collectable collided");
+            // For every collectable the player collides with increment this value +1;
+            collectableTracking.totalCollected++;
+            // For every collectable check if the audio pitch can be increased
+            collectableTracking.IncreasePitch();
 
             if(collectableParticle != null)
             {
@@ -54,9 +60,9 @@ public class CollectableOnCollision : MonoBehaviour
 
     IEnumerator Delay()
     {
-        print(Time.time);
-        yield return new WaitForSeconds(0.2f);
-        print(Time.time);
+        // print(Time.time);
+        yield return new WaitForSeconds(0.1f);
+        // print(Time.time);
     }
 
 }
