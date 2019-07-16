@@ -33,6 +33,7 @@ public class CollectableTracking : MonoBehaviour
         
     }
 
+    // Increases the pitch based on how many collectables have been collected
     public void IncreasePitch()
     {
         if (pitchIncreaseCheck == false)

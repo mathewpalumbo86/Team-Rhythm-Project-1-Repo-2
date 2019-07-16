@@ -1821,6 +1821,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 9123534073876349599, guid: 24b23169f00e50b4bab180e47945aa0a,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.22
+      objectReference: {fileID: 0}
     - target: {fileID: 2455554121756535600, guid: 24b23169f00e50b4bab180e47945aa0a,
         type: 3}
       propertyPath: m_Constraints
@@ -1910,11 +1915,6 @@ PrefabInstance:
         type: 3}
       propertyPath: velocityModifier
       value: 20
-      objectReference: {fileID: 0}
-    - target: {fileID: 9123534073876349599, guid: 24b23169f00e50b4bab180e47945aa0a,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -0.22
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 24b23169f00e50b4bab180e47945aa0a, type: 3}
