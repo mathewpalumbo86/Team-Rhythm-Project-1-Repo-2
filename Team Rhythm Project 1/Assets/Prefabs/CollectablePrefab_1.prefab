@@ -15,8 +15,8 @@ GameObject:
   - component: {fileID: 7059885230643181664}
   - component: {fileID: 3751789202342607164}
   - component: {fileID: 7811837699598786284}
-  - component: {fileID: 286160802263969534}
-  - component: {fileID: 6899812598489452930}
+  - component: {fileID: 612234150093809865}
+  - component: {fileID: 5622055210166601951}
   m_Layer: 0
   m_Name: CollectablePrefab_1
   m_TagString: Collectable
@@ -140,7 +140,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   collectableAudioEffectsObj: {fileID: 0}
   collectableParticle: {fileID: 0}
---- !u!199 &286160802263969534
+  collectableTracking: {fileID: 0}
+--- !u!199 &612234150093809865
 ParticleSystemRenderer:
   serializedVersion: 6
   m_ObjectHideFlags: 2
@@ -202,7 +203,7 @@ ParticleSystemRenderer:
   m_Mesh2: {fileID: 0}
   m_Mesh3: {fileID: 0}
   m_MaskInteraction: 0
---- !u!198 &6899812598489452930
+--- !u!198 &5622055210166601951
 ParticleSystem:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -904,7 +905,7 @@ ParticleSystem:
     m_SpriteRenderer: {fileID: 0}
     m_UseMeshMaterialIndex: 0
     m_UseMeshColors: 1
-    alignToDirection: 0
+    alignToDirection: 1
     m_Texture: {fileID: 0}
     m_TextureClipChannel: 3
     m_TextureClipThreshold: 0
