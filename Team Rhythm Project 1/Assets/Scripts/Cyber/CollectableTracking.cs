@@ -13,6 +13,9 @@ public class CollectableTracking : MonoBehaviour
     // The audio pitch will not increment further after the collectable max
     public int collectableMax;
 
+    // Pitch increment value
+    public float pitchIncrement;
+
     // The music track
     public AudioSource musicSource;
 

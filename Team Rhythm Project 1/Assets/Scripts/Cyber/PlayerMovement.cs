@@ -59,24 +59,21 @@ public class PlayerMovement : MonoBehaviour
         yText.text = "Y: " + angles.y; 
         zText.text = "Z: " + angles.z;
 
+        //=========================================================================================================
         // Checks the controller z rotation and assigns it a direction (forward, left, right). Moves the player vehicle accordingly.
         // Move the player left or right
-        if ((angles.z >=330 && angles.z<= 360) ||(angles.z >= 0 && angles.z <= 30) /* keystroke input test here */ )
+        if ((angles.z >=330 && angles.z<= 360) ||(angles.z >= 0 && angles.z <= 30))
         {
-            ctrlHoriDirectionText.text = "Direction: Forward";
-
             // Vehicle doesn't move when controller points forwards.
+            ctrlHoriDirectionText.text = "Direction: Forward";    
 
         }
 
-        if ((angles.z <= 180 && angles.z >= 15)/* keystroke input test here */)
+        if ((angles.z <= 180 && angles.z >= 15))
         {
             ctrlHoriDirectionText.text = "Direction: Left";
-
-            // (x-)            
-            //=====================================================================
-            // Physics based movement
-            //==============================================
+                        
+            // Physics based movement (-x)
             thisRB.velocity = new Vector3(-1 * velocityModifierLR, 0, 0); // move left
 
         }
@@ -84,35 +81,57 @@ public class PlayerMovement : MonoBehaviour
         if ((angles.z >= 180 && angles.z <= 315))
         {
             ctrlHoriDirectionText.text = "Direction: Right";
-
-            // (x+)   
-            //=====================================================================
-            // Physics based movement
-            //==============================================
+            
+            // Physics based movement (x+)
             thisRB.velocity = new Vector3(1 * velocityModifierLR, 0, 0); // move right
 
         }
 
+        //=========================================================================================================
+        // BOTH X & Y axis control Left & Right movement
+        // Checks the controller y rotation and assigns it a direction (forward, left, right). Moves the player vehicle accordingly.
+        // Move the player left or right (this secondary movement to supplement different gestures by different users)
+        if ((angles.y >= 345 && angles.y <= 360) || (angles.y >= 0 && angles.y <= 15))
+        {
+            // Vehicle doesn't move when controller points forwards.
+            ctrlHoriDirectionText.text = "Direction: Forward";
+
+        }
+
+        if ((angles.y <= 345 && angles.y >= 180))
+        {
+            ctrlHoriDirectionText.text = "Direction: Left";
+
+            // Physics based movement (-x)
+            thisRB.velocity = new Vector3(-1 * velocityModifierLR, 0, 0); // move left
+            
+        }
+
+        if ((angles.y >= 15 && angles.y <= 179))
+        {
+            ctrlHoriDirectionText.text = "Direction: Right";
+            
+            // Physics based movement (x+)             
+            thisRB.velocity = new Vector3(1 * velocityModifierLR, 0, 0); // move right
+
+        }
+
+        //=========================================================================================================
         // Checks the controller X rotation and assigns it a direction (forward, left, right). Moves the player vehicle accordingly.
         // Move the player up or down
         if ((angles.x >= 330 && angles.x <= 360) || (angles.x >= 0 && angles.x <= 30))
         {
-            ctrlVertDirectionText.text = "Vertical Direction: Forward";
-
             // Vehicle doesn't move when controller points forwards.
+            ctrlVertDirectionText.text = "Vertical Direction: Forward";           
 
         }
 
         if ((angles.x >= 180 && angles.x <= 330))
         {
             ctrlVertDirectionText.text = "Vertical Direction: Up";
-
-            // (y-)            
-            //==============================================
-            // Physics based movement
-            //==============================================
+            
+            // Physics based movement (y-)            
             thisRB.velocity = new Vector3(0, 1 * velocityModifierUp, 0);
-
 
         }
 
@@ -120,10 +139,7 @@ public class PlayerMovement : MonoBehaviour
         {
             ctrlVertDirectionText.text = "Vertical Direction: Down ";
 
-            // (y+)         
-            //==============================================
-            // Physics based movement
-            //==============================================
+            // Physics based movement (y+)            
             thisRB.velocity = new Vector3(0, -1 * velocityModifierDown, 0);
 
         }
