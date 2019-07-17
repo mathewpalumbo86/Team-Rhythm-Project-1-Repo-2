@@ -24,10 +24,12 @@ public class PlayerMovement : MonoBehaviour
     // Physics based movement
     // ============================================================
     public Rigidbody thisRB;
-    public float velocityModifier;
+    public float velocityModifierLR;
+    public float velocityModifierUp;
+    public float velocityModifierDown;
 
     // ============================================================
-    
+
     // The speed the vehicle should move.
     public float speed = 1.0f;
 
@@ -67,7 +69,7 @@ public class PlayerMovement : MonoBehaviour
 
         }
 
-        if ((angles.z <= 180 && angles.z >= 30)/* keystroke input test here */)
+        if ((angles.z <= 180 && angles.z >= 15)/* keystroke input test here */)
         {
             ctrlHoriDirectionText.text = "Direction: Left";
 
@@ -75,11 +77,11 @@ public class PlayerMovement : MonoBehaviour
             //=====================================================================
             // Physics based movement
             //==============================================
-            thisRB.velocity = new Vector3(-1 * velocityModifier, 0, 0); // move left
+            thisRB.velocity = new Vector3(-1 * velocityModifierLR, 0, 0); // move left
 
         }
 
-        if ((angles.z >= 180 && angles.z <= 330))
+        if ((angles.z >= 180 && angles.z <= 315))
         {
             ctrlHoriDirectionText.text = "Direction: Right";
 
@@ -87,7 +89,7 @@ public class PlayerMovement : MonoBehaviour
             //=====================================================================
             // Physics based movement
             //==============================================
-            thisRB.velocity = new Vector3(1 * velocityModifier, 0, 0); // move right
+            thisRB.velocity = new Vector3(1 * velocityModifierLR, 0, 0); // move right
 
         }
 
@@ -109,7 +111,7 @@ public class PlayerMovement : MonoBehaviour
             //==============================================
             // Physics based movement
             //==============================================
-            thisRB.velocity = new Vector3(0, 1 * velocityModifier, 0);
+            thisRB.velocity = new Vector3(0, 1 * velocityModifierUp, 0);
 
 
         }
@@ -122,7 +124,7 @@ public class PlayerMovement : MonoBehaviour
             //==============================================
             // Physics based movement
             //==============================================
-            thisRB.velocity = new Vector3(0, -1 * velocityModifier, 0);
+            thisRB.velocity = new Vector3(0, -1 * velocityModifierDown, 0);
 
         }
 
@@ -135,7 +137,7 @@ public class PlayerMovement : MonoBehaviour
         {
             Debug.Log("Move left");
 
-            thisRB.velocity = new Vector3(-1* velocityModifier,0,0);
+            thisRB.velocity = new Vector3(-1* velocityModifierLR, 0,0);
 
         }
 
@@ -144,7 +146,7 @@ public class PlayerMovement : MonoBehaviour
         {
             Debug.Log("Move right");
 
-            thisRB.velocity = new Vector3(1 * velocityModifier, 0, 0);
+            thisRB.velocity = new Vector3(1 * velocityModifierLR, 0, 0);
 
         }
 
@@ -153,7 +155,7 @@ public class PlayerMovement : MonoBehaviour
         {
             Debug.Log("Move up");
 
-            thisRB.velocity = new Vector3(0, 1 * velocityModifier, 0);
+            thisRB.velocity = new Vector3(0, 1 * velocityModifierUp, 0);
 
         }
 
@@ -162,7 +164,7 @@ public class PlayerMovement : MonoBehaviour
         {
             Debug.Log("Move down");
 
-            thisRB.velocity = new Vector3(0, -1 * velocityModifier, 0);
+            thisRB.velocity = new Vector3(0, -1 * velocityModifierDown, 0);
 
         }
 

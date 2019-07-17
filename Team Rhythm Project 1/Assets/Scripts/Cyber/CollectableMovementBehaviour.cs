@@ -11,30 +11,19 @@ public class CollectableMovementBehaviour : MonoBehaviour
     public float collectableMovementSpeed;
 
     // Stores a reference to the collectable manager.
-    private GameObject collectableManager;
+    private GameObject collectableManager;     
 
-    // Rotation speed for collectables
-    private float randRotSpeed;
-    private float thisRotMin;
-    private float thisRotMax;
+    // Set rotation speed
+    public float rotSpeed;
 
-    // Scaling values
-    public float scaleSpeed;
-    
+    // Scaling values    
+    public float setScale;    
 
     void Start()
     {
-        // Sets the rotation speed range for this object
-        thisRotMin = collectableManager.gameObject.GetComponent<CollectableManager>().randRotMin;
-        thisRotMax = collectableManager.gameObject.GetComponent<CollectableManager>().randRotMax;
-
-        // Sets the rotation speed for this object
-        randRotSpeed = Random.Range(thisRotMin, thisRotMax);
-                
+                        
     }
 
-
-    //.
     void OnEnable()
     {
         // Find the collectable spawner with tag.
@@ -51,10 +40,8 @@ public class CollectableMovementBehaviour : MonoBehaviour
         transform.Translate(Vector3.back * Time.deltaTime * collectableMovementSpeed, Space.World);
 
         // Rotates this collectable randomly
-        transform.Rotate(randRotSpeed, randRotSpeed, randRotSpeed);
-
-        // Scales collectables up and down
-        transform.localScale = new Vector3(Mathf.PingPong(scaleSpeed*Time.time, 3)+1f, Mathf.PingPong(scaleSpeed * Time.time, 3)+1f, Mathf.PingPong(scaleSpeed * Time.time, 3)+1f);
-
+        transform.Rotate(rotSpeed, rotSpeed, rotSpeed);
+        
+        transform.localScale = new Vector3(setScale,setScale,setScale);
     }
 }

@@ -17,8 +17,10 @@ public class CollectableOnCollision : MonoBehaviour
         // get the collectable audio effects object
         collectableAudioEffectsObj = GameObject.FindGameObjectWithTag("CollectableEffect_1");
         
+        // get the particle that plays when collected
         collectableParticle = GetComponent<ParticleSystem>();
 
+        // get the collectable tracking script
         collectableTracking = GameObject.FindGameObjectWithTag("GameManager").GetComponent<CollectableTracking>();
 
     }
@@ -43,6 +45,7 @@ public class CollectableOnCollision : MonoBehaviour
             // For every collectable check if the audio pitch can be increased
             collectableTracking.IncreasePitch();
 
+            // If a particle exists play it
             if(collectableParticle != null)
             {
                 collectableParticle.Play();
@@ -52,17 +55,17 @@ public class CollectableOnCollision : MonoBehaviour
                 Debug.Log("no particle attached");
             }    
             
-            StartCoroutine(Delay());
+            // StartCoroutine(Delay());
 
             // this.gameObject.SetActive(false);
         }
     }
 
-    IEnumerator Delay()
-    {
-        // print(Time.time);
-        yield return new WaitForSeconds(0.1f);
-        // print(Time.time);
-    }
+    //IEnumerator Delay()
+    //{
+    //    // print(Time.time);
+    //    yield return new WaitForSeconds(0.0f);
+    //    // print(Time.time);
+    //}
 
 }

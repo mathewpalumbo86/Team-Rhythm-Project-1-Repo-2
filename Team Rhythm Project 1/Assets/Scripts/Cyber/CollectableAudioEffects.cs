@@ -6,8 +6,8 @@ public class CollectableAudioEffects : MonoBehaviour
 {
 
     private AudioSource audioSource;
-    public AudioClip[] shoot;
-    private AudioClip shootClip;
+    public AudioClip[] hit;
+    private AudioClip hitClip;
 
     // Start is called before the first frame update
     void Start()
@@ -27,11 +27,12 @@ public class CollectableAudioEffects : MonoBehaviour
         //}
     }
 
+    // Plays a random clip from an array
     public void PlayCollectableEffect()
     {
-        int index = Random.Range(0, shoot.Length);
-        shootClip = shoot[index];
-        audioSource.clip = shootClip;
+        int index = Random.Range(0, hit.Length);
+        hitClip = hit[index];
+        audioSource.clip = hitClip;
         audioSource.Play();
     }
 
