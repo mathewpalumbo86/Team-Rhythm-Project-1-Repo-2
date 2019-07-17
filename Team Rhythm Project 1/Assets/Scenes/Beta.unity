@@ -1268,6 +1268,31 @@ PrefabInstance:
       propertyPath: m_TagString
       value: GameManager
       objectReference: {fileID: 0}
+    - target: {fileID: 5989620193660028198, guid: 519b42da7ab02154193ccf1c83ab0d57,
+        type: 3}
+      propertyPath: voice.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5989620193660028198, guid: 519b42da7ab02154193ccf1c83ab0d57,
+        type: 3}
+      propertyPath: voice.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: b2c1c0d832a80854fb6cf2e230841e05, type: 3}
+    - target: {fileID: 5989620193660028198, guid: 519b42da7ab02154193ccf1c83ab0d57,
+        type: 3}
+      propertyPath: voice.Array.data[1]
+      value: 
+      objectReference: {fileID: 8300000, guid: 3bc3c67f217fc7944be5f23e5b08bee4, type: 3}
+    - target: {fileID: 5989620193660028198, guid: 519b42da7ab02154193ccf1c83ab0d57,
+        type: 3}
+      propertyPath: voice.Array.data[2]
+      value: 
+      objectReference: {fileID: 8300000, guid: dc4d7aec0138fa9418980c6eae7229f0, type: 3}
+    - target: {fileID: 7261039418371177265, guid: 519b42da7ab02154193ccf1c83ab0d57,
+        type: 3}
+      propertyPath: m_TagString
+      value: CollectableVOEffects
+      objectReference: {fileID: 0}
     - target: {fileID: 1138429999932720858, guid: 519b42da7ab02154193ccf1c83ab0d57,
         type: 3}
       propertyPath: m_LocalPosition.x

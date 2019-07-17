@@ -19,12 +19,16 @@ public class CollectableTracking : MonoBehaviour
     // The music track
     public AudioSource musicSource;
 
+    // VO source
+    public AudioSource VOSource;
+
     bool pitchIncreaseCheck = false;
 
     // Start is called before the first frame update
     void Start()
     {
         musicSource = GameObject.FindGameObjectWithTag("MusicSource").GetComponent<AudioSource>();
+        VOSource = GameObject.FindGameObjectWithTag("CollectableVOEffects").GetComponent<AudioSource>();
 
         totalCollected = 0;
         // pitchIncreaseCheck = false;
@@ -52,7 +56,11 @@ public class CollectableTracking : MonoBehaviour
 
                     Debug.Log("increase pitch");
 
-                    musicSource.pitch += 0.01f;
+                    // Increment the pitch
+                    musicSource.pitch += pitchIncrement;
+
+                    // Play a random voice over pitch to indicate the pitch has sped up
+                    VOSource.GetComponent<CollectableVOEffects>().PlayCollectableVOEffect();
 
                     pitchIncreaseCheck = false;
                 }
