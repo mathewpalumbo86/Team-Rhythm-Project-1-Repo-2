@@ -17,10 +17,12 @@ public class SkyboxManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        // Finds the source, clip and then length of the music
         musicSource = GameObject.FindGameObjectWithTag("MusicSource").GetComponent<AudioSource>();
         musicClip = musicSource.clip;
         musicLength = musicClip.length;
 
+        // Sets up starting skybox exposure values
         exposure = exposureMin;
         exposureDiff = exposureMax - exposureMin;
     }
@@ -28,8 +30,10 @@ public class SkyboxManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        // Calculates the music position and then the exposure
         musicPos = musicLength / Time.time;
         exposure = exposureDiff / musicPos;
+        // Updates the skybox exposure
         RenderSettings.skybox.SetFloat("_Exposure", exposure);
     }
 }

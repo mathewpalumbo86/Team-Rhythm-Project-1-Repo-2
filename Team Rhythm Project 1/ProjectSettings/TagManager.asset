@@ -15,6 +15,7 @@ TagManager:
   - GameManager
   - MusicSource
   - CollectableVOEffects
+  - City
   layers:
   - Default
   - TransparentFX
