@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.11723764, g: 0.07727493, b: 0.026084092, a: 1}
+  m_IndirectSpecularColor: {r: 0.29921395, g: 0.19722493, b: 0.06657266, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -442,6 +442,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: InstructionalUI
       objectReference: {fileID: 0}
+    - target: {fileID: 7368611207717447860, guid: 9a3cadacb91ded94ea18c788406f9f1a,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7368611207717447866, guid: 9a3cadacb91ded94ea18c788406f9f1a,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -661,11 +666,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3733206024261979674, guid: a180bf5fed3b6d94cbe67e8aff172979,
-        type: 3}
-      propertyPath: scaleRate
-      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a180bf5fed3b6d94cbe67e8aff172979, type: 3}
@@ -1228,14 +1228,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1138429999932720856, guid: 519b42da7ab02154193ccf1c83ab0d57,
+    - target: {fileID: 1566886291467215879, guid: 519b42da7ab02154193ccf1c83ab0d57,
         type: 3}
-      propertyPath: m_Name
-      value: GameManager
+      propertyPath: endLevelThreshhold
+      value: 90
       objectReference: {fileID: 0}
     - target: {fileID: 1138429999932720856, guid: 519b42da7ab02154193ccf1c83ab0d57,
         type: 3}
-      propertyPath: m_TagString
+      propertyPath: m_Name
       value: GameManager
       objectReference: {fileID: 0}
     - target: {fileID: 5989620193660028198, guid: 519b42da7ab02154193ccf1c83ab0d57,
@@ -1318,21 +1318,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1138429999932720859, guid: 519b42da7ab02154193ccf1c83ab0d57,
-        type: 3}
-      propertyPath: collectablesPerIncrement
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 1138429999932720859, guid: 519b42da7ab02154193ccf1c83ab0d57,
-        type: 3}
-      propertyPath: collectableMax
-      value: 200
-      objectReference: {fileID: 0}
-    - target: {fileID: 1138429999932720859, guid: 519b42da7ab02154193ccf1c83ab0d57,
-        type: 3}
-      propertyPath: pitchIncrement
-      value: 0.02
-      objectReference: {fileID: 0}
     - target: {fileID: 1138430001303180409, guid: 519b42da7ab02154193ccf1c83ab0d57,
         type: 3}
       propertyPath: m_Camera
@@ -1358,17 +1343,6 @@ PrefabInstance:
       propertyPath: m_TagString
       value: MusicSource
       objectReference: {fileID: 0}
-    - target: {fileID: 1138429999932720857, guid: 519b42da7ab02154193ccf1c83ab0d57,
-        type: 3}
-      propertyPath: itemsToPool.Array.data[1].shouldExpand
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1138429999932720857, guid: 519b42da7ab02154193ccf1c83ab0d57,
-        type: 3}
-      propertyPath: itemsToPool.Array.data[2].objectToPool
-      value: 
-      objectReference: {fileID: 7716653341273902950, guid: 835c4bf803e0360488d001cac9e90a20,
-        type: 3}
     - target: {fileID: 1138430000911418593, guid: 519b42da7ab02154193ccf1c83ab0d57,
         type: 3}
       propertyPath: shoot.Array.size
