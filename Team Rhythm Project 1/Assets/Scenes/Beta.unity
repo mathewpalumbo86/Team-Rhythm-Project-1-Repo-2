@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.29921395, g: 0.19722493, b: 0.06657266, a: 1}
+  m_IndirectSpecularColor: {r: 0.8480618, g: 0.55899066, b: 0.18868822, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -607,25 +607,20 @@ PrefabInstance:
       propertyPath: m_Name
       value: All buildings
       objectReference: {fileID: 0}
-    - target: {fileID: 3733206025465635326, guid: a180bf5fed3b6d94cbe67e8aff172979,
-        type: 3}
-      propertyPath: m_TagString
-      value: City
-      objectReference: {fileID: 0}
     - target: {fileID: 3733206025465871838, guid: a180bf5fed3b6d94cbe67e8aff172979,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 7.1
+      value: 7.5489
       objectReference: {fileID: 0}
     - target: {fileID: 3733206025465871838, guid: a180bf5fed3b6d94cbe67e8aff172979,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.2
+      value: 1.0905
       objectReference: {fileID: 0}
     - target: {fileID: 3733206025465871838, guid: a180bf5fed3b6d94cbe67e8aff172979,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 128
+      value: 127.92
       objectReference: {fileID: 0}
     - target: {fileID: 3733206025465871838, guid: a180bf5fed3b6d94cbe67e8aff172979,
         type: 3}
@@ -1228,40 +1223,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1566886291467215879, guid: 519b42da7ab02154193ccf1c83ab0d57,
-        type: 3}
-      propertyPath: endLevelThreshhold
-      value: 90
-      objectReference: {fileID: 0}
     - target: {fileID: 1138429999932720856, guid: 519b42da7ab02154193ccf1c83ab0d57,
         type: 3}
       propertyPath: m_Name
       value: GameManager
-      objectReference: {fileID: 0}
-    - target: {fileID: 5989620193660028198, guid: 519b42da7ab02154193ccf1c83ab0d57,
-        type: 3}
-      propertyPath: voice.Array.size
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 5989620193660028198, guid: 519b42da7ab02154193ccf1c83ab0d57,
-        type: 3}
-      propertyPath: voice.Array.data[0]
-      value: 
-      objectReference: {fileID: 8300000, guid: b2c1c0d832a80854fb6cf2e230841e05, type: 3}
-    - target: {fileID: 5989620193660028198, guid: 519b42da7ab02154193ccf1c83ab0d57,
-        type: 3}
-      propertyPath: voice.Array.data[1]
-      value: 
-      objectReference: {fileID: 8300000, guid: 3bc3c67f217fc7944be5f23e5b08bee4, type: 3}
-    - target: {fileID: 5989620193660028198, guid: 519b42da7ab02154193ccf1c83ab0d57,
-        type: 3}
-      propertyPath: voice.Array.data[2]
-      value: 
-      objectReference: {fileID: 8300000, guid: dc4d7aec0138fa9418980c6eae7229f0, type: 3}
-    - target: {fileID: 7261039418371177265, guid: 519b42da7ab02154193ccf1c83ab0d57,
-        type: 3}
-      propertyPath: m_TagString
-      value: CollectableVOEffects
       objectReference: {fileID: 0}
     - target: {fileID: 1138429999932720858, guid: 519b42da7ab02154193ccf1c83ab0d57,
         type: 3}
@@ -1338,71 +1303,6 @@ PrefabInstance:
       propertyPath: objectSpawnPosition
       value: 
       objectReference: {fileID: 1123178503}
-    - target: {fileID: 1138429999815051584, guid: 519b42da7ab02154193ccf1c83ab0d57,
-        type: 3}
-      propertyPath: m_TagString
-      value: MusicSource
-      objectReference: {fileID: 0}
-    - target: {fileID: 1138430000911418593, guid: 519b42da7ab02154193ccf1c83ab0d57,
-        type: 3}
-      propertyPath: shoot.Array.size
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 1138430000911418593, guid: 519b42da7ab02154193ccf1c83ab0d57,
-        type: 3}
-      propertyPath: hit.Array.size
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 1138430000911418593, guid: 519b42da7ab02154193ccf1c83ab0d57,
-        type: 3}
-      propertyPath: shoot.Array.data[0]
-      value: 
-      objectReference: {fileID: 8300000, guid: 633d8d764c0af19499cca82ff0fcea14, type: 3}
-    - target: {fileID: 1138430000911418593, guid: 519b42da7ab02154193ccf1c83ab0d57,
-        type: 3}
-      propertyPath: shoot.Array.data[1]
-      value: 
-      objectReference: {fileID: 8300000, guid: 633d8d764c0af19499cca82ff0fcea14, type: 3}
-    - target: {fileID: 1138430000911418593, guid: 519b42da7ab02154193ccf1c83ab0d57,
-        type: 3}
-      propertyPath: shoot.Array.data[2]
-      value: 
-      objectReference: {fileID: 8300000, guid: 633d8d764c0af19499cca82ff0fcea14, type: 3}
-    - target: {fileID: 1138430000911418593, guid: 519b42da7ab02154193ccf1c83ab0d57,
-        type: 3}
-      propertyPath: shoot.Array.data[3]
-      value: 
-      objectReference: {fileID: 8300000, guid: 633d8d764c0af19499cca82ff0fcea14, type: 3}
-    - target: {fileID: 1138430000911418593, guid: 519b42da7ab02154193ccf1c83ab0d57,
-        type: 3}
-      propertyPath: shoot.Array.data[4]
-      value: 
-      objectReference: {fileID: 8300000, guid: 633d8d764c0af19499cca82ff0fcea14, type: 3}
-    - target: {fileID: 1138430000911418593, guid: 519b42da7ab02154193ccf1c83ab0d57,
-        type: 3}
-      propertyPath: hit.Array.data[0]
-      value: 
-      objectReference: {fileID: 8300000, guid: 0fc92ae033f07254691eb7a675cab12e, type: 3}
-    - target: {fileID: 1138430000911418593, guid: 519b42da7ab02154193ccf1c83ab0d57,
-        type: 3}
-      propertyPath: hit.Array.data[1]
-      value: 
-      objectReference: {fileID: 8300000, guid: 1c3655dcc7133314dbc656a63b13bf6a, type: 3}
-    - target: {fileID: 1138430000911418593, guid: 519b42da7ab02154193ccf1c83ab0d57,
-        type: 3}
-      propertyPath: hit.Array.data[2]
-      value: 
-      objectReference: {fileID: 8300000, guid: 633d8d764c0af19499cca82ff0fcea14, type: 3}
-    - target: {fileID: 1138429999815051587, guid: 519b42da7ab02154193ccf1c83ab0d57,
-        type: 3}
-      propertyPath: m_audioClip
-      value: 
-      objectReference: {fileID: 8300000, guid: 1aa831bc02b519b4ba284f6712f74c40, type: 3}
-    - target: {fileID: 1138429999815051587, guid: 519b42da7ab02154193ccf1c83ab0d57,
-        type: 3}
-      propertyPath: Loop
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 519b42da7ab02154193ccf1c83ab0d57, type: 3}
 --- !u!1001 &1846863957257791054
