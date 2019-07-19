@@ -553,7 +553,7 @@ GameObject:
   - component: {fileID: 5475239809360263319}
   m_Layer: 0
   m_Name: All buildings
-  m_TagString: Untagged
+  m_TagString: City
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -567,7 +567,7 @@ Transform:
   m_GameObject: {fileID: 3733206025465635326}
   m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 7.1, y: 0.2, z: 103.9}
-  m_LocalScale: {x: 75, y: 75, z: 75}
+  m_LocalScale: {x: 68.88287, y: 68.88287, z: 68.88287}
   m_Children:
   - {fileID: 3733206025465871836}
   - {fileID: 3733206025465871834}
@@ -662,7 +662,7 @@ ParticleSystem:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3733206025465635326}
   serializedVersion: 6
-  lengthInSec: 0.25
+  lengthInSec: 0.15
   simulationSpeed: 1
   stopAction: 1
   cullingMode: 0
@@ -737,7 +737,7 @@ ParticleSystem:
     startLifetime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 6.15
+      scalar: 0.9
       minScalar: 5
       maxCurve:
         serializedVersion: 2
@@ -790,7 +790,7 @@ ParticleSystem:
     startSpeed:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 3.91
+      scalar: 1.88
       minScalar: 5
       maxCurve:
         serializedVersion: 2
@@ -906,7 +906,7 @@ ParticleSystem:
     startSize:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 0.15
+      scalar: 0.02
       minScalar: 1
       maxCurve:
         serializedVersion: 2
@@ -1287,7 +1287,7 @@ ParticleSystem:
     boxThickness: {x: 0, y: 0, z: 0}
     radiusThickness: 1
     donutRadius: 0.2
-    m_Position: {x: 0, y: 0, z: 0}
+    m_Position: {x: 0.2, y: -0.19, z: -0.03}
     m_Rotation: {x: -90, y: 0, z: 0}
     m_Scale: {x: 1, y: 1, z: 1}
     placementMode: 0
@@ -1368,7 +1368,7 @@ ParticleSystem:
     sphericalDirectionAmount: 0
     randomPositionAmount: 0
     radius:
-      value: 0.72023964
+      value: 0.12
       mode: 0
       spread: 0
       speed:
