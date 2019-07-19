@@ -569,7 +569,7 @@ GameObject:
   - component: {fileID: 3152449501993201804}
   m_Layer: 0
   m_Name: AudioSource
-  m_TagString: Untagged
+  m_TagString: MusicSource
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -600,11 +600,11 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: fe6f1aa2f5e01bd43bf5bc6f0ee7901a, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 1aa831bc02b519b4ba284f6712f74c40, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
-  Loop: 1
+  Loop: 0
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -738,6 +738,7 @@ GameObject:
   - component: {fileID: 1138429999932720857}
   - component: {fileID: 1138429999932720859}
   - component: {fileID: 1566886291467215879}
+  - component: {fileID: 3251585024543481279}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: GameManager
@@ -837,7 +838,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   totalCollected: 0
   collectablesPerIncrement: 10
-  collectableMax: 200
+  collectableMax: 300
   pitchIncrement: 0.02
   musicSource: {fileID: 0}
   VOSource: {fileID: 0}
@@ -858,8 +859,105 @@ MonoBehaviour:
   percentageMusicComplete: 0
   timeCheck: 0
   endLevelThreshhold: 90
+  timeToTakeAway: 300
   city: {fileID: 0}
   cityParticle: {fileID: 0}
+--- !u!82 &3251585024543481279
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1138429999932720856}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 5a59e66bf23cdb2469e9ff6195baed03, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &1138430000349111494
 GameObject:
   m_ObjectHideFlags: 0
@@ -1146,7 +1244,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f117d23ec6b67e6449e9fe15448b86a0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hit: []
+  hit:
+  - {fileID: 8300000, guid: 0fc92ae033f07254691eb7a675cab12e, type: 3}
+  - {fileID: 8300000, guid: 1c3655dcc7133314dbc656a63b13bf6a, type: 3}
+  - {fileID: 8300000, guid: 633d8d764c0af19499cca82ff0fcea14, type: 3}
 --- !u!1 &1138430001016876475
 GameObject:
   m_ObjectHideFlags: 0
@@ -1448,7 +1549,7 @@ GameObject:
   - component: {fileID: 5989620193660028198}
   m_Layer: 0
   m_Name: CollectableVOEffects
-  m_TagString: CollectableEffect_1
+  m_TagString: CollectableVOEffects
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1575,4 +1676,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 93ef8900fcf189c4783123de62c0ddf5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  voice: []
+  voice:
+  - {fileID: 8300000, guid: b2c1c0d832a80854fb6cf2e230841e05, type: 3}
+  - {fileID: 8300000, guid: 3bc3c67f217fc7944be5f23e5b08bee4, type: 3}
+  - {fileID: 8300000, guid: dc4d7aec0138fa9418980c6eae7229f0, type: 3}
