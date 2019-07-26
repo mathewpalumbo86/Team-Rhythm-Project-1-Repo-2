@@ -97,7 +97,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   collectableMovementSpeed: 0
   rotSpeed: 3
-  setScale: 2
+  setScale: 3.5
 --- !u!54 &7059885230643181664
 Rigidbody:
   m_ObjectHideFlags: 0
