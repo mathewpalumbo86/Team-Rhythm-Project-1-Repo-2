@@ -18,8 +18,7 @@ public class MeshGenerator : MonoBehaviour
     public int zSize;
 
     // Delay between creating new tiles (for testing)
-    // public float pauseBetweenTiles;
- 
+    // public float pauseBetweenTiles; 
 
     // Start is called before the first frame update
     void Start()
@@ -31,8 +30,6 @@ public class MeshGenerator : MonoBehaviour
         // Sets up the mesh
         CreateShape();
         UpdateMesh();
-
-
        
         // Creates the mesh collider
          MeshCollider meshc = gameObject.AddComponent(typeof(MeshCollider)) as MeshCollider;
@@ -41,15 +38,8 @@ public class MeshGenerator : MonoBehaviour
 
         // Physics is currently not required for the ground mesh so is set as a trigger
         meshc.isTrigger = true;
-
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-       
-    }
-
+    
     // Creates the mesh data (vertices and triangles arrays)
     void CreateShape()
     {
@@ -107,8 +97,6 @@ public class MeshGenerator : MonoBehaviour
     mesh.RecalculateNormals();
 
 }
-
-
     //// Used to show position of the vertices
     //private void OnDrawGizmos()
     //{

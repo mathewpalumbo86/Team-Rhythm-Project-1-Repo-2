@@ -21,16 +21,19 @@ public class ObjectActivator : MonoBehaviour
     public float spawnRangeYMin;
     public float spawnRangeYMax;
     // Variables to randomise the delay
-    public float collectableRandMin; 
-    public float collectableRandMax;
+    // public float collectableRandMin; 
+    // public float collectableRandMax;
 
     private float objectDelay; // For setting a delay between object placements
-    public Transform objectSpawnPosition; // Reference to the object spawn position.
+    public Transform collectableSpawnPos_1; // Collectable spawn 1
+    public Transform collectableSpawnPos_2; // Collectable spawn 2
+    public Transform collectableSpawnPos_3; // Collectable spawn 3
+    public Transform obstacleSpawnPosition; // Reference to the object spawn position.
 
     //========================== Obstacle variables ===========================
     public float obstacleSpawnOffset;
 
-
+    // Checks what type of object entered the attached trigger then spawns the next one available in the object pool
     private void OnTriggerEnter(Collider other)
     {
         // Debug.Log("trigger entered");        
@@ -56,32 +59,79 @@ public class ObjectActivator : MonoBehaviour
             }
         }
 
-        if (other.tag == "Collectable")
+        if (other.tag == "Collectable_1")
         {
             
-            objectDelay = Random.Range(collectableRandMin, collectableRandMax);
+            // objectDelay = Random.Range(collectableRandMin, collectableRandMax);
             // DelayObjectPlacement();
 
             // Debug.Log("is a collectable");
 
             // Randomise spawn position
-            spawnPosX = Random.Range(spawnRangeXMin, spawnRangeXMax);
-            spawnPosY = Random.Range(spawnRangeYMin, spawnRangeYMax);
+            // spawnPosX = Random.Range(spawnRangeXMin, spawnRangeXMax);
+            // spawnPosY = Random.Range(spawnRangeYMin, spawnRangeYMax);
 
-            GameObject objectToActivate = ObjectPooler.SharedInstance.GetPooledObject("Collectable");
+            GameObject objectToActivate = ObjectPooler.SharedInstance.GetPooledObject("Collectable_1");
             if (objectToActivate != null)
             {
                 // Sets the position of each object
-                objectToActivate.transform.position = new Vector3(spawnPosX, spawnPosY, (objectSpawnPosition.transform.position.z));
-                objectToActivate.transform.rotation = objectSpawnPosition.transform.rotation;
+                objectToActivate.transform.position = collectableSpawnPos_1.transform.position;
+                objectToActivate.transform.rotation = collectableSpawnPos_1.transform.rotation;
                 objectToActivate.SetActive(true);
                 // Debug.Log("spawn offset = " + spawnOffset);
             }
         }
 
-        if(other.tag == "Obstacle")
+        if (other.tag == "Collectable_2")
         {
-            objectDelay = Random.Range(collectableRandMin, collectableRandMax);
+
+            // objectDelay = Random.Range(collectableRandMin, collectableRandMax);
+            // DelayObjectPlacement();
+
+            // Debug.Log("is a collectable");
+
+            // Randomise spawn position
+            // spawnPosX = Random.Range(spawnRangeXMin, spawnRangeXMax);
+            // spawnPosY = Random.Range(spawnRangeYMin, spawnRangeYMax);
+
+            GameObject objectToActivate = ObjectPooler.SharedInstance.GetPooledObject("Collectable_2");
+            if (objectToActivate != null)
+            {
+                // Sets the position of each object
+                objectToActivate.transform.position = collectableSpawnPos_2.transform.position;
+                objectToActivate.transform.rotation = collectableSpawnPos_2.transform.rotation;
+                objectToActivate.SetActive(true);
+                // Debug.Log("spawn offset = " + spawnOffset);
+            }
+        }
+
+        if (other.tag == "Collectable_3")
+        {
+
+            // objectDelay = Random.Range(collectableRandMin, collectableRandMax);
+            // DelayObjectPlacement();
+
+            // Debug.Log("is a collectable");
+
+            // Randomise spawn position
+            // spawnPosX = Random.Range(spawnRangeXMin, spawnRangeXMax);
+            // spawnPosY = Random.Range(spawnRangeYMin, spawnRangeYMax);
+
+            GameObject objectToActivate = ObjectPooler.SharedInstance.GetPooledObject("Collectable_3");
+            if (objectToActivate != null)
+            {
+                // Sets the position of each object
+                objectToActivate.transform.position = collectableSpawnPos_3.transform.position;
+                objectToActivate.transform.rotation = collectableSpawnPos_3.transform.rotation;
+                objectToActivate.SetActive(true);
+                // Debug.Log("spawn offset = " + spawnOffset);
+            }
+        }
+
+
+        if (other.tag == "Obstacle")
+        {
+            // objectDelay = Random.Range(collectableRandMin, collectableRandMax);
             
                         
             // Randomise spawn position
@@ -94,8 +144,8 @@ public class ObjectActivator : MonoBehaviour
                 // DelayObjectPlacement();
 
                 // Sets the position of each object
-                objectToActivate.transform.position = new Vector3(spawnPosX, spawnPosY, (objectSpawnPosition.transform.position.z+obstacleSpawnOffset));
-                objectToActivate.transform.rotation = objectSpawnPosition.transform.rotation;
+                objectToActivate.transform.position = new Vector3(spawnPosX, spawnPosY, (obstacleSpawnPosition.transform.position.z+obstacleSpawnOffset));
+                objectToActivate.transform.rotation = obstacleSpawnPosition.transform.rotation;
                 objectToActivate.SetActive(true);
                 // Debug.Log("spawn offset = " + spawnOffset);
             }

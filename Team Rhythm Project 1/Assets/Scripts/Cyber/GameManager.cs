@@ -26,12 +26,6 @@ public class GameManager : MonoBehaviour
         StartCoroutine(StartEffectTimer(bgMusicSource)); // starts coroutine
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-       
-    }
-
     //Runs at start and waits until the end to play the sound and effect
     IEnumerator StartEffectTimer(AudioSource bgrClip)
     {
@@ -63,23 +57,8 @@ public class GameManager : MonoBehaviour
                 cityParticle.Play();
 
                 StartCoroutine(StartExplosionSound(explosionSound));
-            }
-            
-
-           //if (cityParticle.isPlaying)
-           // {
-              // return;
-            //}
-            //else
-            //{
-           //    city.SetActive(false);
-           // }
-
-
-        //}
+            }           
     }
-
-
 
     void DestroyCity()
     {

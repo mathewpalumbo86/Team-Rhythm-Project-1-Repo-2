@@ -27,9 +27,28 @@ public class CollectableMovementBehaviour : MonoBehaviour
     void OnEnable()
     {
         // Find the collectable spawner with tag.
-        collectableManager = GameObject.FindGameObjectWithTag("CollectableSpawner");
+        if(gameObject.tag == "Collectable_1")
+        {
+            Debug.Log("collectable 1");
 
-        // Access the terrain manager script on the spawner and set the speed.
+            collectableManager = GameObject.FindGameObjectWithTag("CollectableSpawner_1");
+        }
+
+        if (gameObject.tag == "Collectable_2")
+        {
+            Debug.Log("collectable 2");
+
+            collectableManager = GameObject.FindGameObjectWithTag("CollectableSpawner_2");
+        }
+
+        if (gameObject.tag == "Collectable_3")
+        {
+            Debug.Log("collectable 3");
+
+            collectableManager = GameObject.FindGameObjectWithTag("CollectableSpawner_3");
+        }
+
+        // Access the collectable manager script on the spawner and set the speed.
         collectableMovementSpeed = collectableManager.gameObject.GetComponent<CollectableManager>().collectableSpeed;
     }
 
