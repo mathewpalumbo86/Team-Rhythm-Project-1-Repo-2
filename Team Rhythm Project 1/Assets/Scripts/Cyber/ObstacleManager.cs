@@ -6,7 +6,6 @@ public class ObstacleManager : MonoBehaviour
 {
     /// How fast the terrain moves towards the player. Accessed by ObstacleMovementBehaviour.cs
     public float obstacleSpeed;
-
    
     // Start is called before the first frame update
     void Start()
@@ -21,14 +20,6 @@ public class ObstacleManager : MonoBehaviour
             thisCollectablePrefab.transform.rotation = transform.rotation;
 
             thisCollectablePrefab.SetActive(true);
-
-
         }
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 }

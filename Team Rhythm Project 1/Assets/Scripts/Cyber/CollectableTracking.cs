@@ -33,13 +33,7 @@ public class CollectableTracking : MonoBehaviour
         totalCollected = 0;
         // pitchIncreaseCheck = false;
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
+    
     // Increases the pitch based on how many collectables have been collected
     public void IncreasePitch()
     {
@@ -68,5 +62,4 @@ public class CollectableTracking : MonoBehaviour
             }
         }
     }
-
 }

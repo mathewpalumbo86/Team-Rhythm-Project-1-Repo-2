@@ -78,7 +78,10 @@ MonoBehaviour:
   spawnRangeYMax: 5
   collectableRandMin: 10
   collectableRandMax: 20
-  objectSpawnPosition: {fileID: 0}
+  collectableSpawnPos_1: {fileID: 0}
+  collectableSpawnPos_2: {fileID: 0}
+  collectableSpawnPos_3: {fileID: 0}
+  obstacleSpawnPosition: {fileID: 0}
   obstacleSpawnOffset: 64
 --- !u!1 &1138429999582449771
 GameObject:
@@ -784,13 +787,25 @@ MonoBehaviour:
     shouldExpand: 1
   - objectToPool: {fileID: 6162229178503756653, guid: cab2eb0260201c64883b78a476d28c32,
       type: 3}
-    amountToPool: 10
-    shouldExpand: 1
+    amountToPool: 2
+    shouldExpand: 0
+  - objectToPool: {fileID: 4163970473244015374, guid: 569a1e8116718bb4a8d4a09ea9df842b,
+      type: 3}
+    amountToPool: 4
+    shouldExpand: 0
+  - objectToPool: {fileID: 7600275035907700517, guid: f0e5b7d274837ce44909343b28c5c5aa,
+      type: 3}
+    amountToPool: 8
+    shouldExpand: 0
   - objectToPool: {fileID: 7716653341273902950, guid: 835c4bf803e0360488d001cac9e90a20,
       type: 3}
     amountToPool: 3
     shouldExpand: 1
   pooledObjects:
+  - {fileID: 7668930546003554456, guid: 7424fee07a7c68b4c80be2c26e290545, type: 3}
+  - {fileID: 7668930546003554456, guid: 7424fee07a7c68b4c80be2c26e290545, type: 3}
+  - {fileID: 7668930546003554456, guid: 7424fee07a7c68b4c80be2c26e290545, type: 3}
+  - {fileID: 7668930546003554456, guid: 7424fee07a7c68b4c80be2c26e290545, type: 3}
   - {fileID: 7668930546003554456, guid: 7424fee07a7c68b4c80be2c26e290545, type: 3}
   - {fileID: 7668930546003554456, guid: 7424fee07a7c68b4c80be2c26e290545, type: 3}
   - {fileID: 7668930546003554456, guid: 7424fee07a7c68b4c80be2c26e290545, type: 3}
@@ -858,8 +873,7 @@ MonoBehaviour:
   bgMusicPos: 0
   percentageMusicComplete: 0
   timeCheck: 0
-  endLevelThreshhold: 90
-  timeToTakeAway: 300
+  endLevelThreshhold: 1
   city: {fileID: 0}
   cityParticle: {fileID: 0}
 --- !u!82 &3251585024543481279

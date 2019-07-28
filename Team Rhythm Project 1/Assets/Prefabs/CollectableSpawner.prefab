@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 6642799594656483965}
   m_Layer: 0
   m_Name: CollectableSpawner
-  m_TagString: Collectable
+  m_TagString: CollectableSpawner
   m_Icon: {fileID: 419385456094870383, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -43,8 +43,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d39c413eb3dd65b499a2269820df2525, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  collectableSpeed: 50
+  thisCollectablePrefab: {fileID: 0}
+  collectableSpeed: 25
   randRotMin: 2
-  randRotMax: 4
-  randScaleMin: 0
-  randScaleMax: 5
+  randRotMax: 8

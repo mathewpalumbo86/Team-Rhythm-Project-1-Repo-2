@@ -7,8 +7,6 @@ TagManager:
   - ResetZone
   - TerrainSpawner
   - Terrain
-  - Collectable
-  - CollectableSpawner
   - CollectableEffect_1
   - Obstacle
   - ObstacleSpawner
@@ -16,6 +14,13 @@ TagManager:
   - MusicSource
   - CollectableVOEffects
   - City
+  - Collectable_1
+  - Collectable_2
+  - Collectable_3
+  - Collectable
+  - CollectableSpawner_1
+  - CollectableSpawner_2
+  - CollectableSpawner_3
   layers:
   - Default
   - TransparentFX
