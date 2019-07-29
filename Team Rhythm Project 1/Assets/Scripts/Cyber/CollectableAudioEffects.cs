@@ -5,9 +5,11 @@ using UnityEngine;
 public class CollectableAudioEffects : MonoBehaviour
 {
 
-    private AudioSource audioSource;
-    public AudioClip[] hit;
-    private AudioClip hitClip;
+    private AudioSource audioSource;    // The source of the collectable audio
+    public AudioClip[] collisionSounds; // The collectables audio array
+    private AudioClip collisionClip;    // The selected audio clip to play
+
+    public int index = 0; // Needs to be accessible from the CollectableOnCollision script
 
     // Start is called before the first frame update
     void Start()
@@ -30,9 +32,10 @@ public class CollectableAudioEffects : MonoBehaviour
     // Plays a random clip from an array
     public void PlayCollectableEffect()
     {
-        int index = Random.Range(0, hit.Length);
-        hitClip = hit[index];
-        audioSource.clip = hitClip;
+        // int index = Random.Range(0, collisionSounds.Length);
+        // Plays the collectable audio clip based on which type was collided with 
+        collisionClip = collisionSounds[index];
+        audioSource.clip = collisionClip;
         audioSource.Play();
     }
 
