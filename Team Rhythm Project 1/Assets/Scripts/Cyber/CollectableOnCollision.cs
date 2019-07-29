@@ -31,6 +31,22 @@ public class CollectableOnCollision : MonoBehaviour
         {
             // Debug.Log("collectable collided");
 
+            // Sets the index for the collectable audio effect array based on which collectable this is
+            if(gameObject.tag == "Collectable_1")
+            {
+                collectableAudioEffectsObj.GetComponent<CollectableAudioEffects>().index = 0;
+            }
+
+            if (gameObject.tag == "Collectable_2")
+            {
+                collectableAudioEffectsObj.GetComponent<CollectableAudioEffects>().index = 1;
+            }
+
+            if (gameObject.tag == "Collectable_3")
+            {
+                collectableAudioEffectsObj.GetComponent<CollectableAudioEffects>().index = 2;
+            }
+
             // if the player hits this object play a collectable sound effect and set it to inactive
             collectableAudioEffectsObj.GetComponent<CollectableAudioEffects>().PlayCollectableEffect();
 
@@ -47,10 +63,8 @@ public class CollectableOnCollision : MonoBehaviour
             else
             {
                 Debug.Log("no particle attached");
-            }    
-            
+            }                
             // StartCoroutine(Delay());
-
             // this.gameObject.SetActive(false);
         }
     }
