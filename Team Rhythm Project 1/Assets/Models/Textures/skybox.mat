@@ -79,7 +79,7 @@ Material:
     - _Cull: 2
     - _Cutoff: 0.5
     - _DstBlend: 0
-    - _Exposure: 0.25141224
+    - _Exposure: 0.5590921
     - _GlossMapScale: 1
     - _Glossiness: 0.5
     - _GlossyReflections: 1
