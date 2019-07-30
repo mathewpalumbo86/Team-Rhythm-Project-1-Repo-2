@@ -12,8 +12,8 @@ GameObject:
   - component: {fileID: 479997961313423105}
   - component: {fileID: 479997961312325057}
   - component: {fileID: 479997961310065413}
-  - component: {fileID: 479997961310065412}
   - component: {fileID: 479997961310065418}
+  - component: {fileID: 2381586986621171396}
   m_Layer: 0
   m_Name: Boat_3 (2)
   m_TagString: Player
@@ -30,7 +30,7 @@ Transform:
   m_GameObject: {fileID: 479997961310065415}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 50, y: 50, z: 50}
+  m_LocalScale: {x: 40, y: 40, z: 40}
   m_Children:
   - {fileID: 2575655472003892517}
   m_Father: {fileID: 0}
@@ -97,19 +97,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 0
---- !u!65 &479997961310065412
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 479997961310065415}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.16121183, y: 0.048622042, z: 0.25764805}
-  m_Center: {x: -0.00000027567145, y: 0.011104426, z: -0.10238036}
 --- !u!114 &479997961310065418
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -129,10 +116,24 @@ MonoBehaviour:
   ctrlHoriDirectionText: {fileID: 0}
   ctrlVertDirectionText: {fileID: 0}
   thisRB: {fileID: 0}
-  velocityModifierLR: 20
+  velocityModifierLR: 40
   velocityModifierUp: 20
   velocityModifierDown: 15
   speed: 10
+--- !u!64 &2381586986621171396
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 479997961310065415}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 1
+  m_CookingOptions: 14
+  m_Mesh: {fileID: 4300008, guid: e8e7fd44f7775b942a25966ba8c06cbd, type: 3}
 --- !u!1001 &5629649439640187068
 PrefabInstance:
   m_ObjectHideFlags: 0

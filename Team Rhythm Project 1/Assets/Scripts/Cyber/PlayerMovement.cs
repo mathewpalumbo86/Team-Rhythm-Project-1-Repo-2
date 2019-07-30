@@ -91,30 +91,30 @@ public class PlayerMovement : MonoBehaviour
         // BOTH X & Y axis control Left & Right movement
         // Checks the controller y rotation and assigns it a direction (forward, left, right). Moves the player vehicle accordingly.
         // Move the player left or right (this secondary movement to supplement different gestures by different users)
-        if ((angles.y >= 345 && angles.y <= 360) || (angles.y >= 0 && angles.y <= 15))
-        {
-            // Vehicle doesn't move when controller points forwards.
-            ctrlHoriDirectionText.text = "Direction: Forward";
+        //if ((angles.y >= 345 && angles.y <= 360) || (angles.y >= 0 && angles.y <= 15))
+        //{
+        //    // Vehicle doesn't move when controller points forwards.
+        //    ctrlHoriDirectionText.text = "Direction: Forward";
 
-        }
+        //}
 
-        if ((angles.y <= 345 && angles.y >= 180))
-        {
-            ctrlHoriDirectionText.text = "Direction: Left";
+        //if ((angles.y <= 345 && angles.y >= 180))
+        //{
+        //    ctrlHoriDirectionText.text = "Direction: Left";
 
-            // Physics based movement (-x)
-            thisRB.velocity = new Vector3(-1 * velocityModifierLR, 0, 0); // move left
+        //    // Physics based movement (-x)
+        //    thisRB.velocity = new Vector3(-1 * velocityModifierLR, 0, 0); // move left
             
-        }
+        //}
 
-        if ((angles.y >= 15 && angles.y <= 179))
-        {
-            ctrlHoriDirectionText.text = "Direction: Right";
+        //if ((angles.y >= 15 && angles.y <= 179))
+        //{
+        //    ctrlHoriDirectionText.text = "Direction: Right";
             
-            // Physics based movement (x+)             
-            thisRB.velocity = new Vector3(1 * velocityModifierLR, 0, 0); // move right
+        //    // Physics based movement (x+)             
+        //    thisRB.velocity = new Vector3(1 * velocityModifierLR, 0, 0); // move right
 
-        }
+        //}
 
         //=========================================================================================================
         // Checks the controller X rotation and assigns it a direction (forward, left, right). Moves the player vehicle accordingly.
