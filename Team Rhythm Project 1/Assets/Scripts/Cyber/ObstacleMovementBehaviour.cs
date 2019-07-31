@@ -11,14 +11,22 @@ public class ObstacleMovementBehaviour : MonoBehaviour
 
     // Stores a reference to the obstacle manager.
     private GameObject obstacleManager;
+
+    public float obstacleWidthMin;
+    public float obstacleWidthMax;
+    public float thisObstacleWidth;
             
     void OnEnable()
     {
+        thisObstacleWidth = Random.Range(obstacleWidthMin, obstacleWidthMax);
+        
         // Find the collectable spawner with tag.
         obstacleManager = GameObject.FindGameObjectWithTag("ObstacleSpawner");
 
         // Access the terrain manager script on the spawner and set the speed.
         obstacleMovementSpeed = obstacleManager.gameObject.GetComponent<ObstacleManager>().obstacleSpeed;
+
+        gameObject.transform.localScale = new Vector3 ( thisObstacleWidth,gameObject.transform.localScale.y , gameObject.transform.localScale.z);
     }
 
     // FixedUpdate is used for physics updates

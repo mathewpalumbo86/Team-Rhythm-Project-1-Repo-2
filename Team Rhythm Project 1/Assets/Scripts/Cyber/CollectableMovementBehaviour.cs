@@ -11,7 +11,9 @@ public class CollectableMovementBehaviour : MonoBehaviour
     public float collectableMovementSpeed;
 
     // Stores a reference to the collectable manager.
-    private GameObject collectableManager;     
+    private GameObject collectableManager;
+
+    private CollectableManager collectableManagerScript;
 
     // Set rotation speed
     public float rotSpeed;
@@ -50,17 +52,25 @@ public class CollectableMovementBehaviour : MonoBehaviour
 
         // Access the collectable manager script on the spawner and set the speed.
         collectableMovementSpeed = collectableManager.gameObject.GetComponent<CollectableManager>().collectableSpeed;
+
+        //
+        if(collectableManager != null)
+        {
+            collectableManagerScript = collectableManager.gameObject.GetComponent<CollectableManager>();
+        }
+
     }
 
     // FixedUpdate is used for physics updates
     void FixedUpdate()
     {
         // Move this instance of collectable. (Must use space.world because of the rotation)
-        transform.Translate(Vector3.back * Time.deltaTime * collectableMovementSpeed, Space.World);
+        transform.Translate(Vector3.back * Time.fixedDeltaTime * collectableManagerScript.collectableSpeed, Space.World);
 
         // Rotates this collectable randomly
         transform.Rotate(rotSpeed, rotSpeed, rotSpeed);
         
+        // 
         transform.localScale = new Vector3(setScale,setScale,setScale);
     }
 }

@@ -107,7 +107,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ca896d818b73c3943a4e383b49550ae5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  terrainMovementSpeed: 100
+  terrainMovementSpeed: 0
 --- !u!54 &2667038473606779134
 Rigidbody:
   m_ObjectHideFlags: 0

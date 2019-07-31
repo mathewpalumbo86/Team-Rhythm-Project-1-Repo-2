@@ -46,7 +46,7 @@ public class PlayerMovement : MonoBehaviour
     void FixedUpdate()
     {
         // calculate distance to move
-        float step = speed * Time.deltaTime; 
+        float step = speed * Time.fixedDeltaTime; 
 
         // Get the controller rotation
         controllerGO = OVRInput.GetLocalControllerRotation(OVRInput.Controller.RTrackedRemote);
