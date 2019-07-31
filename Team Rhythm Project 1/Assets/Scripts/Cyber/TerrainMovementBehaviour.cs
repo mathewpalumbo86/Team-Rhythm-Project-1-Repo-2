@@ -9,24 +9,39 @@ public class TerrainMovementBehaviour : MonoBehaviour
     public float terrainMovementSpeed;      
 
     // Stores a reference to the terrain manager.
-    private GameObject theTerrainManager;    
-
+    private GameObject theTerrainManager;
+    private TerrainManager terrainManagerScript;
 
     // Called when terrain instantiates.
     void OnEnable ()
     {
-        // Find the terrain spawner with tag.
+        
+            // Find the terrain spawner with tag.
         theTerrainManager = GameObject.FindGameObjectWithTag("TerrainSpawner");
 
         // Access the terrain manager script on the spawner and set the speed.
-        terrainMovementSpeed = theTerrainManager.gameObject.GetComponent<TerrainManager>().terrainSpeed;        
+        terrainMovementSpeed = theTerrainManager.gameObject.GetComponent<TerrainManager>().terrainSpeed;
+
+        //
+        if (theTerrainManager != null)
+        {
+            terrainManagerScript = theTerrainManager.gameObject.GetComponent<TerrainManager>();
+        }
+
+
+        // Debug.Log("FIXED DELTA TIME " + Time.fixedDeltaTime);
+
+        // Debug.Log("terrain movement speed " + terrainMovementSpeed);
     }
 
     // FixedUpdate is used for physics updates
     void FixedUpdate()
     {
+        // Access the terrain manager script on the spawner and set the speed.
+        terrainMovementSpeed = terrainManagerScript.terrainSpeed;
+
         // Move this instance of terrain.
-        transform.Translate(Vector3.back * Time.deltaTime * terrainMovementSpeed);
+        transform.Translate(Vector3.back * Time.fixedDeltaTime * terrainMovementSpeed);
     }
     
 

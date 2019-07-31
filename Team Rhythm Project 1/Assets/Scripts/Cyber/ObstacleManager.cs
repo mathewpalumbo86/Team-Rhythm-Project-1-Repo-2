@@ -6,7 +6,9 @@ public class ObstacleManager : MonoBehaviour
 {
     /// How fast the terrain moves towards the player. Accessed by ObstacleMovementBehaviour.cs
     public float obstacleSpeed;
-   
+
+        
+
     // Start is called before the first frame update
     void Start()
     {
