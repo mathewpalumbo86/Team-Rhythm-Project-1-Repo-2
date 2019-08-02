@@ -21,10 +21,6 @@ TagManager:
   - CollectableSpawner_1
   - CollectableSpawner_2
   - CollectableSpawner_3
-  - CollectableSpawner
-  - CameraRig
-  - EoGObject
-  - EoGSpawnPoint
   layers:
   - Default
   - TransparentFX
