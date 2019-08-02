@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.3422083, g: 0.22556886, b: 0.076139495, a: 1}
+  m_IndirectSpecularColor: {r: 0.030509109, g: 0.033145297, b: 0.093349166, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1114,7 +1114,7 @@ PrefabInstance:
     - target: {fileID: 1647570267910612822, guid: d25dd8e3b2bdf744e85cf1037c19b923,
         type: 3}
       propertyPath: terrainSpeed
-      value: 500
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 6790477440934613926, guid: d25dd8e3b2bdf744e85cf1037c19b923,
         type: 3}
@@ -2191,12 +2191,12 @@ PrefabInstance:
     - target: {fileID: 1138429999460788665, guid: 519b42da7ab02154193ccf1c83ab0d57,
         type: 3}
       propertyPath: m_LocalScale.z
-      value: 50
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 1138429999460788665, guid: 519b42da7ab02154193ccf1c83ab0d57,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 130.5
+      value: 128
       objectReference: {fileID: 0}
     - target: {fileID: 1138429999932720858, guid: 519b42da7ab02154193ccf1c83ab0d57,
         type: 3}
@@ -2312,6 +2312,11 @@ PrefabInstance:
         type: 3}
       propertyPath: spawnRangeXMax
       value: 26
+      objectReference: {fileID: 0}
+    - target: {fileID: 1138429999460788662, guid: 519b42da7ab02154193ccf1c83ab0d57,
+        type: 3}
+      propertyPath: spawnOffset
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1138429999932720857, guid: 519b42da7ab02154193ccf1c83ab0d57,
         type: 3}
@@ -2655,7 +2660,17 @@ PrefabInstance:
     - target: {fileID: 479997961310065418, guid: 6cf355374e06dc1438a19f528e2eca13,
         type: 3}
       propertyPath: velocityModifierLR
-      value: 15
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 479997961310065418, guid: 6cf355374e06dc1438a19f528e2eca13,
+        type: 3}
+      propertyPath: velocityModifierDown
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 479997961310065418, guid: 6cf355374e06dc1438a19f528e2eca13,
+        type: 3}
+      propertyPath: velocityModifierUp
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 479997961310065413, guid: 6cf355374e06dc1438a19f528e2eca13,
         type: 3}
