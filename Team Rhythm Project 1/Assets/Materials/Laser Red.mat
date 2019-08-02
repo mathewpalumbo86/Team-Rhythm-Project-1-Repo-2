@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: laser
+  m_Name: Laser Red
   m_Shader: {fileID: 4800000, guid: 86a03e8a2cd85094fbd952a790cf481e, type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 4
@@ -20,7 +20,7 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - Texture2D_28885E10:
-        m_Texture: {fileID: 2800000, guid: 5563aa34057c347499c480ea33c5d593, type: 3}
+        m_Texture: {fileID: 2800000, guid: 96c02017fe36eb3439e7896c814c3ebc, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _BumpMap:
@@ -67,7 +67,7 @@ Material:
     - _WorkflowMode: 1
     - _ZWrite: 1
     m_Colors:
-    - Color_AC4D2E49: {r: 1, g: 1, b: 1, a: 0}
+    - Color_AC4D2E49: {r: 454.03772, g: 0, b: 0, a: 0}
     - Vector2_63246863: {r: -0.5, g: 0, b: 0, a: 0}
     - _Color: {r: 0.5, g: 0.5, b: 0.5, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
