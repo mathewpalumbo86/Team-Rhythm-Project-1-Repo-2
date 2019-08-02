@@ -42,19 +42,7 @@ public class TerrainMovementBehaviour : MonoBehaviour
 
         // Move this instance of terrain.
         transform.Translate(Vector3.back * Time.fixedDeltaTime * terrainMovementSpeed);
-
-        // Terrain offset calculation but use UpdateOffset(offset, terrainManagerScript.terrainSpeed) where you usually 
-        // add the offset to the z position value (it will return a float). Also use this on enable as well to ensure that 
-        // the speed is set correctly on spawn. e.g. Vector 3(~, ~, position.z + UpdateOffset(offset, terrainManagerScript.terrainSpeed))
-        // UpdateOffset(offset, terrainManagerScript.terrainSpeed);
     }
-
-    // float UpdateOffset(float currentOffset, float currentSpeed)
-    // {
-        // divides the current offset by the current speed then deducts that amount from the current 
-        // offset (faster speed smaller offset?) try adding if it fails
-        // float updatedOffset = currentOffset - (currentOffset / currentSpeed); 
-        // return updatedOffset;
-    // }
+    
 
 }
