@@ -25,6 +25,8 @@ TagManager:
   - CameraRig
   - EoGObject
   - EoGSpawnPoint
+  - BoatSpeedUpAudio
+  - SpeedUpParticle
   layers:
   - Default
   - TransparentFX
