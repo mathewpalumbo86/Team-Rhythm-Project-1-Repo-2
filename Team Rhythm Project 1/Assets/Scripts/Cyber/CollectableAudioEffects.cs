@@ -34,7 +34,7 @@ public class CollectableAudioEffects : MonoBehaviour
     // Plays a random clip from an array
     public void PlayCollectableEffect()
     {
-        Debug.Log("play the sound");
+        // Debug.Log("play the sound");
 
         // int index = Random.Range(0, collisionSounds.Length);
         // Plays the collectable audio clip based on which type was collided with 

@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 1.0472794, g: 0.69029164, b: 0.23300551, a: 1}
+  m_IndirectSpecularColor: {r: 0.056002162, g: 0.03691272, b: 0.01245997, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -262,6 +262,15 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 0}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 479997961310065415, guid: 6cf355374e06dc1438a19f528e2eca13,
+        type: 3}
+      propertyPath: m_Name
+      value: Boat_3 (2)
+      objectReference: {fileID: 0}
     - target: {fileID: 4426922557830157630, guid: 6cf355374e06dc1438a19f528e2eca13,
         type: 3}
       propertyPath: m_PlayOnAwake
@@ -276,15 +285,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_TagString
       value: BoatSpeedUpAudio
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 479997961310065415, guid: 6cf355374e06dc1438a19f528e2eca13,
-        type: 3}
-      propertyPath: m_Name
-      value: Boat_3 (2)
       objectReference: {fileID: 0}
     - target: {fileID: 479997961310031655, guid: 6cf355374e06dc1438a19f528e2eca13,
         type: 3}
@@ -469,7 +469,7 @@ PrefabInstance:
     - target: {fileID: 3071129421403901609, guid: e93aa93baed13274992f7b12fc080977,
         type: 3}
       propertyPath: amountOfVisuals
-      value: 256
+      value: 128
       objectReference: {fileID: 0}
     - target: {fileID: 3071129421403901609, guid: e93aa93baed13274992f7b12fc080977,
         type: 3}
@@ -755,7 +755,7 @@ PrefabInstance:
     - target: {fileID: 3071129421403901609, guid: e93aa93baed13274992f7b12fc080977,
         type: 3}
       propertyPath: amountOfVisuals
-      value: 256
+      value: 128
       objectReference: {fileID: 0}
     - target: {fileID: 3071129421403901609, guid: e93aa93baed13274992f7b12fc080977,
         type: 3}
@@ -2102,7 +2102,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_audioClip
       value: 
-      objectReference: {fileID: 8300000, guid: 76ee94c658af21d4f80f9be1bff4f4a7, type: 3}
+      objectReference: {fileID: 8300000, guid: b0ff75c2ac13bd1448deff724340343f, type: 3}
     - target: {fileID: 1138430000911418592, guid: 519b42da7ab02154193ccf1c83ab0d57,
         type: 3}
       propertyPath: OutputAudioMixerGroup
