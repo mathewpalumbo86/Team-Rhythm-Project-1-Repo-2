@@ -31,21 +31,21 @@ public class CollectableMovementBehaviour : MonoBehaviour
         // Find the collectable spawner with tag.
         if(gameObject.tag == "Collectable_1")
         {
-            Debug.Log("collectable 1");
+            // Debug.Log("collectable 1");
 
             collectableManager = GameObject.FindGameObjectWithTag("CollectableSpawner_1");
         }
 
         if (gameObject.tag == "Collectable_2")
         {
-            Debug.Log("collectable 2");
+            // Debug.Log("collectable 2");
 
             collectableManager = GameObject.FindGameObjectWithTag("CollectableSpawner_2");
         }
 
         if (gameObject.tag == "Collectable_3")
         {
-            Debug.Log("collectable 3");
+            // Debug.Log("collectable 3");
 
             collectableManager = GameObject.FindGameObjectWithTag("CollectableSpawner_3");
         }
