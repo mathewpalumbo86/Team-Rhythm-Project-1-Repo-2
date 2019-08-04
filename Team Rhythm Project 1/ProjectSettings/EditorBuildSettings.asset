@@ -26,4 +26,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/PreRelease.unity
     guid: 24336ab2d6686b3428c4aff00c697c5d
+  - enabled: 0
+    path: Assets/Scenes/Beta - Testing 2.unity
+    guid: 777145dc887f9584b8185e5a798542c5
   m_configObjects: {}
