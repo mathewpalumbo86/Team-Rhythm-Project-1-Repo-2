@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 479997961310065413}
   - component: {fileID: 479997961310065418}
   - component: {fileID: 2381586986621171396}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Boat_3 (2)
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -145,7 +145,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1101571916519739068}
   - component: {fileID: 4426922557830157630}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Audio Source
   m_TagString: Untagged
   m_Icon: {fileID: 0}

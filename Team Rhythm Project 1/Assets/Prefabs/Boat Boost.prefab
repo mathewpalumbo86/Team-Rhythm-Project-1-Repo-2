@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 7898778661987267993}
   - component: {fileID: 7898778661987267992}
   - component: {fileID: 7898778661987267995}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Boat Boost
   m_TagString: Untagged
   m_Icon: {fileID: 0}
