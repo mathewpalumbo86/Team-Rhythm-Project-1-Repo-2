@@ -31,14 +31,21 @@ public class PlayerMovement : MonoBehaviour
     // ============================================================
 
     // The speed the vehicle should move.
-    public float speed = 1.0f;
+    public float speed;
 
     // ============================================================
 
+    // Variables to rotate the boat when it moves left or right
+    public Transform leftTargetRotation;
+    public Transform rightTargetRotation;
+    public Transform upTargetRotation;
+    public Transform downTargetRotation;
+    public Transform recenterTargetRotation;
+    public float rotSpeed;
 
     void Start()
     {
-        // grab the players rigidbody
+        // grab the players (Boat) rigidbody
         thisRB = GetComponent<Rigidbody>();
     }
 
@@ -65,7 +72,10 @@ public class PlayerMovement : MonoBehaviour
         if ((angles.z >=330 && angles.z<= 360) ||(angles.z >= 0 && angles.z <= 30))
         {
             // Vehicle doesn't move when controller points forwards.
-            ctrlHoriDirectionText.text = "Direction: Forward";    
+            ctrlHoriDirectionText.text = "Direction: Forward";
+
+            // Rotates the boat when it moves (back to centre)
+            transform.rotation = Quaternion.Lerp(transform.rotation, recenterTargetRotation.rotation, Time.time * rotSpeed);
 
         }
 
@@ -76,6 +86,9 @@ public class PlayerMovement : MonoBehaviour
             // Physics based movement (-x)
             thisRB.velocity = new Vector3(-1 * velocityModifierLR, 0, 0); // move left
 
+            // Rotates the boat when it moves
+            transform.rotation = Quaternion.Lerp(transform.rotation, leftTargetRotation.rotation, Time.time * rotSpeed);
+
         }
 
         if ((angles.z >= 180 && angles.z <= 315))
@@ -84,6 +97,9 @@ public class PlayerMovement : MonoBehaviour
             
             // Physics based movement (x+)
             thisRB.velocity = new Vector3(1 * velocityModifierLR, 0, 0); // move right
+
+            // Rotates the boat when it moves
+            transform.rotation = Quaternion.Lerp(transform.rotation, rightTargetRotation.rotation, Time.time * rotSpeed);
 
         }
 
@@ -122,7 +138,10 @@ public class PlayerMovement : MonoBehaviour
         if ((angles.x >= 330 && angles.x <= 360) || (angles.x >= 0 && angles.x <= 30))
         {
             // Vehicle doesn't move when controller points forwards.
-            ctrlVertDirectionText.text = "Vertical Direction: Forward";           
+            ctrlVertDirectionText.text = "Vertical Direction: Forward";
+
+            // Rotates the boat when it moves (back to centre)
+            transform.rotation = Quaternion.Lerp(transform.rotation, recenterTargetRotation.rotation, Time.time * rotSpeed);
 
         }
 
@@ -133,6 +152,9 @@ public class PlayerMovement : MonoBehaviour
             // Physics based movement (y-)            
             thisRB.velocity = new Vector3(0, 1 * velocityModifierUp, 0);
 
+            // Rotates the boat when it moves
+            transform.rotation = Quaternion.Lerp(transform.rotation, upTargetRotation.rotation, Time.time * rotSpeed);
+
         }
 
         if ((angles.x > 0 && angles.x < 180))
@@ -141,6 +163,9 @@ public class PlayerMovement : MonoBehaviour
 
             // Physics based movement (y+)            
             thisRB.velocity = new Vector3(0, -1 * velocityModifierDown, 0);
+
+            // Rotates the boat when it moves
+            transform.rotation = Quaternion.Lerp(transform.rotation, downTargetRotation.rotation, Time.time * rotSpeed);
 
         }
 
@@ -153,7 +178,11 @@ public class PlayerMovement : MonoBehaviour
         {
             Debug.Log("Move left");
 
+            // Move the boat
             thisRB.velocity = new Vector3(-1* velocityModifierLR, 0,0);
+
+            // Rotates the boat when it moves
+            transform.rotation = Quaternion.Lerp(transform.rotation, leftTargetRotation.rotation, Time.time * rotSpeed);
 
         }
 
@@ -162,7 +191,11 @@ public class PlayerMovement : MonoBehaviour
         {
             Debug.Log("Move right");
 
+            // Move the boat
             thisRB.velocity = new Vector3(1 * velocityModifierLR, 0, 0);
+
+            // Rotates the boat when it moves
+            transform.rotation = Quaternion.Lerp(transform.rotation, rightTargetRotation.rotation, Time.time * rotSpeed);
 
         }
 
@@ -173,6 +206,9 @@ public class PlayerMovement : MonoBehaviour
 
             thisRB.velocity = new Vector3(0, 1 * velocityModifierUp, 0);
 
+            // Rotates the boat when it moves
+            transform.rotation = Quaternion.Lerp(transform.rotation, upTargetRotation.rotation, Time.time * rotSpeed);
+
         }
 
         // Use keyboard to move down (physics based movement)
@@ -181,6 +217,10 @@ public class PlayerMovement : MonoBehaviour
             Debug.Log("Move down");
 
             thisRB.velocity = new Vector3(0, -1 * velocityModifierDown, 0);
+
+            // Rotates the boat when it moves
+            transform.rotation = Quaternion.Lerp(transform.rotation, downTargetRotation.rotation, Time.time * rotSpeed);
+
 
         }
 
