@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 5081118406928708204}
   - component: {fileID: 5081118406928708205}
   - component: {fileID: 5081118406928708202}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Plane
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -104,7 +104,7 @@ GameObject:
   - component: {fileID: 5081118407687481760}
   - component: {fileID: 5081118407687481761}
   - component: {fileID: 5081118407687481694}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Plane (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -193,7 +193,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4232855347650960435}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: GridPlanes
   m_TagString: Untagged
   m_Icon: {fileID: 0}

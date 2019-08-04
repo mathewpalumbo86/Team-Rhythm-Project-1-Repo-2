@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 7668930546003554457}
   - component: {fileID: 5446288298665767576}
   - component: {fileID: 2667038473606779134}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: MeshGenerator
   m_TagString: Terrain
   m_Icon: {fileID: 0}

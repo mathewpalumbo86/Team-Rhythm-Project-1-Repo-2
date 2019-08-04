@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4831275581991343939}
   - component: {fileID: 5160037662977571077}
   - component: {fileID: 8887952652922830655}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Particle System
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4707,7 +4707,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5100299986299606467}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Light Show Particals (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4743,7 +4743,7 @@ GameObject:
   - component: {fileID: 7376023012883411818}
   - component: {fileID: 3424187226487850228}
   - component: {fileID: 7948368352207906471}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Blue Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9441,7 +9441,7 @@ GameObject:
   - component: {fileID: 55532352328130548}
   - component: {fileID: 4628584542175808917}
   - component: {fileID: 287135941965911018}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Blue Lines
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14140,7 +14140,7 @@ GameObject:
   - component: {fileID: 4075989142563594675}
   - component: {fileID: 4979828156840951476}
   - component: {fileID: 3766365565935200516}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Cylinder
   m_TagString: Untagged
   m_Icon: {fileID: 0}

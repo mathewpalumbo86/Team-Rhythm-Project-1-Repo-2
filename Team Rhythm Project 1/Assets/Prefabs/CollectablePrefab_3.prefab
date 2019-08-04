@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 5806270040472310436}
   - component: {fileID: 3783635695344231553}
   - component: {fileID: 8284571918968947863}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: CollectablePrefab_3
   m_TagString: Collectable_3
   m_Icon: {fileID: 0}
@@ -142,6 +142,7 @@ MonoBehaviour:
   collectableAudioEffectsObj: {fileID: 0}
   collectableParticle: {fileID: 0}
   collectableTracking: {fileID: 0}
+  thisCollectablesPosition: {fileID: 0}
 --- !u!199 &3783635695344231553
 ParticleSystemRenderer:
   serializedVersion: 6
