@@ -15,7 +15,21 @@ AudioMixerController:
   m_SuspendThreshold: -80
   m_EnableSuspend: 1
   m_UpdateMode: 0
-  m_ExposedParameters: []
+  m_ExposedParameters:
+  - guid: cf246b9c671cb424ca41ce745f6f4ee2
+    name: Cyber1
+  - guid: 6623a41a4450c58408f7904b149dec30
+    name: Cyber2
+  - guid: 7bfa2aee610a8c34c9b72fd208901a57
+    name: Cyber3
+  - guid: 6cbb45f2bddf2074c8dccf01cd82a0b9
+    name: Drum2
+  - guid: 901bcca2bb146a240862833708fd426d
+    name: Drum3
+  - guid: 065894c6d29627c4db7c0cb493a7db37
+    name: Drum1
+  - guid: d946616a4b5f5b74fb41f7a2148cc90c
+    name: MasterVol
   m_AudioMixerGroupViews:
   - guids:
     - 3c0225af3646eff4483efbc621e75582
