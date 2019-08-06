@@ -423,8 +423,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   masterAudio: {fileID: 24100000, guid: 7754d5b55524da347b428d23de16efe8, type: 2}
   ON: 0
-  volume: -7
-  pitch: 0
+  mVolume: 0
+  pitch: -80
+  c1Volume: -80
+  c2Volume: -80
+  c3Volume: -80
+  d1Volume: -80
+  d2Volume: -80
+  d3Volume: -80
 --- !u!4 &99610441
 Transform:
   m_ObjectHideFlags: 0
@@ -18576,6 +18582,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: AudioMixer Board (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3715454203111182968, guid: 6f45e0b04b4a130458701bef66c7dc51,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 875890807438992238, guid: 6f45e0b04b4a130458701bef66c7dc51,
         type: 3}

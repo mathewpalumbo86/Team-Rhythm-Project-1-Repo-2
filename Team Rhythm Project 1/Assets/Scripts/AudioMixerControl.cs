@@ -11,11 +11,23 @@ public class AudioMixerControl : MonoBehaviour
 
 
     [Range(-80f, 20f)]
-    public float volume;
+    public float mVolume;
     [Range(-80, 20f)]
     public float pitch;
+    [Range(-80f, 20f)]
+    public float c1Volume;
+    [Range(-80f, 20f)]
+    public float c2Volume;
+    [Range(-80f, 20f)]
+    public float c3Volume;
+    [Range(-80f, 20f)]
+    public float d1Volume;
+    [Range(-80f, 20f)]
+    public float d2Volume;
+    [Range(-80f, 20f)]
+    public float d3Volume;
 
-    
+
 
     public void SetMasterMusic(float masterVol)
     {
@@ -25,29 +37,44 @@ public class AudioMixerControl : MonoBehaviour
     }
     private void Start()
     {
-      //CyberSfx2(10);
+        CyberSfx1(-80);
+
 
     }
     public void Update()
     {
-        if (ON == true)
+
+        /*if (ON == true)
         {
-            CyberSfx1(20);
+            CyberSfx1(volume);// how you set the music (between -80 and 20)
         }
         else 
         {
             ON = false;
             CyberSfx1(-80);
         }
+        */
+
+        SetMasterMusic(mVolume);// master music slider 
+        
+        CyberSfx1(c1Volume);// cyber effect sliders 
+        CyberSfx2(c2Volume);
+        CyberSfx3(c3Volume);
+
+        DrumSfx1(d1Volume);//drum effect sliders 
+        DrumSfx2(d2Volume);
+        DrumSfx3(d3Volume);
+
+
+
     }
 
     public void CyberSfx1 (float Cbr1)
     {
-        
-        masterAudio.SetFloat("Cyber1", Cbr1);
+
+                masterAudio.SetFloat("Cyber1", Cbr1);// lets you change the volume for Cyber effect 
 
         
-
     }
     public void CyberSfx2(float Cbr2)
     {
