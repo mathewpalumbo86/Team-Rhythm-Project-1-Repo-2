@@ -10,6 +10,16 @@ public class PlayerMovement : MonoBehaviour
     // Will store the controller rotation
     public Quaternion controllerGO;
 
+    // Stores the quaternions of each axis separately
+    Quaternion xQuaternion;
+    Quaternion yQuaternion;     // Not used
+    Quaternion zQuaternion;
+
+    // Stores the converted quaternion for each axis
+    Vector3 xAxisEulerAngles;
+    Vector3 yAxisEulerAngles;   // Not used
+    Vector3 zAxisEulerAngles;
+
     // Controller values shown in UI overlay
     public Text xText;
     public Text yText;
@@ -58,7 +68,7 @@ public class PlayerMovement : MonoBehaviour
         // Get the controller rotation
         controllerGO = OVRInput.GetLocalControllerRotation(OVRInput.Controller.RTrackedRemote);
 
-        // Converts the quaternion to readable values
+        // Converts the controller quaternion to readable values
         Vector3 angles = controllerGO.eulerAngles;
 
         // Updating the text overlay
@@ -69,16 +79,7 @@ public class PlayerMovement : MonoBehaviour
         //=========================================================================================================
         // Checks the controller z rotation and assigns it a direction (forward, left, right). Moves the player vehicle accordingly.
         // Move the player left or right
-        if ((angles.z >=330 && angles.z<= 360) ||(angles.z >= 0 && angles.z <= 30))
-        {
-            // Vehicle doesn't move when controller points forwards.
-            ctrlHoriDirectionText.text = "Direction: Forward";
-
-            // Rotates the boat when it moves (back to centre)
-            transform.rotation = Quaternion.Lerp(transform.rotation, recenterTargetRotation.rotation, Time.time * rotSpeed);
-
-        }
-
+        
         if ((angles.z <= 180 && angles.z >= 15))
         {
             ctrlHoriDirectionText.text = "Direction: Left";
@@ -87,7 +88,10 @@ public class PlayerMovement : MonoBehaviour
             thisRB.velocity = new Vector3(-1 * velocityModifierLR, 0, 0); // move left
 
             // Rotates the boat when it moves
-            transform.rotation = Quaternion.Lerp(transform.rotation, leftTargetRotation.rotation, Time.time * rotSpeed);
+            zQuaternion = Quaternion.Lerp(transform.rotation, leftTargetRotation.rotation, Time.time * rotSpeed);
+
+            // Convert this quaternion to euler
+            zAxisEulerAngles = zQuaternion.eulerAngles;
 
         }
 
@@ -99,7 +103,23 @@ public class PlayerMovement : MonoBehaviour
             thisRB.velocity = new Vector3(1 * velocityModifierLR, 0, 0); // move right
 
             // Rotates the boat when it moves
-            transform.rotation = Quaternion.Lerp(transform.rotation, rightTargetRotation.rotation, Time.time * rotSpeed);
+            zQuaternion = Quaternion.Lerp(transform.rotation, rightTargetRotation.rotation, Time.time * rotSpeed);
+
+            // Convert this quaternion to euler
+            zAxisEulerAngles = zQuaternion.eulerAngles;
+
+        }
+
+        if ((angles.z >= 330 && angles.z <= 360) || (angles.z >= 0 && angles.z <= 30))
+        {
+            // Vehicle doesn't move when controller points forwards.
+            ctrlHoriDirectionText.text = "Direction: Forward";
+
+            // Rotates the boat when it moves (back to centre)
+            zQuaternion = Quaternion.Lerp(transform.rotation, recenterTargetRotation.rotation, Time.time * rotSpeed);
+
+            // Convert this quaternion to euler
+            zAxisEulerAngles = zQuaternion.eulerAngles;
 
         }
 
@@ -120,13 +140,13 @@ public class PlayerMovement : MonoBehaviour
 
         //    // Physics based movement (-x)
         //    thisRB.velocity = new Vector3(-1 * velocityModifierLR, 0, 0); // move left
-            
+
         //}
 
         //if ((angles.y >= 15 && angles.y <= 179))
         //{
         //    ctrlHoriDirectionText.text = "Direction: Right";
-            
+
         //    // Physics based movement (x+)             
         //    thisRB.velocity = new Vector3(1 * velocityModifierLR, 0, 0); // move right
 
@@ -135,15 +155,6 @@ public class PlayerMovement : MonoBehaviour
         //=========================================================================================================
         // Checks the controller X rotation and assigns it a direction (forward, left, right). Moves the player vehicle accordingly.
         // Move the player up or down
-        if ((angles.x >= 330 && angles.x <= 360) || (angles.x >= 0 && angles.x <= 30))
-        {
-            // Vehicle doesn't move when controller points forwards.
-            ctrlVertDirectionText.text = "Vertical Direction: Forward";
-
-            // Rotates the boat when it moves (back to centre)
-            transform.rotation = Quaternion.Lerp(transform.rotation, recenterTargetRotation.rotation, Time.time * rotSpeed);
-
-        }
 
         if ((angles.x >= 180 && angles.x <= 330))
         {
@@ -153,7 +164,10 @@ public class PlayerMovement : MonoBehaviour
             thisRB.velocity = new Vector3(0, 1 * velocityModifierUp, 0);
 
             // Rotates the boat when it moves
-            transform.rotation = Quaternion.Lerp(transform.rotation, upTargetRotation.rotation, Time.time * rotSpeed);
+            xQuaternion = Quaternion.Lerp(transform.rotation, upTargetRotation.rotation, Time.time * rotSpeed);
+
+            // Convert this quaternion to euler
+            xAxisEulerAngles = xQuaternion.eulerAngles;
 
         }
 
@@ -165,9 +179,33 @@ public class PlayerMovement : MonoBehaviour
             thisRB.velocity = new Vector3(0, -1 * velocityModifierDown, 0);
 
             // Rotates the boat when it moves
-            transform.rotation = Quaternion.Lerp(transform.rotation, downTargetRotation.rotation, Time.time * rotSpeed);
+            xQuaternion = Quaternion.Lerp(transform.rotation, downTargetRotation.rotation, Time.time * rotSpeed);
+
+            // Convert this quaternion to euler
+            xAxisEulerAngles = xQuaternion.eulerAngles;
 
         }
+
+        if ((angles.x >= 330 && angles.x <= 360) || (angles.x >= 0 && angles.x <= 30))
+        {
+            // Vehicle doesn't move when controller points forwards.
+            ctrlVertDirectionText.text = "Vertical Direction: Forward";
+
+            // Rotates the boat when it moves (back to centre)
+            xQuaternion = Quaternion.Lerp(transform.rotation, recenterTargetRotation.rotation, Time.time * rotSpeed);
+
+            // Convert this quaternion to euler
+            xAxisEulerAngles = xQuaternion.eulerAngles;
+
+        }
+
+
+        // This combines the above rotations into one (Y axis is currently not used)
+        Vector3 combinedEuler;
+        combinedEuler = new Vector3(xAxisEulerAngles.x, transform.rotation.y, zAxisEulerAngles.z);
+
+        // Converts back to quaternion and updates the roation.
+        transform.rotation = Quaternion.Euler(combinedEuler);
 
 #if UNITY_EDITOR
         // Movement controls in the editor
