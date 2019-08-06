@@ -67,7 +67,7 @@ Material:
     - _WorkflowMode: 1
     - _ZWrite: 1
     m_Colors:
-    - Color_AC4D2E49: {r: 454.03772, g: 0, b: 0, a: 0}
+    - Color_AC4D2E49: {r: 17.155933, g: 0, b: 0.9351229, a: 0}
     - Vector2_63246863: {r: -0.5, g: 0, b: 0, a: 0}
     - _Color: {r: 0.5, g: 0.5, b: 0.5, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}

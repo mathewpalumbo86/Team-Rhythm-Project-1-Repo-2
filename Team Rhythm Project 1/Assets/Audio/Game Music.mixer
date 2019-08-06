@@ -18,6 +18,8 @@ AudioMixerController:
   m_ExposedParameters:
   - guid: cf246b9c671cb424ca41ce745f6f4ee2
     name: Cyber1
+  - guid: 95d2541714d728e439e626758dec8619
+    name: MyExposedParam
   - guid: 6623a41a4450c58408f7904b149dec30
     name: Cyber2
   - guid: 7bfa2aee610a8c34c9b72fd208901a57
