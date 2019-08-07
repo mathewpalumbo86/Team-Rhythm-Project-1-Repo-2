@@ -41,6 +41,10 @@ public class CollectableTracking : MonoBehaviour
 
     bool pitchIncreaseCheck = false;
 
+    [SerializeField]
+    GameObject orangeFloor, leftGrid, rightGrid;
+    MaterialScroller orangeFloorMaterialScroller, leftGridMaterialScroller, rightGridMaterialScroller;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -49,6 +53,9 @@ public class CollectableTracking : MonoBehaviour
         boatSpeedUpAudio = GameObject.FindGameObjectWithTag("BoatSpeedUpAudio").GetComponent<AudioSource>();
         speedUpParticle = GameObject.FindGameObjectWithTag("SpeedUpParticle").GetComponent<ParticleSystem>();
         terrainManagerScript = GameObject.FindGameObjectWithTag("TerrainSpawner").GetComponent<TerrainManager>();
+        orangeFloorMaterialScroller = orangeFloor.GetComponent<MaterialScroller>();
+        leftGridMaterialScroller = leftGrid.GetComponent<MaterialScroller>();
+        rightGridMaterialScroller = rightGrid.GetComponent<MaterialScroller>();
 
         totalCollected = 0;
         // pitchIncreaseCheck = false;
@@ -78,6 +85,10 @@ public class CollectableTracking : MonoBehaviour
 
                     // Speeds up terrain movement
                     terrainManagerScript.terrainSpeed = terrainManagerScript.terrainSpeed + terrainSpeedIncrease;
+
+                    orangeFloorMaterialScroller.SpeedUp();
+                    leftGridMaterialScroller.SpeedUp();
+                    rightGridMaterialScroller.SpeedUp();
 
                     // Play a random voice over pitch to indicate the pitch has sped up
                     VOSource.GetComponent<CollectableVOEffects>().PlayCollectableVOEffect();
