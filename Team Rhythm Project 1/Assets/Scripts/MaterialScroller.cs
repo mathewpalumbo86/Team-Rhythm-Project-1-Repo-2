@@ -7,23 +7,24 @@ public class MaterialScroller : MonoBehaviour
     Renderer myRenderer; //used to control material options
 
     [SerializeField, Tooltip("This is for controlling Material Scroll Speed Illusion")]
-    float offsetY = -0.1f;
+    private float offsetY = -0.1f;
 
 
     private void Awake()
     {
         myRenderer = GetComponent<Renderer>();
+        offsetY = -0.1f;
     }
 
-    private void FixedUpdate()
+    private void Update()
     {
-        offsetY *= Time.fixedDeltaTime;
+        float speed = offsetY + (offsetY * Time.time);
         //myRenderer.material.mainTextureOffset = new Vector2(0f, offsetY);
-        myRenderer.material.SetTextureOffset("_MainTex", new Vector2(0f, offsetY));
+        myRenderer.material.SetTextureOffset("_MainTex", new Vector2(0f, speed));
     }
 
     public void SpeedUp()
     {
-        offsetY += -1f;
+        offsetY += -0.6f;
     }
 }
