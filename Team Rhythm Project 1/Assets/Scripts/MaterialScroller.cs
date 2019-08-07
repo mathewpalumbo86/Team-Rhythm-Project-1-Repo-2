@@ -18,7 +18,8 @@ public class MaterialScroller : MonoBehaviour
     private void FixedUpdate()
     {
         offsetY *= Time.fixedDeltaTime;
-        myRenderer.material.mainTextureOffset = new Vector2(0f, offsetY);
+        //myRenderer.material.mainTextureOffset = new Vector2(0f, offsetY);
+        myRenderer.material.SetTextureOffset("_MainTex", new Vector2(0f, offsetY));
     }
 
     public void SpeedUp()
