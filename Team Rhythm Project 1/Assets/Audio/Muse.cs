@@ -19,14 +19,36 @@ public class Muse : MonoBehaviour
     void Start()
     {
 
-        
+        mixer = FindObjectOfType<AudioMixerControl>();
 
-        mixer.DrumSfx1(10);
+        if ( mixer = FindObjectOfType<AudioMixerControl>())
+        {
+
+
+           Debug.Log("mixer Gained");
+
+
+
+        }
+
 
     }
 
+    void Update()
+    {
+
+        mixer.CyberSfx1(2);
+        //mixer.CyberSfx1(volume);
+        mixer.SetMasterMusic(volume);
+        Debug.Log("Volume = " + volume);
 
 
 
-   
+
+    }
+    //AudioMixerControl mixer;// put at start of the script calling the audio mixer script
+    //  mixer = FindObjectOfType<AudioMixerControl>();// put in start to grab the audio mixer function and have them active
+    //mixer.("Whatever sound effect you want to increase")// put this in update or where every the sound effect should be played
+
+
 }

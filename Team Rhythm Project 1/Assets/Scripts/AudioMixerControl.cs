@@ -6,13 +6,13 @@ using UnityEngine.Audio;
 public class AudioMixerControl : MonoBehaviour
 {
     public AudioMixer masterAudio;
-    
+
     public bool ON = false;
 
 
     [Range(-80f, 20f)]
     public float mVolume;
-    [Range(-80, 20f)]
+    [Range(0.01f, 10f)] // pitch Values
     public float pitch;
     [Range(-80f, 20f)]
     public float c1Volume;
@@ -31,13 +31,13 @@ public class AudioMixerControl : MonoBehaviour
 
     public void SetMasterMusic(float masterVol)
     {
-        
+
         masterAudio.SetFloat("MasterVol", masterVol);
-        
+
     }
     private void Start()
     {
-        CyberSfx1(-80);
+
 
 
     }
@@ -48,38 +48,38 @@ public class AudioMixerControl : MonoBehaviour
         {
             CyberSfx1(volume);// how you set the music (between -80 and 20)
         }
-        else 
+        else
         {
             ON = false;
             CyberSfx1(-80);
         }
         */
 
-        SetMasterMusic(mVolume);// master music slider 
-        
-        CyberSfx1(c1Volume);// cyber effect sliders 
+        //SetMasterMusic(mVolume);// master music slider
+
+        /*CyberSfx1(c1Volume);// cyber effect sliders
         CyberSfx2(c2Volume);
         CyberSfx3(c3Volume);
 
-        DrumSfx1(d1Volume);//drum effect sliders 
+        DrumSfx1(d1Volume);//drum effect sliders
         DrumSfx2(d2Volume);
         DrumSfx3(d3Volume);
+        */
 
-
-
+        //PitchCy1(pitch);
     }
 
     public void CyberSfx1 (float Cbr1)
     {
 
-                masterAudio.SetFloat("Cyber1", Cbr1);// lets you change the volume for Cyber effect 
+                masterAudio.SetFloat("Cyber1", Cbr1);// lets you change the volume for Cyber effect
 
-        
+
     }
     public void CyberSfx2(float Cbr2)
     {
         masterAudio.SetFloat("Cyber2", Cbr2);
-        
+
     }
 
     public void CyberSfx3(float Cbr3)
@@ -103,11 +103,48 @@ public class AudioMixerControl : MonoBehaviour
     }
 
 
+
+    public void MasterPitch(float masPitch)
+    {
+        masterAudio.SetFloat("MasterPitch", masPitch);
+    }
+    public void PitchCy1 (float PitchCy1)
+    {
+       masterAudio.SetFloat("PitchCY1", PitchCy1);
+    }
+    public void PitchCy2(float PitchCy2)
+    {
+        masterAudio.SetFloat("PitchCY2", PitchCy2);
+    }
+    public void PitchCy3(float PitchCy3)
+    {
+        masterAudio.SetFloat("PitchCY3", PitchCy3);
+    }
+    public void PitchDru1(float PitchDru1)
+    {
+        masterAudio.SetFloat("PitchDru1", PitchDru1);
+    }
+    public void PitchDru2(float PitchDru2)
+    {
+        masterAudio.SetFloat("PitchDru2", PitchDru2);
+    }
+    public void PitchDru3(float PitchDru3)
+    {
+        masterAudio.SetFloat("PitchDru3", PitchDru3);
+    }
+
+
+
+
+
+
+
+
     public void MusicOn()
     {
 
         ON = true;
-               
+
     }
 
     public void MusicOff()
