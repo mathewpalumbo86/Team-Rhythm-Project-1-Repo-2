@@ -69,18 +69,18 @@ public class PlayerMovement : MonoBehaviour
         controllerGO = OVRInput.GetLocalControllerRotation(OVRInput.Controller.RTrackedRemote);
 
         // Converts the controller quaternion to readable values
-        Vector3 angles = controllerGO.eulerAngles;
+        Vector3 controllerAngles = controllerGO.eulerAngles;
 
         // Updating the text overlay
-        xText.text = "X: " + angles.x;
-        yText.text = "Y: " + angles.y; 
-        zText.text = "Z: " + angles.z;
+        xText.text = "X: " + controllerAngles.x;
+        yText.text = "Y: " + controllerAngles.y; 
+        zText.text = "Z: " + controllerAngles.z;
 
         //=========================================================================================================
         // Checks the controller z rotation and assigns it a direction (forward, left, right). Moves the player vehicle accordingly.
         // Move the player left or right
         
-        if ((angles.z <= 180 && angles.z >= 15))
+        if ((controllerAngles.z <= 180 && controllerAngles.z >= 15))
         {
             ctrlHoriDirectionText.text = "Direction: Left";
                         
@@ -95,7 +95,7 @@ public class PlayerMovement : MonoBehaviour
 
         }
 
-        if ((angles.z >= 180 && angles.z <= 315))
+        if ((controllerAngles.z >= 180 && controllerAngles.z <= 315))
         {
             ctrlHoriDirectionText.text = "Direction: Right";
             
@@ -110,7 +110,7 @@ public class PlayerMovement : MonoBehaviour
 
         }
 
-        if ((angles.z >= 330 && angles.z <= 360) || (angles.z >= 0 && angles.z <= 30))
+        if ((controllerAngles.z >= 330 && controllerAngles.z <= 360) || (controllerAngles.z >= 0 && controllerAngles.z <= 30))
         {
             // Vehicle doesn't move when controller points forwards.
             ctrlHoriDirectionText.text = "Direction: Forward";
@@ -156,7 +156,7 @@ public class PlayerMovement : MonoBehaviour
         // Checks the controller X rotation and assigns it a direction (forward, left, right). Moves the player vehicle accordingly.
         // Move the player up or down
 
-        if ((angles.x >= 180 && angles.x <= 330))
+        if ((controllerAngles.x >= 180 && controllerAngles.x <= 330))
         {
             ctrlVertDirectionText.text = "Vertical Direction: Up";
             
@@ -171,7 +171,7 @@ public class PlayerMovement : MonoBehaviour
 
         }
 
-        if ((angles.x > 0 && angles.x < 180))
+        if ((controllerAngles.x > 0 && controllerAngles.x < 180))
         {
             ctrlVertDirectionText.text = "Vertical Direction: Down ";
 
@@ -186,7 +186,7 @@ public class PlayerMovement : MonoBehaviour
 
         }
 
-        if ((angles.x >= 330 && angles.x <= 360) || (angles.x >= 0 && angles.x <= 30))
+        if ((controllerAngles.x >= 330 && controllerAngles.x <= 360) || (controllerAngles.x >= 0 && angles.x <= 30))
         {
             // Vehicle doesn't move when controller points forwards.
             ctrlVertDirectionText.text = "Vertical Direction: Forward";
