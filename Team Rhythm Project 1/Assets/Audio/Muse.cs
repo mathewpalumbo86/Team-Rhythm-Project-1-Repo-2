@@ -31,7 +31,7 @@ public class Muse : MonoBehaviour
 
         }
 
-        
+
     }
 
     void Update()
@@ -46,9 +46,9 @@ public class Muse : MonoBehaviour
 
 
     }
-    //AudioMixerControl mixer;// put at start of the script calling the audio mixer script 
-    //  mixer = FindObjectOfType<AudioMixerControl>();// put in start to grab the audio mixer function and have them active 
-    //mixer.("Whatever sound effect you want to increase")// put this in update or where every the sound effect should be played 
+    //AudioMixerControl mixer;// put at start of the script calling the audio mixer script
+    //  mixer = FindObjectOfType<AudioMixerControl>();// put in start to grab the audio mixer function and have them active
+    //mixer.("Whatever sound effect you want to increase")// put this in update or where every the sound effect should be played
 
 
 }

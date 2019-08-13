@@ -7,9 +7,26 @@ TagManager:
   - ResetZone
   - TerrainSpawner
   - Terrain
-  - Collectable
-  - CollectableSpawner
   - CollectableEffect_1
+  - Obstacle
+  - ObstacleSpawner
+  - GameManager
+  - MusicSource
+  - CollectableVOEffects
+  - City
+  - Collectable_1
+  - Collectable_2
+  - Collectable_3
+  - Collectable
+  - CollectableSpawner_1
+  - CollectableSpawner_2
+  - CollectableSpawner_3
+  - CollectableSpawner
+  - CameraRig
+  - EoGObject
+  - EoGSpawnPoint
+  - BoatSpeedUpAudio
+  - SpeedUpParticle
   layers:
   - Default
   - TransparentFX

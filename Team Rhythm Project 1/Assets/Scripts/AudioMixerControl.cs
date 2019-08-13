@@ -6,13 +6,13 @@ using UnityEngine.Audio;
 public class AudioMixerControl : MonoBehaviour
 {
     public AudioMixer masterAudio;
-    
+
     public bool ON = false;
 
 
     [Range(-80f, 20f)]
     public float mVolume;
-    [Range(0.01f, 10f)] // pitch Values 
+    [Range(0.01f, 10f)] // pitch Values
     public float pitch;
     [Range(-80f, 20f)]
     public float c1Volume;
@@ -31,13 +31,13 @@ public class AudioMixerControl : MonoBehaviour
 
     public void SetMasterMusic(float masterVol)
     {
-        
+
         masterAudio.SetFloat("MasterVol", masterVol);
-        
+
     }
     private void Start()
     {
-        
+
 
 
     }
@@ -48,20 +48,20 @@ public class AudioMixerControl : MonoBehaviour
         {
             CyberSfx1(volume);// how you set the music (between -80 and 20)
         }
-        else 
+        else
         {
             ON = false;
             CyberSfx1(-80);
         }
         */
 
-        //SetMasterMusic(mVolume);// master music slider 
+        //SetMasterMusic(mVolume);// master music slider
 
-        /*CyberSfx1(c1Volume);// cyber effect sliders 
+        /*CyberSfx1(c1Volume);// cyber effect sliders
         CyberSfx2(c2Volume);
         CyberSfx3(c3Volume);
 
-        DrumSfx1(d1Volume);//drum effect sliders 
+        DrumSfx1(d1Volume);//drum effect sliders
         DrumSfx2(d2Volume);
         DrumSfx3(d3Volume);
         */
@@ -72,14 +72,14 @@ public class AudioMixerControl : MonoBehaviour
     public void CyberSfx1 (float Cbr1)
     {
 
-                masterAudio.SetFloat("Cyber1", Cbr1);// lets you change the volume for Cyber effect 
+                masterAudio.SetFloat("Cyber1", Cbr1);// lets you change the volume for Cyber effect
 
-        
+
     }
     public void CyberSfx2(float Cbr2)
     {
         masterAudio.SetFloat("Cyber2", Cbr2);
-        
+
     }
 
     public void CyberSfx3(float Cbr3)
@@ -102,11 +102,11 @@ public class AudioMixerControl : MonoBehaviour
         masterAudio.SetFloat("Drum3", Drum3);
     }
 
-     
+
 
     public void MasterPitch(float masPitch)
     {
-        masterAudio.SetFloat("MasterPitch", masPitch);        
+        masterAudio.SetFloat("MasterPitch", masPitch);
     }
     public void PitchCy1 (float PitchCy1)
     {
@@ -144,7 +144,7 @@ public class AudioMixerControl : MonoBehaviour
     {
 
         ON = true;
-               
+
     }
 
     public void MusicOff()

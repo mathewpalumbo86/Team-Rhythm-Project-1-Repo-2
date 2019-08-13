@@ -8,7 +8,7 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: AudioVisual_Mat_1
-  m_Shader: {fileID: 4800000, guid: 0ee0c86dac5512f40a5c118571d81117, type: 3}
+  m_Shader: {fileID: 4800000, guid: 2fd7d2ad6e49f5b44ac540005c095ff5, type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
@@ -60,10 +60,10 @@ Material:
     - _SpecularHighlights: 1
     - _SrcBlend: 1
     - _Surface: 0
-    - _Thickness: 10
+    - _Thickness: 20
     - _WorkflowMode: 1
     - _ZWrite: 1
     m_Colors:
-    - _Color: {r: 0.9245283, g: 0.18752226, b: 0.49903533, a: 1}
+    - _Color: {r: 0.93333334, g: 0.9020454, b: 0.18039215, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
