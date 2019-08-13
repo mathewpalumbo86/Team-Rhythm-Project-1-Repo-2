@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.15822883, g: 0.10429609, b: 0.03520457, a: 1}
+  m_IndirectSpecularColor: {r: 0.031310767, g: 0.043809082, b: 0.045598738, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1754,7 +1754,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 921542090}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 333.6, y: 0, z: -174.5}
+  m_LocalPosition: {x: 332, y: 0, z: -174.5}
   m_LocalScale: {x: 60, y: 1, z: 60}
   m_Children: []
   m_Father: {fileID: 0}
@@ -1957,7 +1957,7 @@ PrefabInstance:
     - target: {fileID: 4341558713826369296, guid: c4f981578738c36478d6fb762c5d333d,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -171.2
+      value: -174
       objectReference: {fileID: 0}
     - target: {fileID: 4341558713826369296, guid: c4f981578738c36478d6fb762c5d333d,
         type: 3}
@@ -1998,6 +1998,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4341558713826369296, guid: c4f981578738c36478d6fb762c5d333d,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 60
+      objectReference: {fileID: 0}
+    - target: {fileID: 4341558713826369303, guid: c4f981578738c36478d6fb762c5d333d,
+        type: 3}
+      propertyPath: offsetY
+      value: 2.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c4f981578738c36478d6fb762c5d333d, type: 3}
@@ -2491,6 +2501,16 @@ PrefabInstance:
       propertyPath: itemsToPool.Array.data[3].amountToPool
       value: 8
       objectReference: {fileID: 0}
+    - target: {fileID: 1138429999932720857, guid: 519b42da7ab02154193ccf1c83ab0d57,
+        type: 3}
+      propertyPath: itemsToPool.Array.data[0].amountToPool
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1138429999932720857, guid: 519b42da7ab02154193ccf1c83ab0d57,
+        type: 3}
+      propertyPath: itemsToPool.Array.data[0].shouldExpand
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1138430000911418593, guid: 519b42da7ab02154193ccf1c83ab0d57,
         type: 3}
       propertyPath: collisionSounds.Array.size
@@ -2536,7 +2556,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_audioClip
       value: 
-      objectReference: {fileID: 8300000, guid: b0ff75c2ac13bd1448deff724340343f, type: 3}
+      objectReference: {fileID: 8300000, guid: def7fb36e3e16484382989a81a022947, type: 3}
     - target: {fileID: 1138430000911418592, guid: 519b42da7ab02154193ccf1c83ab0d57,
         type: 3}
       propertyPath: OutputAudioMixerGroup
@@ -2849,6 +2869,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: TerrainSpawner
+      objectReference: {fileID: 0}
+    - target: {fileID: 1647570267910612823, guid: d25dd8e3b2bdf744e85cf1037c19b923,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1647570267910612817, guid: d25dd8e3b2bdf744e85cf1037c19b923,
         type: 3}
@@ -3228,6 +3253,48 @@ PrefabInstance:
     - target: {fileID: 14300000, guid: ce816f2e6abb0504092c23ed9b970dfd, type: 3}
       propertyPath: m_Enabled
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2015248, guid: ce816f2e6abb0504092c23ed9b970dfd, type: 3}
+      propertyPath: m_BackGroundColor.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2015248, guid: ce816f2e6abb0504092c23ed9b970dfd, type: 3}
+      propertyPath: m_BackGroundColor.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2015248, guid: ce816f2e6abb0504092c23ed9b970dfd, type: 3}
+      propertyPath: m_BackGroundColor.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 20504667576486672, guid: ce816f2e6abb0504092c23ed9b970dfd,
+        type: 3}
+      propertyPath: m_BackGroundColor.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 20504667576486672, guid: ce816f2e6abb0504092c23ed9b970dfd,
+        type: 3}
+      propertyPath: m_BackGroundColor.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 20504667576486672, guid: ce816f2e6abb0504092c23ed9b970dfd,
+        type: 3}
+      propertyPath: m_BackGroundColor.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 20131489337305086, guid: ce816f2e6abb0504092c23ed9b970dfd,
+        type: 3}
+      propertyPath: m_BackGroundColor.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 20131489337305086, guid: ce816f2e6abb0504092c23ed9b970dfd,
+        type: 3}
+      propertyPath: m_BackGroundColor.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 20131489337305086, guid: ce816f2e6abb0504092c23ed9b970dfd,
+        type: 3}
+      propertyPath: m_BackGroundColor.b
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ce816f2e6abb0504092c23ed9b970dfd, type: 3}
