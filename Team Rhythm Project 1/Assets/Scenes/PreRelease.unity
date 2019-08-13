@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.34135622, g: 0.47759932, b: 0.49710572, a: 1}
+  m_IndirectSpecularColor: {r: 0.017000686, g: 0.023786748, b: 0.024758518, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1522,7 +1522,12 @@ PrefabInstance:
     - target: {fileID: 6288593475838343190, guid: adcaaabf35efc0148b7e10df7f2214d3,
         type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6288593475838343190, guid: adcaaabf35efc0148b7e10df7f2214d3,
+        type: 3}
+      propertyPath: ON
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6288593475648038741, guid: adcaaabf35efc0148b7e10df7f2214d3,
         type: 3}
@@ -2545,17 +2550,17 @@ PrefabInstance:
         type: 3}
       propertyPath: collisionSounds.Array.data[0]
       value: 
-      objectReference: {fileID: 8300000, guid: 0c1d432741d9a1242a53690d55dead22, type: 3}
+      objectReference: {fileID: 8300000, guid: e8056f419ff479346af54c293086d0f3, type: 3}
     - target: {fileID: 1138430000911418593, guid: 519b42da7ab02154193ccf1c83ab0d57,
         type: 3}
       propertyPath: collisionSounds.Array.data[1]
       value: 
-      objectReference: {fileID: 8300000, guid: e94c638754d996c4ba9afda1b2e87a2a, type: 3}
+      objectReference: {fileID: 8300000, guid: 968794e6269c9244ab9e0391f4078eda, type: 3}
     - target: {fileID: 1138430000911418593, guid: 519b42da7ab02154193ccf1c83ab0d57,
         type: 3}
       propertyPath: collisionSounds.Array.data[2]
       value: 
-      objectReference: {fileID: 8300000, guid: 0fc92ae033f07254691eb7a675cab12e, type: 3}
+      objectReference: {fileID: 8300000, guid: b4f1b644c632aa245bf88366571ded83, type: 3}
     - target: {fileID: 1138429999815051587, guid: 519b42da7ab02154193ccf1c83ab0d57,
         type: 3}
       propertyPath: OutputAudioMixerGroup
@@ -2629,6 +2634,11 @@ PrefabInstance:
       propertyPath: leftGrid
       value: 
       objectReference: {fileID: 909331950}
+    - target: {fileID: 1138429999815051586, guid: 519b42da7ab02154193ccf1c83ab0d57,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 519b42da7ab02154193ccf1c83ab0d57, type: 3}
 --- !u!114 &1241149393 stripped
