@@ -5,7 +5,9 @@ using UnityEngine;
 public class CollectableOnCollision : MonoBehaviour
 {
     // Collectable audio effects script
-    public GameObject collectableAudioEffectsObj;
+    //public GameObject collectableAudioEffectsObj;
+    CollectableAudioEffects collectableAudioScript;
+
     // public CollectableAudioEffects collectableAudioEffectsScript;
     public ParticleSystem collectableParticle;
     // Collectable tracking script
@@ -16,10 +18,11 @@ public class CollectableOnCollision : MonoBehaviour
     
     // Start is called before the first frame update
     void Start()
-    {        
+    {
         // get the collectable audio effects object
-        collectableAudioEffectsObj = GameObject.FindGameObjectWithTag("CollectableEffect_1");
-        
+        // collectableAudioEffectsObj = GameObject.FindGameObjectWithTag("CollectableEffect_1");
+        collectableAudioScript = FindObjectOfType<CollectableAudioEffects>();
+
         // get the particle that plays when collected
         collectableParticle = GetComponent<ParticleSystem>();
 
@@ -35,26 +38,26 @@ public class CollectableOnCollision : MonoBehaviour
             // Debug.Log("collectable collided");
 
             // Store the position that the collision occurred
-            collectableAudioEffectsObj.GetComponent<CollectableAudioEffects>().collisionPosition = gameObject.transform;
+            // collectableAudioEffectsObj.GetComponent<CollectableAudioEffects>().collisionPosition = gameObject.transform;
 
             // Sets the index for the collectable audio effect array based on which collectable this is
             if (gameObject.tag == "Collectable_1")
             {
-                collectableAudioEffectsObj.GetComponent<CollectableAudioEffects>().index = 0;
+                collectableAudioScript.index = 0;
             }
 
             if (gameObject.tag == "Collectable_2")
             {
-                collectableAudioEffectsObj.GetComponent<CollectableAudioEffects>().index = 1;
+                collectableAudioScript.index = 1;
             }
 
             if (gameObject.tag == "Collectable_3")
             {
-                collectableAudioEffectsObj.GetComponent<CollectableAudioEffects>().index = 2;
+                collectableAudioScript.index = 2;
             }
 
             // if the player hits this object play a collectable sound effect and set it to inactive
-            collectableAudioEffectsObj.GetComponent<CollectableAudioEffects>().PlayCollectableEffect();
+            collectableAudioScript.PlayCollectableEffect();
 
             // For every collectable the player collides with increment this value +1;
             collectableTracking.totalCollected++;
