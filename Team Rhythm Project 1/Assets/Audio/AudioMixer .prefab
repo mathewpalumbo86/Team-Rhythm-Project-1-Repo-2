@@ -478,7 +478,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &6288593475838343191
 Transform:
   m_ObjectHideFlags: 0
@@ -1378,36 +1378,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 6288593475838343191}
     m_Modifications:
-    - target: {fileID: 5435310787723430504, guid: 67cf10b420b9b69488bd143f6b384e3c,
-        type: 3}
-      propertyPath: Loop
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5842644133910565793, guid: 67cf10b420b9b69488bd143f6b384e3c,
-        type: 3}
-      propertyPath: Loop
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7044880627421134041, guid: 67cf10b420b9b69488bd143f6b384e3c,
-        type: 3}
-      propertyPath: Loop
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 991795549274991206, guid: 67cf10b420b9b69488bd143f6b384e3c,
-        type: 3}
-      propertyPath: Loop
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 119183817084853058, guid: 67cf10b420b9b69488bd143f6b384e3c,
-        type: 3}
-      propertyPath: Loop
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6909470746505852098, guid: 67cf10b420b9b69488bd143f6b384e3c,
-        type: 3}
-      propertyPath: Loop
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 7180667117260945867, guid: 67cf10b420b9b69488bd143f6b384e3c,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1471,6 +1441,36 @@ PrefabInstance:
     - target: {fileID: 1262818752484536925, guid: 67cf10b420b9b69488bd143f6b384e3c,
         type: 3}
       propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5435310787723430504, guid: 67cf10b420b9b69488bd143f6b384e3c,
+        type: 3}
+      propertyPath: Loop
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5842644133910565793, guid: 67cf10b420b9b69488bd143f6b384e3c,
+        type: 3}
+      propertyPath: Loop
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7044880627421134041, guid: 67cf10b420b9b69488bd143f6b384e3c,
+        type: 3}
+      propertyPath: Loop
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 991795549274991206, guid: 67cf10b420b9b69488bd143f6b384e3c,
+        type: 3}
+      propertyPath: Loop
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 119183817084853058, guid: 67cf10b420b9b69488bd143f6b384e3c,
+        type: 3}
+      propertyPath: Loop
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6909470746505852098, guid: 67cf10b420b9b69488bd143f6b384e3c,
+        type: 3}
+      propertyPath: Loop
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []

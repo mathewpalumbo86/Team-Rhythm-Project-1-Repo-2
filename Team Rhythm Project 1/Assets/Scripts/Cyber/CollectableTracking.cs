@@ -52,7 +52,7 @@ public class CollectableTracking : MonoBehaviour
         VOSource = GameObject.FindGameObjectWithTag("CollectableVOEffects").GetComponent<AudioSource>();
         boatSpeedUpAudio = GameObject.FindGameObjectWithTag("BoatSpeedUpAudio").GetComponent<AudioSource>();
         speedUpParticle = GameObject.FindGameObjectWithTag("SpeedUpParticle").GetComponent<ParticleSystem>();
-        terrainManagerScript = GameObject.FindGameObjectWithTag("TerrainSpawner").GetComponent<TerrainManager>();
+        // terrainManagerScript = GameObject.FindGameObjectWithTag("TerrainSpawner").GetComponent<TerrainManager>();
         orangeFloorMaterialScroller = orangeFloor.GetComponent<MaterialScroller>();
         leftGridMaterialScroller = leftGrid.GetComponent<MaterialScroller>();
         rightGridMaterialScroller = rightGrid.GetComponent<MaterialScroller>();
@@ -84,7 +84,7 @@ public class CollectableTracking : MonoBehaviour
                     musicSource.pitch += pitchIncrement;
 
                     // Speeds up terrain movement
-                    terrainManagerScript.terrainSpeed = terrainManagerScript.terrainSpeed + terrainSpeedIncrease;
+                    // terrainManagerScript.terrainSpeed = terrainManagerScript.terrainSpeed + terrainSpeedIncrease;
 
                     orangeFloorMaterialScroller.SpeedUp();
                     leftGridMaterialScroller.SpeedUp();
