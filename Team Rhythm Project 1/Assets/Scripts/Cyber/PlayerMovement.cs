@@ -8,7 +8,7 @@ using UnityEngine.UI;
 public class PlayerMovement : MonoBehaviour
 {
     // Will store the controller rotation
-    public Quaternion controllerGO;     
+    //public Quaternion controllerGO;     
 
     // Controller values shown in UI overlay
     public Text xText;
@@ -40,7 +40,6 @@ public class PlayerMovement : MonoBehaviour
     public Vector3 downTargetRotation;
     public Vector3 recenterTargetRotation;
     
-
     public float rotSpeed;
         
     void Start()
@@ -57,15 +56,15 @@ public class PlayerMovement : MonoBehaviour
         float step = speed * Time.fixedDeltaTime; 
 
         // Get the controller rotation
-        controllerGO = OVRInput.GetLocalControllerRotation(OVRInput.Controller.RTrackedRemote);
+        // controllerGO = OVRInput.GetLocalControllerRotation(OVRInput.Controller.RTrackedRemote);
 
         // Converts the controller quaternion to readable values
-        Vector3 controllerAngles = controllerGO.eulerAngles;
+        // Vector3 controllerAngles = controllerGO.eulerAngles;
         
         // Updating the text overlay
-        xText.text = "X: " + controllerAngles.x;
-        yText.text = "Y: " + controllerAngles.y; 
-        zText.text = "Z: " + controllerAngles.z;
+        // xText.text = "X: " + controllerAngles.x;
+        // yText.text = "Y: " + controllerAngles.y; 
+        // zText.text = "Z: " + controllerAngles.z;
 
         //=========================================================================================================
         // Checks the controller z rotation and assigns it a direction (forward, left, right). Moves the player vehicle accordingly.
@@ -156,7 +155,7 @@ public class PlayerMovement : MonoBehaviour
         // Movement controls in the editor
         // Debug.Log("Unity Editor");
 
-        float zRotateLerpValue = Mathf.Lerp(currRotation.z, leftTargetRotation.z, rotSpeed * Time.deltaTime);
+        
 
         // Use keyboard to move left (physics based movement)
         if (Input.GetKey(KeyCode.A))
@@ -166,16 +165,21 @@ public class PlayerMovement : MonoBehaviour
             // Move the boat
             thisRB.velocity = new Vector3(-1* velocityModifierLR, 0,0);
 
-            
-            // Mathf.Clamp(currRotation.z, 0f , leftTargetRotation.z)
 
-            transform.Rotate(0.0f, 0.0f, zRotateLerpValue, Space.Self);
+            //float zRotateLerpValue = Mathf.Lerp(currRotation.z, leftTargetRotation.z, rotSpeed);
+                        
+            //// Mathf.Clamp(currRotation.z, 0f , leftTargetRotation.z)
+            //if(zRotateLerpValue< leftTargetRotation.z)
+            //{
+            //    transform.Rotate(0.0f, 0.0f, zRotateLerpValue, Space.Self);
+            //}
+            
 
-            
-            
+            //Debug.Log(" curr: " + currRotation.z + " leftTarget: " + leftTargetRotation.z + " zRotateLerpValue: " + zRotateLerpValue);
+
 
         }
-        Debug.Log(" curr: " + currRotation.z + " leftTarget: " + leftTargetRotation.z + " zRotateLerpValue: " + zRotateLerpValue);
+        
 
 
         // Use keyboard to move left (physics based movement)
@@ -186,7 +190,13 @@ public class PlayerMovement : MonoBehaviour
             // Move the boat
             thisRB.velocity = new Vector3(1 * velocityModifierLR, 0, 0);
 
-            
+            //float zRotateLerpValue = Mathf.Lerp(currRotation.z, rightTargetRotation.z, rotSpeed);
+
+            //// Mathf.Clamp(currRotation.z, 0f , leftTargetRotation.z)
+            //if (zRotateLerpValue < rightTargetRotation.z)
+            //{
+            //    transform.Rotate(0.0f, 0.0f, zRotateLerpValue, Space.Self);
+            //}
 
         }
 
