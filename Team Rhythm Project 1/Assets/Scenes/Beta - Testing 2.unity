@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.03386881, g: 0.022323763, b: 0.0075353147, a: 1}
+  m_IndirectSpecularColor: {r: 0.013025747, g: 0.01822504, b: 0.018969525, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -89,7 +89,7 @@ LightmapSettings:
     m_PVRFilteringAtrousPositionSigmaAO: 1
     m_ShowResolutionOverlay: 1
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 0
+  m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -483,6 +483,12 @@ Camera:
   m_CorrespondingSourceObject: {fileID: 9123534073875814409, guid: 24b23169f00e50b4bab180e47945aa0a,
     type: 3}
   m_PrefabInstance: {fileID: 9123534073649613600}
+  m_PrefabAsset: {fileID: 0}
+--- !u!82 &624360095 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 1138429999815051587, guid: 519b42da7ab02154193ccf1c83ab0d57,
+    type: 3}
+  m_PrefabInstance: {fileID: 1138430000184037680}
   m_PrefabAsset: {fileID: 0}
 --- !u!114 &635970630 stripped
 MonoBehaviour:
@@ -1432,6 +1438,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 49463780349309990, guid: e752b41fc2448604298dff72ff473d62,
+        type: 3}
+      propertyPath: backgroundMusic
+      value: 
+      objectReference: {fileID: 624360095}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e752b41fc2448604298dff72ff473d62, type: 3}
 --- !u!1001 &271972607642317217
@@ -1848,7 +1859,7 @@ PrefabInstance:
         type: 3}
       propertyPath: OutputAudioMixerGroup
       value: 
-      objectReference: {fileID: 24300002, guid: 640f050cd9a0f474ca814e9d5680636a,
+      objectReference: {fileID: 243632104537817266, guid: 7754d5b55524da347b428d23de16efe8,
         type: 2}
     - target: {fileID: 1138430000911418592, guid: 519b42da7ab02154193ccf1c83ab0d57,
         type: 3}
