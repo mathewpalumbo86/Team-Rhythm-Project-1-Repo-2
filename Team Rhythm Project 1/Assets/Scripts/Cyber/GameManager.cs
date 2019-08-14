@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using NaughtyAttributes;
 public class GameManager : MonoBehaviour
 {
     // public AudioSource bgMusicSource;
@@ -14,6 +14,10 @@ public class GameManager : MonoBehaviour
     public ParticleSystem cityParticle;
     AudioSource bgMusicSource; // background music clip
     AudioSource explosionSound;
+
+    [SerializeField, Required("Needs EoG Manager GameObject Reference")]
+    GameObject eogManager;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -39,6 +43,7 @@ public class GameManager : MonoBehaviour
         yield return new WaitUntil(() => !cityParticle.isPlaying);
         yield return new WaitUntil(() => !explosionEffectClip.isPlaying);
         DestroyCity();
+        EnableEOG();
     }
 
     //plays sound and effect
@@ -63,6 +68,23 @@ public class GameManager : MonoBehaviour
     void DestroyCity()
     {
         Destroy(GameObject.FindGameObjectWithTag("City"));
+    }
+
+    void EnableEOG()
+    {
+        if(eogManager == null)
+        {
+            return;
+        }
+        else
+        {
+            if (eogManager.activeInHierarchy == false)
+            {
+                eogManager.SetActive(true);
+            }
+        }
+
+       
     }
 
 }
