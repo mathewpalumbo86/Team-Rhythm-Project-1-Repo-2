@@ -38,26 +38,26 @@ public class ObjectActivator : MonoBehaviour
     {
         // Debug.Log("trigger entered");        
 
-        if (other.tag == "Terrain")
-        {
-            // Grabs the mesh generator of the object that collided and gets it's mesh z size. 
-            // This is used to offset and tile the objects perfectly next to each other.
-            meshGenerator = other.gameObject.GetComponent<MeshGenerator>();
-            spawnOffset = meshGenerator.zSize;
+        //if (other.tag == "Terrain")
+        //{
+        //    // Grabs the mesh generator of the object that collided and gets it's mesh z size. 
+        //    // This is used to offset and tile the objects perfectly next to each other.
+        //    meshGenerator = other.gameObject.GetComponent<MeshGenerator>();
+        //    spawnOffset = meshGenerator.zSize;
 
 
-            // Debug.Log("tag is true");
+        //    // Debug.Log("tag is true");
            
-            GameObject objectToActivate = ObjectPooler.SharedInstance.GetPooledObject("Terrain");
-            if (objectToActivate != null)
-            {
-                // Sets the position of each object, allowing for the position offset
-                objectToActivate.transform.position = new Vector3(terrainSpawnPosition.transform.position.x, terrainSpawnPosition.transform.position.y, (terrainSpawnPosition.transform.position.z + spawnOffset));
-                objectToActivate.transform.rotation = terrainSpawnPosition.transform.rotation;
-                objectToActivate.SetActive(true);
-                // Debug.Log("spawn offset = " + spawnOffset);
-            }
-        }
+        //    GameObject objectToActivate = ObjectPooler.SharedInstance.GetPooledObject("Terrain");
+        //    if (objectToActivate != null)
+        //    {
+        //        // Sets the position of each object, allowing for the position offset
+        //        objectToActivate.transform.position = new Vector3(terrainSpawnPosition.transform.position.x, terrainSpawnPosition.transform.position.y, (terrainSpawnPosition.transform.position.z + spawnOffset));
+        //        objectToActivate.transform.rotation = terrainSpawnPosition.transform.rotation;
+        //        objectToActivate.SetActive(true);
+        //        // Debug.Log("spawn offset = " + spawnOffset);
+        //    }
+        //}
 
         if (other.tag == "Collectable_1")
         {

@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.051867474, g: 0.07257032, b: 0.07553493, a: 1}
+  m_IndirectSpecularColor: {r: 0.021805283, g: 0.03050758, b: 0.031754527, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1149,7 +1149,7 @@ PrefabInstance:
     - target: {fileID: 6642799594656483954, guid: d2901353f314b8e469d9cec434b45512,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 220
+      value: 140
       objectReference: {fileID: 0}
     - target: {fileID: 6642799594656483954, guid: d2901353f314b8e469d9cec434b45512,
         type: 3}
@@ -1438,7 +1438,7 @@ PrefabInstance:
     - target: {fileID: 6642799594656483954, guid: d2901353f314b8e469d9cec434b45512,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 284
+      value: 140
       objectReference: {fileID: 0}
     - target: {fileID: 6642799594656483954, guid: d2901353f314b8e469d9cec434b45512,
         type: 3}
@@ -1984,7 +1984,7 @@ PrefabInstance:
     - target: {fileID: 6642799594656483954, guid: d2901353f314b8e469d9cec434b45512,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 252
+      value: 140
       objectReference: {fileID: 0}
     - target: {fileID: 6642799594656483954, guid: d2901353f314b8e469d9cec434b45512,
         type: 3}
@@ -2294,6 +2294,17 @@ PrefabInstance:
       propertyPath: m_Name
       value: GameManager
       objectReference: {fileID: 0}
+    - target: {fileID: 1138429999815051587, guid: 519b42da7ab02154193ccf1c83ab0d57,
+        type: 3}
+      propertyPath: OutputAudioMixerGroup
+      value: 
+      objectReference: {fileID: 243632104537817266, guid: 7754d5b55524da347b428d23de16efe8,
+        type: 2}
+    - target: {fileID: 1138429999815051587, guid: 519b42da7ab02154193ccf1c83ab0d57,
+        type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: def7fb36e3e16484382989a81a022947, type: 3}
     - target: {fileID: 1138429999460788665, guid: 519b42da7ab02154193ccf1c83ab0d57,
         type: 3}
       propertyPath: m_LocalScale.z
@@ -2437,7 +2448,7 @@ PrefabInstance:
     - target: {fileID: 1138429999932720857, guid: 519b42da7ab02154193ccf1c83ab0d57,
         type: 3}
       propertyPath: itemsToPool.Array.data[3].amountToPool
-      value: 8
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 1138429999932720857, guid: 519b42da7ab02154193ccf1c83ab0d57,
         type: 3}
@@ -2448,6 +2459,16 @@ PrefabInstance:
         type: 3}
       propertyPath: itemsToPool.Array.data[0].shouldExpand
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1138429999932720857, guid: 519b42da7ab02154193ccf1c83ab0d57,
+        type: 3}
+      propertyPath: itemsToPool.Array.data[1].amountToPool
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 1138429999932720857, guid: 519b42da7ab02154193ccf1c83ab0d57,
+        type: 3}
+      propertyPath: itemsToPool.Array.data[2].amountToPool
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 1138430000911418593, guid: 519b42da7ab02154193ccf1c83ab0d57,
         type: 3}
@@ -2484,17 +2505,6 @@ PrefabInstance:
       propertyPath: collisionSounds.Array.data[2]
       value: 
       objectReference: {fileID: 8300000, guid: b4f1b644c632aa245bf88366571ded83, type: 3}
-    - target: {fileID: 1138429999815051587, guid: 519b42da7ab02154193ccf1c83ab0d57,
-        type: 3}
-      propertyPath: OutputAudioMixerGroup
-      value: 
-      objectReference: {fileID: 243632104537817266, guid: 7754d5b55524da347b428d23de16efe8,
-        type: 2}
-    - target: {fileID: 1138429999815051587, guid: 519b42da7ab02154193ccf1c83ab0d57,
-        type: 3}
-      propertyPath: m_audioClip
-      value: 
-      objectReference: {fileID: 8300000, guid: def7fb36e3e16484382989a81a022947, type: 3}
     - target: {fileID: 1138430000911418592, guid: 519b42da7ab02154193ccf1c83ab0d57,
         type: 3}
       propertyPath: OutputAudioMixerGroup
@@ -2594,6 +2604,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 243305782383738400, guid: 7754d5b55524da347b428d23de16efe8,
         type: 2}
+    - target: {fileID: 1566886291467215879, guid: 519b42da7ab02154193ccf1c83ab0d57,
+        type: 3}
+      propertyPath: eogManager
+      value: 
+      objectReference: {fileID: 1500948934}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 519b42da7ab02154193ccf1c83ab0d57, type: 3}
 --- !u!114 &1241149393 stripped
@@ -2947,6 +2962,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: End Of Game
       objectReference: {fileID: 0}
+    - target: {fileID: 49463780349309985, guid: e752b41fc2448604298dff72ff473d62,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 49463780349309991, guid: e752b41fc2448604298dff72ff473d62,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -3006,7 +3026,7 @@ PrefabInstance:
         type: 3}
       propertyPath: effectEoG
       value: 
-      objectReference: {fileID: 6056144292705123126, guid: 21a587966f299a147ab348ceee47c902,
+      objectReference: {fileID: 5113658898071977401, guid: 13583e0978d6f8d438e2e607bb07903d,
         type: 3}
     - target: {fileID: 49463780349309990, guid: e752b41fc2448604298dff72ff473d62,
         type: 3}
@@ -3015,6 +3035,12 @@ PrefabInstance:
       objectReference: {fileID: 51170418}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e752b41fc2448604298dff72ff473d62, type: 3}
+--- !u!1 &1500948934 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 49463780349309985, guid: e752b41fc2448604298dff72ff473d62,
+    type: 3}
+  m_PrefabInstance: {fileID: 1500948933}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1594581591
 PrefabInstance:
   m_ObjectHideFlags: 0
