@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.010305135, g: 0.014418459, b: 0.015007135, a: 1}
+  m_IndirectSpecularColor: {r: 0.051867474, g: 0.07257032, b: 0.07553493, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -181,6 +181,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dbb6bb9edcab89747be18a186c7eafd7, type: 3}
+--- !u!82 &51170418 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 1138429999815051587, guid: 519b42da7ab02154193ccf1c83ab0d57,
+    type: 3}
+  m_PrefabInstance: {fileID: 1241149392}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &65144396
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2996,6 +3002,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 49463780349309990, guid: e752b41fc2448604298dff72ff473d62,
+        type: 3}
+      propertyPath: effectEoG
+      value: 
+      objectReference: {fileID: 6056144292705123126, guid: 21a587966f299a147ab348ceee47c902,
+        type: 3}
+    - target: {fileID: 49463780349309990, guid: e752b41fc2448604298dff72ff473d62,
+        type: 3}
+      propertyPath: backgroundMusic
+      value: 
+      objectReference: {fileID: 51170418}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e752b41fc2448604298dff72ff473d62, type: 3}
 --- !u!1001 &1594581591
