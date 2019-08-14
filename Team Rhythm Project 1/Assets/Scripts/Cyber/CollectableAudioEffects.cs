@@ -39,10 +39,12 @@ public class CollectableAudioEffects : MonoBehaviour
         // int index = Random.Range(0, collisionSounds.Length);
         // Plays the collectable audio clip based on which type was collided with 
         collisionClip = collisionSounds[index];
-        audioSource.clip = collisionClip;
+        // audioSource.clip = collisionClip;
         // audioSource.PlayOneShot(collisionClip);
 
-        AudioSource.PlayClipAtPoint(collisionClip, collisionPosition.position);
+        // AudioSource.PlayClipAtPoint(collisionClip, collisionPosition.position);
+        audioSource.PlayOneShot(collisionClip);
+
     }
 
    
