@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.36046714, g: 0.50433064, b: 0.52494067, a: 1}
+  m_IndirectSpecularColor: {r: 0.11930502, g: 0.16692883, b: 0.1737471, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -351,12 +351,12 @@ PrefabInstance:
         type: 3}
       propertyPath: leftTargetRotation
       value: 
-      objectReference: {fileID: 1788451505}
+      objectReference: {fileID: 0}
     - target: {fileID: 479997961310065418, guid: 6cf355374e06dc1438a19f528e2eca13,
         type: 3}
       propertyPath: rightTargetRotation
       value: 
-      objectReference: {fileID: 473291080}
+      objectReference: {fileID: 0}
     - target: {fileID: 479997961310065418, guid: 6cf355374e06dc1438a19f528e2eca13,
         type: 3}
       propertyPath: rotSpeed
@@ -366,17 +366,42 @@ PrefabInstance:
         type: 3}
       propertyPath: upTargetRotation
       value: 
-      objectReference: {fileID: 1318927075}
+      objectReference: {fileID: 0}
     - target: {fileID: 479997961310065418, guid: 6cf355374e06dc1438a19f528e2eca13,
         type: 3}
       propertyPath: downTargetRotation
       value: 
-      objectReference: {fileID: 574157876}
+      objectReference: {fileID: 0}
     - target: {fileID: 479997961310065418, guid: 6cf355374e06dc1438a19f528e2eca13,
         type: 3}
       propertyPath: recenterTargetRotation
       value: 
-      objectReference: {fileID: 1624750855}
+      objectReference: {fileID: 0}
+    - target: {fileID: 479997961310065418, guid: 6cf355374e06dc1438a19f528e2eca13,
+        type: 3}
+      propertyPath: leftTargetRotation.z
+      value: 250
+      objectReference: {fileID: 0}
+    - target: {fileID: 479997961310065418, guid: 6cf355374e06dc1438a19f528e2eca13,
+        type: 3}
+      propertyPath: rightTargetRotation.z
+      value: -35
+      objectReference: {fileID: 0}
+    - target: {fileID: 479997961310065418, guid: 6cf355374e06dc1438a19f528e2eca13,
+        type: 3}
+      propertyPath: upTargetRotation.x
+      value: -15
+      objectReference: {fileID: 0}
+    - target: {fileID: 479997961310065418, guid: 6cf355374e06dc1438a19f528e2eca13,
+        type: 3}
+      propertyPath: downTargetRotation.x
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 479997961310065418, guid: 6cf355374e06dc1438a19f528e2eca13,
+        type: 3}
+      propertyPath: speed
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 479997961310065413, guid: 6cf355374e06dc1438a19f528e2eca13,
         type: 3}
       propertyPath: m_AngularDrag
@@ -3127,13 +3152,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1624750851}
-  m_LocalRotation: {x: 0.13052616, y: 0, z: 0, w: 0.9914449}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 15.673, y: 4.2863297, z: -132.9}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 30
-  m_LocalEulerAnglesHint: {x: 15, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1651828922
 PrefabInstance:
   m_ObjectHideFlags: 0

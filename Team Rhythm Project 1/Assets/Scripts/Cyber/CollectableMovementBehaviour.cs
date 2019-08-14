@@ -71,6 +71,6 @@ public class CollectableMovementBehaviour : MonoBehaviour
         transform.Rotate(rotSpeed, rotSpeed, rotSpeed);
         
         // 
-        transform.localScale = new Vector3(setScale,setScale,setScale);
+        // transform.localScale = new Vector3(setScale,setScale,setScale);
     }
 }
