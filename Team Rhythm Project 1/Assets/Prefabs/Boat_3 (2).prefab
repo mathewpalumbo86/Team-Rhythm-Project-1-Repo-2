@@ -90,8 +90,8 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 479997961310065415}
   serializedVersion: 2
-  m_Mass: 75
-  m_Drag: 5
+  m_Mass: 1
+  m_Drag: 2
   m_AngularDrag: 1
   m_UseGravity: 0
   m_IsKinematic: 0
@@ -110,17 +110,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 27318c38069253644ba2a0829e45c8c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  controllerGO: {x: 0, y: 0, z: 0, w: 0}
   xText: {fileID: 0}
   yText: {fileID: 0}
   zText: {fileID: 0}
   ctrlHoriDirectionText: {fileID: 0}
   ctrlVertDirectionText: {fileID: 0}
   thisRB: {fileID: 0}
-  velocityModifierLR: 40
+  velocityModifierLR: 15
   velocityModifierUp: 20
   velocityModifierDown: 15
   speed: 10
+  leftTargetRotation: {x: 0, y: 0, z: 0}
+  rightTargetRotation: {x: 0, y: 0, z: 0}
+  upTargetRotation: {x: 0, y: 0, z: 0}
+  downTargetRotation: {x: 0, y: 0, z: 0}
+  recenterTargetRotation: {x: 0, y: 0, z: 0}
+  rotSpeed: 0
 --- !u!64 &2381586986621171396
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -331,13 +336,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7898778661987267992, guid: 75a1ee9941aa4a74887ed04a57da32df,
         type: 3}
-      propertyPath: ShapeModule.angle
-      value: 4.3693447
+      propertyPath: simulationSpeed
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 7898778661987267992, guid: 75a1ee9941aa4a74887ed04a57da32df,
         type: 3}
-      propertyPath: simulationSpeed
-      value: 20
+      propertyPath: InitialModule.maxNumParticles
+      value: 35
+      objectReference: {fileID: 0}
+    - target: {fileID: 7898778661987267992, guid: 75a1ee9941aa4a74887ed04a57da32df,
+        type: 3}
+      propertyPath: ShapeModule.angle
+      value: 4.3693447
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 75a1ee9941aa4a74887ed04a57da32df, type: 3}
