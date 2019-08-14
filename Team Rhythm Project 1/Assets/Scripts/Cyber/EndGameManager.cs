@@ -1,92 +1,68 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEditor;
+using NaughtyAttributes;
 public class EndGameManager : MonoBehaviour
 {
-    [SerializeField, Tooltip("Put everything but the player/camera rig in this array")]
-    GameObject[] objectsInScene;
+    [Required("Needs audio source for Fireworks.wav")]
+    [SerializeField]
+    AudioSource fireworkSound;
 
-    [SerializeField, Tooltip("Put All Firework Objects to instantiate after city explosion")]
-    GameObject[] fireworksToSpawn;
+    [Required("Need End of Game Voice Clip")]
+    [SerializeField]
+    AudioSource voiceEoG;
 
-    [SerializeField, Tooltip("Put All Secondary FX Objects to instantiate after city explosion")]
-    GameObject[] secondaryFXToSpawn;
+    [Required("Need Reference to the Background Music Audio Source")]
+    [SerializeField]
+    AudioSource backgroundMusic;
 
-    [SerializeField, Tooltip("Put All Tertiary FX Objects to instantiate after city explosion")]
-    GameObject[] tertiaryFXToSpawn;
+    [Required("Need The End Game Text and Fireworks")]
+    [SerializeField]
+    GameObject effectEoG;
 
-    [SerializeField, Tooltip("Put All Firework Spawn Points in here")]
-    GameObject[] fireworkSpawnPoints;
+    [ReadOnly, TextArea(3,5), SerializeField]
+    string scriptUsage = "To Use This Script Properly\n" + "Just Activate The attached object\n" + "after City Explodes";
 
-    [SerializeField, Tooltip("Put All Secondary Spawn Points in here")]
-    GameObject[] secondaryEffectSpawnPoints;
-
-    [SerializeField, Tooltip("Put All Tertiary Spawn Points in here")]
-    GameObject[] tertiaryEffectSpawnPoints;
 
     private void OnEnable()
     {
-        Debug.Log("Did you tag all EoG Objects with the EoGSpawnPoint or EoGObject tags?");
-        DeactivateObjects(); // Deactivates the game objects
-        SpawnObjects(); // Spawns EoG Objects from arrays
+        TurnOnEndSceneOBJs(); // turns on EoG UI and Fireworks Particles
+        StopBGMusic();// stops background music
+        PlayAudio(); // plays EoG VO and Fireworks sound
     }
 
-    void DeactivateObjects()
+    void TurnOnEndSceneOBJs()
     {
-        if (objectsInScene != null)
+        if (effectEoG == null)
         {
-            foreach(GameObject currentObject in objectsInScene)
+            return;
+        }
+        else
+        {
+            if (effectEoG.activeInHierarchy == false)
             {
-                if (currentObject.tag != "CameraRig" && currentObject.tag != "EoGSpawnPoint")// makes sure mistakes are minimized when debugging. EoGSpawnPoint is for end of game spawns (fireworks, etc.)
-                {
-                    currentObject.SetActive(false); // deactivates everything in the array
-                }
+                effectEoG.SetActive(true); // enable game object
             }
         }
+        
     }
 
-    void SpawnObjects()
+    void PlayAudio()
     {
-        if (fireworksToSpawn != null)
+        fireworkSound.Play(); // plays continuously (loops)
+        voiceEoG.PlayOneShot(voiceEoG.clip); // plays once, use mixer to configure sound
+    }
+
+    void StopBGMusic()
+    {
+        if(backgroundMusic.isPlaying == true)
         {
-            for(int i = 0; i < (fireworkSpawnPoints.Length - 1); i++)
-            {
-                if (i > (fireworksToSpawn.Length - 1) || i <= -1)
-                {
-                    break;
-                }
-                Instantiate(fireworksToSpawn[i], fireworkSpawnPoints[i].transform.position, Quaternion.identity);
-
-            }
-        }
-
-        if (secondaryFXToSpawn != null)
-        {
-            for (int i = 0; i < (secondaryEffectSpawnPoints.Length - 1); i++)
-            {
-                if (i > (secondaryFXToSpawn.Length - 1) || i <= -1)
-                {
-                    break;
-                }
-                Instantiate(secondaryFXToSpawn[i], secondaryEffectSpawnPoints[i].transform.position, Quaternion.identity);
-
-            }
-        }
-
-        if (tertiaryFXToSpawn != null)
-        {
-            for (int i = 0; i < (tertiaryEffectSpawnPoints.Length - 1); i++)
-            {
-                if (i > (tertiaryFXToSpawn.Length - 1) || i <= -1)
-                {
-                    break;
-                }
-                Instantiate(tertiaryFXToSpawn[i], tertiaryEffectSpawnPoints[i].transform.position, Quaternion.identity);
-
-            }
+            backgroundMusic.Stop();
         }
     }
 
     
+
+
 }
