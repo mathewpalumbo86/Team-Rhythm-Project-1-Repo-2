@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 71c1514a6bd24e1e882cebbe1904ce04, type: 3}
   m_Name: End of game
   m_EditorClassIdentifier: 
-  hashCode: 1650851124
+  hashCode: -12917560
   material: {fileID: 21789327148197642}
   materialHashCode: -670759105
   fontAssetType: 1
@@ -1035,7 +1035,7 @@ Material:
     - _LightAngle: 3.1416
     - _MaskSoftnessX: 0
     - _MaskSoftnessY: 0
-    - _OutlineSoftness: -0.5
+    - _OutlineSoftness: 0
     - _OutlineUVSpeedX: 0
     - _OutlineUVSpeedY: 0
     - _OutlineWidth: 0.263

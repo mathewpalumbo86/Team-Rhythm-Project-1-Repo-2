@@ -40,10 +40,11 @@ public class GameManager : MonoBehaviour
     IEnumerator StartExplosionSound(AudioSource explosionEffectClip)
     {
         explosionSound.PlayOneShot(explosionSound.clip);
+        EnableEOG();
         yield return new WaitUntil(() => !cityParticle.isPlaying);
         yield return new WaitUntil(() => !explosionEffectClip.isPlaying);
         DestroyCity();
-        EnableEOG();
+        
     }
 
     //plays sound and effect

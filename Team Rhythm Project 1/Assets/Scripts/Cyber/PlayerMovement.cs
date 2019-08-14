@@ -8,7 +8,7 @@ using UnityEngine.UI;
 public class PlayerMovement : MonoBehaviour
 {
     // Will store the controller rotation
-    //public Quaternion controllerGO;     
+    public Quaternion controllerGO;     
 
     // Controller values shown in UI overlay
     public Text xText;
@@ -56,10 +56,10 @@ public class PlayerMovement : MonoBehaviour
         float step = speed * Time.fixedDeltaTime; 
 
         // Get the controller rotation
-        // controllerGO = OVRInput.GetLocalControllerRotation(OVRInput.Controller.RTrackedRemote);
+        controllerGO = OVRInput.GetLocalControllerRotation(OVRInput.Controller.RTrackedRemote);
 
         // Converts the controller quaternion to readable values
-        // Vector3 controllerAngles = controllerGO.eulerAngles;
+        Vector3 controllerAngles = controllerGO.eulerAngles;
         
         // Updating the text overlay
         // xText.text = "X: " + controllerAngles.x;
@@ -72,17 +72,13 @@ public class PlayerMovement : MonoBehaviour
 
         Vector3 currRotation = new Vector3(transform.localEulerAngles.x, transform.localEulerAngles.y, transform.localEulerAngles.z);
 
-        /*
+        
         if ((controllerAngles.z <= 180 && controllerAngles.z >= 15))
         {
             ctrlHoriDirectionText.text = "Direction: Left";
                         
             // Physics based movement (-x)
-            thisRB.velocity = new Vector3(-1 * velocityModifierLR, 0, 0); // move left   
-
-
-            float zRotateLerpValue = Mathf.Lerp(currRotation.z, leftTargetRotation.z, Time.deltaTime * rotSpeed);
-            transform.Rotate(0.0f, 0.0f, zRotateLerpValue, Space.Self);
+            thisRB.velocity = new Vector3(-1 * velocityModifierLR, 0, 0); // move left             
 
 
         }
@@ -149,7 +145,7 @@ public class PlayerMovement : MonoBehaviour
 
         // Converts back to quaternion and updates the rotation.
         // transform.rotation = Quaternion.Euler(combinedEuler);
-        */
+        
 
 #if UNITY_EDITOR
         // Movement controls in the editor

@@ -8,9 +8,9 @@ public class ObjectActivator : MonoBehaviour
     // public string objectTag; // Used to check the tag of the object to be turned on.
 
     //========================= Terrain varibles ==============================
-    public Transform terrainSpawnPosition; // Reference to the terrain spawn position.
-    public float spawnOffset; // Offsets the objects position when spawned so they tile next to each other
-    public MeshGenerator meshGenerator; // Stores the mesh generator script attached to the object entered the trigger        
+    // public Transform terrainSpawnPosition; // Reference to the terrain spawn position.
+    // public float spawnOffset; // Offsets the objects position when spawned so they tile next to each other
+    // public MeshGenerator meshGenerator; // Stores the mesh generator script attached to the object entered the trigger        
     
     //========================= Collectable variables =========================
     // Collectable spawn position x and y axis is randomised
@@ -24,10 +24,10 @@ public class ObjectActivator : MonoBehaviour
     // public float collectableRandMin; 
     // public float collectableRandMax;
 
-    private float objectDelay; // For setting a delay between object placements
-    public Transform collectableSpawnPos_1; // Collectable spawn 1
-    public Transform collectableSpawnPos_2; // Collectable spawn 2
-    public Transform collectableSpawnPos_3; // Collectable spawn 3
+    // private float objectDelay; // For setting a delay between object placements
+    public Vector3 collectableSpawnPos_1; // Collectable spawn 1
+    public Vector3 collectableSpawnPos_2; // Collectable spawn 2
+    public Vector3 collectableSpawnPos_3; // Collectable spawn 3
     public Transform obstacleSpawnPosition; // Reference to the object spawn position.
 
     //========================== Obstacle variables ===========================
@@ -75,8 +75,8 @@ public class ObjectActivator : MonoBehaviour
             if (objectToActivate != null)
             {
                 // Sets the position of each object
-                objectToActivate.transform.position = collectableSpawnPos_1.transform.position;
-                objectToActivate.transform.rotation = collectableSpawnPos_1.transform.rotation;
+                objectToActivate.transform.position = collectableSpawnPos_1;
+                objectToActivate.transform.rotation = Quaternion.Euler(collectableSpawnPos_1);
                 objectToActivate.SetActive(true);
                 // Debug.Log("spawn offset = " + spawnOffset);
             }
@@ -98,8 +98,8 @@ public class ObjectActivator : MonoBehaviour
             if (objectToActivate != null)
             {
                 // Sets the position of each object
-                objectToActivate.transform.position = collectableSpawnPos_2.transform.position;
-                objectToActivate.transform.rotation = collectableSpawnPos_2.transform.rotation;
+                objectToActivate.transform.position = collectableSpawnPos_2;
+                objectToActivate.transform.rotation = Quaternion.Euler(collectableSpawnPos_2);
                 objectToActivate.SetActive(true);
                 // Debug.Log("spawn offset = " + spawnOffset);
             }
@@ -121,8 +121,8 @@ public class ObjectActivator : MonoBehaviour
             if (objectToActivate != null)
             {
                 // Sets the position of each object
-                objectToActivate.transform.position = collectableSpawnPos_3.transform.position;
-                objectToActivate.transform.rotation = collectableSpawnPos_3.transform.rotation;
+                objectToActivate.transform.position = collectableSpawnPos_3;
+                objectToActivate.transform.rotation = Quaternion.Euler(collectableSpawnPos_3);
                 objectToActivate.SetActive(true);
                 // Debug.Log("spawn offset = " + spawnOffset);
             }
@@ -130,9 +130,7 @@ public class ObjectActivator : MonoBehaviour
 
 
         if (other.tag == "Obstacle")
-        {
-            // objectDelay = Random.Range(collectableRandMin, collectableRandMax);
-            
+        {                 
                         
             // Randomise spawn position
             spawnPosX = Random.Range(spawnRangeXMin, spawnRangeXMax);
@@ -150,17 +148,6 @@ public class ObjectActivator : MonoBehaviour
                 // Debug.Log("spawn offset = " + spawnOffset);
             }
         }
-
-    }
-
-    //IEnumerator DelayObjectPlacement()
-    //{
-    //    Debug.Log("delay called");
-    //    // print(Time.time);
-    //    yield return new WaitForSeconds(5.0f);
-    //    // print(Time.time);
-                
-    //}
-
+    }    
 
 }
