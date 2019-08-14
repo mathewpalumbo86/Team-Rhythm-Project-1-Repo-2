@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.013025747, g: 0.01822504, b: 0.018969525, a: 1}
+  m_IndirectSpecularColor: {r: 0.010305135, g: 0.014418459, b: 0.015007135, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1445,6 +1445,12 @@ PrefabInstance:
       objectReference: {fileID: 624360095}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e752b41fc2448604298dff72ff473d62, type: 3}
+--- !u!1 &49463779979550659 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 49463780349309985, guid: e752b41fc2448604298dff72ff473d62,
+    type: 3}
+  m_PrefabInstance: {fileID: 49463779979550658}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &271972607642317217
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1675,6 +1681,12 @@ PrefabInstance:
       propertyPath: m_Name
       value: GameManager
       objectReference: {fileID: 0}
+    - target: {fileID: 1138429999815051587, guid: 519b42da7ab02154193ccf1c83ab0d57,
+        type: 3}
+      propertyPath: OutputAudioMixerGroup
+      value: 
+      objectReference: {fileID: 243632104537817266, guid: 7754d5b55524da347b428d23de16efe8,
+        type: 2}
     - target: {fileID: 1138429999460788665, guid: 519b42da7ab02154193ccf1c83ab0d57,
         type: 3}
       propertyPath: m_LocalScale.z
@@ -1855,12 +1867,6 @@ PrefabInstance:
       propertyPath: collisionSounds.Array.data[2]
       value: 
       objectReference: {fileID: 8300000, guid: 0fc92ae033f07254691eb7a675cab12e, type: 3}
-    - target: {fileID: 1138429999815051587, guid: 519b42da7ab02154193ccf1c83ab0d57,
-        type: 3}
-      propertyPath: OutputAudioMixerGroup
-      value: 
-      objectReference: {fileID: 243632104537817266, guid: 7754d5b55524da347b428d23de16efe8,
-        type: 2}
     - target: {fileID: 1138430000911418592, guid: 519b42da7ab02154193ccf1c83ab0d57,
         type: 3}
       propertyPath: OutputAudioMixerGroup
@@ -1878,6 +1884,11 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: -468.7
       objectReference: {fileID: 0}
+    - target: {fileID: 1566886291467215879, guid: 519b42da7ab02154193ccf1c83ab0d57,
+        type: 3}
+      propertyPath: eogManager
+      value: 
+      objectReference: {fileID: 49463779979550659}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 519b42da7ab02154193ccf1c83ab0d57, type: 3}
 --- !u!1001 &1372755777319002214
