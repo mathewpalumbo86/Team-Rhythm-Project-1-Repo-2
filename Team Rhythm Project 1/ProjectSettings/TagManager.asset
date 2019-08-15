@@ -27,6 +27,7 @@ TagManager:
   - EoGSpawnPoint
   - BoatSpeedUpAudio
   - SpeedUpParticle
+  - ObjectActivator
   layers:
   - Default
   - TransparentFX
