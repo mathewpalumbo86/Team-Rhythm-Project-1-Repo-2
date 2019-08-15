@@ -24,12 +24,21 @@ public class EndGameManager : MonoBehaviour
     [ReadOnly, TextArea(3,5), SerializeField]
     string scriptUsage = "To Use This Script Properly\n" + "Just Activate The attached object\n" + "after City Explodes";
 
+    // Spawners to be turned off
+    [SerializeField]
+    GameObject objectActivator;
+
+    void Start()
+    {
+        // objectActivator = GameObject.FindGameObjectWithTag("ObjectActivator");        
+    }
 
     private void OnEnable()
     {
         TurnOnEndSceneOBJs(); // turns on EoG UI and Fireworks Particles
         StopBGMusic();// stops background music
         PlayAudio(); // plays EoG VO and Fireworks sound
+        TurnOffSpawners(); // Turns off all the spawners
     }
 
     void TurnOnEndSceneOBJs()
@@ -62,7 +71,8 @@ public class EndGameManager : MonoBehaviour
         }
     }
 
-    
-
-
+    void TurnOffSpawners()
+    {
+        objectActivator.SetActive(false);        
+    }
 }
