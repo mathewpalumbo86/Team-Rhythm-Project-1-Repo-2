@@ -28,6 +28,10 @@ TagManager:
   - BoatSpeedUpAudio
   - SpeedUpParticle
   - ObjectActivator
+  - LevelPiece_1
+  - LevelPiece_2
+  - LevelPieceSpawner
+  - NewLevelPieceTrigger
   layers:
   - Default
   - TransparentFX

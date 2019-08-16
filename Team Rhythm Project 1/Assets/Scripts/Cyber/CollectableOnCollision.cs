@@ -14,8 +14,8 @@ public class CollectableOnCollision : MonoBehaviour
     public CollectableTracking collectableTracking;
     
     // Stores this collectables position on collision so the audio can be played at that position
-    public Transform thisCollectablesPosition;
-    
+    public Transform thisCollectablesPosition;    
+
     // Start is called before the first frame update
     void Start()
     {
@@ -28,7 +28,7 @@ public class CollectableOnCollision : MonoBehaviour
 
         // get the collectable tracking script
         collectableTracking = GameObject.FindGameObjectWithTag("GameManager").GetComponent<CollectableTracking>();
-
+        
     }
     
     private void OnTriggerEnter(Collider other)
@@ -39,6 +39,12 @@ public class CollectableOnCollision : MonoBehaviour
 
             // Store the position that the collision occurred
             // collectableAudioEffectsObj.GetComponent<CollectableAudioEffects>().collisionPosition = gameObject.transform;
+
+            if(gameObject.GetComponent<MeshRenderer>().enabled == true)
+            {
+                // Turn the collectable renderer off
+                gameObject.GetComponent<MeshRenderer>().enabled = false;
+            }            
 
             // Sets the index for the collectable audio effect array based on which collectable this is
             if (gameObject.tag == "Collectable_1")

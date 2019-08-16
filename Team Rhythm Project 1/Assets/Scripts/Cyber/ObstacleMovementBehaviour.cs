@@ -18,6 +18,12 @@ public class ObstacleMovementBehaviour : MonoBehaviour
             
     void OnEnable()
     {
+        if (gameObject.GetComponent<MeshRenderer>().enabled == false)
+        {
+            // Turn the obstacle renderer on
+            gameObject.GetComponent<MeshRenderer>().enabled = true;
+        }
+
         thisObstacleWidth = Random.Range(obstacleWidthMin, obstacleWidthMax);
         
         // Find the collectable spawner with tag.

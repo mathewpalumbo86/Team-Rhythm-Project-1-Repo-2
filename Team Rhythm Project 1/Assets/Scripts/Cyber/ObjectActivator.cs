@@ -29,6 +29,7 @@ public class ObjectActivator : MonoBehaviour
     public Vector3 collectableSpawnPos_2; // Collectable spawn 2
     public Vector3 collectableSpawnPos_3; // Collectable spawn 3
     public Transform obstacleSpawnPosition; // Reference to the object spawn position.
+    public Transform levelPieceSpawn;       // Spawn point for level pieces
 
     //========================== Obstacle variables ===========================
     public float obstacleSpawnOffset;
@@ -47,7 +48,7 @@ public class ObjectActivator : MonoBehaviour
 
 
         //    // Debug.Log("tag is true");
-           
+
         //    GameObject objectToActivate = ObjectPooler.SharedInstance.GetPooledObject("Terrain");
         //    if (objectToActivate != null)
         //    {
@@ -61,7 +62,7 @@ public class ObjectActivator : MonoBehaviour
 
         if (other.tag == "Collectable_1")
         {
-            
+
             // objectDelay = Random.Range(collectableRandMin, collectableRandMax);
             // DelayObjectPlacement();
 
@@ -130,8 +131,8 @@ public class ObjectActivator : MonoBehaviour
 
 
         if (other.tag == "Obstacle")
-        {                 
-                        
+        {
+
             // Randomise spawn position
             spawnPosX = Random.Range(spawnRangeXMin, spawnRangeXMax);
             // spawnPosY = Random.Range(spawnRangeYMin, spawnRangeYMax);
@@ -142,12 +143,26 @@ public class ObjectActivator : MonoBehaviour
                 // DelayObjectPlacement();
 
                 // Sets the position of each object
-                objectToActivate.transform.position = new Vector3(spawnPosX, spawnPosY, (obstacleSpawnPosition.transform.position.z+obstacleSpawnOffset));
+                objectToActivate.transform.position = new Vector3(spawnPosX, spawnPosY, (obstacleSpawnPosition.transform.position.z + obstacleSpawnOffset));
                 objectToActivate.transform.rotation = obstacleSpawnPosition.transform.rotation;
                 objectToActivate.SetActive(true);
                 // Debug.Log("spawn offset = " + spawnOffset);
             }
         }
-    }    
 
+
+        if (other.tag == "NewLevelPieceTrigger")
+        {
+            GameObject objectToActivate = ObjectPooler.SharedInstance.GetPooledObject("LevelPiece_1");
+            if (objectToActivate != null)
+            {
+                // Sets the position of each object
+                objectToActivate.transform.position = collectableSpawnPos_3;
+                objectToActivate.transform.rotation = levelPieceSpawn.transform.rotation;
+                objectToActivate.SetActive(true);
+                // Debug.Log("spawn offset = " + spawnOffset);
+            }
+        }
+
+    }
 }
