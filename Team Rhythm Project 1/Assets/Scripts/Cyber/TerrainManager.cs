@@ -6,7 +6,7 @@ public class TerrainManager : MonoBehaviour
 {
     
     // How fast the terrain moves towards the player. Accessed by TerrainMovementBehaviour.cs
-    public float terrainSpeed;    
+    // public float terrainSpeed;    
 
     // Start is called before the first frame update
     void Start()
@@ -14,7 +14,7 @@ public class TerrainManager : MonoBehaviour
         // NOTE: This scripts execution order must be later than the object pooler. The object pooler needs time to build the pool before it is accessed.
         
         // Places the very first terrain object. The object moves to an object activator which triggers the rest.
-        GameObject thisTerrainPrefab = ObjectPooler.SharedInstance.GetPooledObject("Terrain");
+        GameObject thisTerrainPrefab = ObjectPooler.SharedInstance.GetPooledObject("LevelPiece_1");
         if (thisTerrainPrefab != null)
         {
             thisTerrainPrefab.transform.position = transform.position;            

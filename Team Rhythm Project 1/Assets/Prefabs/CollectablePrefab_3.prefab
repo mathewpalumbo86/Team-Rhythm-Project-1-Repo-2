@@ -97,7 +97,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a9ac822e53a3d04cacb9ec25b514dee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  collectableMovementSpeed: 0
+  collectableMovementSpeed: 10
+  collectableRenderer: {fileID: 0}
   rotSpeed: 3
   setScale: 3.5
 --- !u!54 &6702758256672781352
@@ -144,6 +145,7 @@ MonoBehaviour:
   collectableParticle: {fileID: 0}
   collectableTracking: {fileID: 0}
   thisCollectablesPosition: {fileID: 0}
+  collectableRenderer: {fileID: 0}
 --- !u!199 &3783635695344231553
 ParticleSystemRenderer:
   serializedVersion: 6

@@ -4,17 +4,16 @@ using UnityEngine;
 
 public class CollectableMovementBehaviour : MonoBehaviour
 {
-
     // Similar to terrain movement behaviour
 
     /// Movement speed of this collectable instance.
     public float collectableMovementSpeed;
 
     // Stores a reference to the collectable manager.
-    private GameObject collectableManager;
+    public GameObject collectableManager;
 
-    private CollectableManager collectableManagerScript;
-
+    public CollectableManager collectableManagerScript;
+    
     // Set rotation speed
     public float rotSpeed;
 
@@ -23,13 +22,19 @@ public class CollectableMovementBehaviour : MonoBehaviour
 
     void Start()
     {
-                        
+        
     }
 
     void OnEnable()
     {
+        if (gameObject.GetComponent<MeshRenderer>().enabled == false)
+        {
+            // Turn the collectable renderer on
+            gameObject.GetComponent<MeshRenderer>().enabled = true;
+        }
+
         // Find the collectable spawner with tag.
-        if(gameObject.tag == "Collectable_1")
+        if (gameObject.tag == "Collectable_1")
         {
             // Debug.Log("collectable 1");
 

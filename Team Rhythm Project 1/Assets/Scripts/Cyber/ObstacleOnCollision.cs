@@ -26,6 +26,12 @@ public class ObstacleOnCollision : MonoBehaviour
     {
         if (other.gameObject.tag == "Player")
         {
+            if (gameObject.GetComponent<MeshRenderer>().enabled == true)
+            {
+                // Turn the obstacle renderer on
+                gameObject.GetComponent<MeshRenderer>().enabled = false;
+            }
+
             StartCoroutine(WaitForAudioToFinish());
 
         }

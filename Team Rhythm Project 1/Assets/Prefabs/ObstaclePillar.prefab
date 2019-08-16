@@ -108,9 +108,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   obstacleMovementSpeed: 10
-  obstacleWidthMin: 4
+  obstacleWidthMin: 8
   obstacleWidthMax: 22
-  thisObstacleWidth: 0
+  thisObstacleWidth: 3
 --- !u!54 &7992722663168838371
 Rigidbody:
   m_ObjectHideFlags: 0
