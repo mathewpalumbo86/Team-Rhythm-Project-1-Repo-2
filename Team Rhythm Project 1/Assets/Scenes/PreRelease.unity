@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.70885706, g: 0.33833337, b: 0.6796555, a: 1}
+  m_IndirectSpecularColor: {r: 1.9779791, g: 0.94404566, b: 1.8965001, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2409,6 +2409,11 @@ PrefabInstance:
       propertyPath: m_audioClip
       value: 
       objectReference: {fileID: 8300000, guid: def7fb36e3e16484382989a81a022947, type: 3}
+    - target: {fileID: 1138429999460788661, guid: 519b42da7ab02154193ccf1c83ab0d57,
+        type: 3}
+      propertyPath: m_TagString
+      value: ObjectActivator
+      objectReference: {fileID: 0}
     - target: {fileID: 1138429999460788665, guid: 519b42da7ab02154193ccf1c83ab0d57,
         type: 3}
       propertyPath: m_LocalScale.z
@@ -2721,6 +2726,22 @@ PrefabInstance:
       propertyPath: leftGrid
       value: 
       objectReference: {fileID: 909331950}
+    - target: {fileID: 1138429999932720859, guid: 519b42da7ab02154193ccf1c83ab0d57,
+        type: 3}
+      propertyPath: mixerPitch
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1138429999932720859, guid: 519b42da7ab02154193ccf1c83ab0d57,
+        type: 3}
+      propertyPath: mixerPitchIncrement
+      value: 0.01
+      objectReference: {fileID: 0}
+    - target: {fileID: 1138429999932720859, guid: 519b42da7ab02154193ccf1c83ab0d57,
+        type: 3}
+      propertyPath: audioMixer
+      value: 
+      objectReference: {fileID: 24100000, guid: 7754d5b55524da347b428d23de16efe8,
+        type: 2}
     - target: {fileID: 1138429999815051586, guid: 519b42da7ab02154193ccf1c83ab0d57,
         type: 3}
       propertyPath: m_Enabled
@@ -2758,11 +2779,6 @@ PrefabInstance:
       propertyPath: eogManager
       value: 
       objectReference: {fileID: 1500948934}
-    - target: {fileID: 1138429999460788661, guid: 519b42da7ab02154193ccf1c83ab0d57,
-        type: 3}
-      propertyPath: m_TagString
-      value: ObjectActivator
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 519b42da7ab02154193ccf1c83ab0d57, type: 3}
 --- !u!114 &1241149393 stripped
