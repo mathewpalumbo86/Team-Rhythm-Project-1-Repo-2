@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Audio;
 
 public class CollectableTracking : MonoBehaviour
 {
@@ -22,6 +23,13 @@ public class CollectableTracking : MonoBehaviour
 
     // The music track
     public AudioSource musicSource;
+
+    // The audio mixer
+    public AudioMixer audioMixer;
+    // Start the mixer pitch at 100%
+    public float mixerPitch;
+    // Increment down by 1% 
+    public float mixerPitchIncrement;
 
     // Stores a reference to the terrain manager.
     private GameObject theTerrainManager;
@@ -61,7 +69,8 @@ public class CollectableTracking : MonoBehaviour
         // pitchIncreaseCheck = false;
     }
     
-    // Increases the pitch based on how many collectables have been collected
+    // Increases the pitch based on how many collectables have been collected, speeding the music up.
+    // The music pitch is then inverted through the mixer to keep the music sounding the same but faster.
     public void IncreasePitch()
     {
         if (pitchIncreaseCheck == false)
@@ -80,8 +89,12 @@ public class CollectableTracking : MonoBehaviour
 
                     // Debug.Log("increase pitch");
 
-                    // Increment the pitch
+                    // Increment the pitch of the audio source up, this speeds the music up
                     musicSource.pitch += pitchIncrement;
+
+                    // Increment the pitch of the mixer down, this keeps the music sounding the same
+                    mixerPitch -= mixerPitchIncrement;
+                    audioMixer.SetFloat("MusicPitch", mixerPitch);
 
                     // Speeds up terrain movement
                     // terrainManagerScript.terrainSpeed = terrainManagerScript.terrainSpeed + terrainSpeedIncrease;
