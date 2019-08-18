@@ -32,6 +32,7 @@ TagManager:
   - LevelPiece_2
   - LevelPieceSpawner
   - NewLevelPieceTrigger
+  - Counter
   layers:
   - Default
   - TransparentFX

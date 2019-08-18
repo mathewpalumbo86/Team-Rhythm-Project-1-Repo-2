@@ -18,11 +18,17 @@ public class CollectableMovementBehaviour : MonoBehaviour
     public float rotSpeed;
 
     // Scaling values    
-    public float setScale;    
+    public float setScale;
+
+    bool isCounter = false;
 
     void Start()
     {
-        
+        //makes a tag check once (as it can get resource intensive)
+        if(gameObject.tag == "Counter")
+        {
+            isCounter = true;
+        }
     }
 
     void OnEnable()
@@ -54,14 +60,15 @@ public class CollectableMovementBehaviour : MonoBehaviour
 
             collectableManager = GameObject.FindGameObjectWithTag("CollectableSpawner_3");
         }
-
-        // Access the collectable manager script on the spawner and set the speed.
-        collectableMovementSpeed = collectableManager.gameObject.GetComponent<CollectableManager>().collectableSpeed;
-
+        
+       
         //
         if(collectableManager != null)
         {
             collectableManagerScript = collectableManager.gameObject.GetComponent<CollectableManager>();
+            // Access the collectable manager script on the spawner and set the speed.
+            collectableMovementSpeed = collectableManager.gameObject.GetComponent<CollectableManager>().collectableSpeed;
+
         }
 
     }
@@ -69,9 +76,12 @@ public class CollectableMovementBehaviour : MonoBehaviour
     // FixedUpdate is used for physics updates
     void FixedUpdate()
     {
-        // Move this instance of collectable. (Must use space.world because of the rotation)
-        transform.Translate(Vector3.back * Time.fixedDeltaTime * collectableManagerScript.collectableSpeed, Space.World);
-
+        //Makes sure that it's not a counter prefab
+        if(isCounter == false)
+        {
+            // Move this instance of collectable. (Must use space.world because of the rotation)
+            transform.Translate(Vector3.back * Time.fixedDeltaTime * collectableManagerScript.collectableSpeed, Space.World);
+        }
         // Rotates this collectable randomly
         transform.Rotate(rotSpeed, rotSpeed, rotSpeed);
         
