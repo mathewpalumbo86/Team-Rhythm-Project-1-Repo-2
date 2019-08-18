@@ -7,7 +7,7 @@ public class CollectableOnCollision : MonoBehaviour
     // Collectable audio effects script
     //public GameObject collectableAudioEffectsObj;
     CollectableAudioEffects collectableAudioScript;
-
+    CountColour myColour;
     // public CollectableAudioEffects collectableAudioEffectsScript;
     public ParticleSystem collectableParticle;
     // Collectable tracking script
@@ -49,17 +49,29 @@ public class CollectableOnCollision : MonoBehaviour
             // Sets the index for the collectable audio effect array based on which collectable this is
             if (gameObject.tag == "Collectable_1")
             {
+                myColour = CountColour.Yellow;
                 collectableAudioScript.index = 0;
+                collectableTracking.SetCubeActive(myColour);
+                collectableTracking.DoCount();
+                
+                
+
             }
 
             if (gameObject.tag == "Collectable_2")
             {
+                myColour = CountColour.Pink;
                 collectableAudioScript.index = 1;
+                collectableTracking.SetCubeActive(myColour);
+                collectableTracking.DoCount();
             }
 
             if (gameObject.tag == "Collectable_3")
             {
+                myColour = CountColour.Blue;
                 collectableAudioScript.index = 2;
+                collectableTracking.SetCubeActive(myColour);
+                collectableTracking.DoCount();
             }
 
             // if the player hits this object play a collectable sound effect and set it to inactive

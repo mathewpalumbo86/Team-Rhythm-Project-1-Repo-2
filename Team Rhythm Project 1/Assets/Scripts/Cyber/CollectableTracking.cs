@@ -2,15 +2,19 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Audio;
-
+public enum CountColour { Yellow, Blue, Pink }
 public class CollectableTracking : MonoBehaviour
 {
     // This script tracks the amount of collectables collected by 
     // the player and executes behaviour based on the amount.
-    
+
+    [SerializeField]
+    GameObject[] yellowCount, blueCount, pinkCount;
+    public CountColour colourOfCube;
 
     // Total collectables picked up by the player
     public int totalCollected;
+    public int currentCount { get; private set; }
 
     // How many collectables are needed to increment the audio pitch
     public int collectablesPerIncrement;
@@ -48,6 +52,8 @@ public class CollectableTracking : MonoBehaviour
     public ParticleSystem speedUpParticle;    
 
     bool pitchIncreaseCheck = false;
+
+    
 
     [SerializeField]
     GameObject orangeFloor, leftGrid, rightGrid;
@@ -117,5 +123,53 @@ public class CollectableTracking : MonoBehaviour
 
             }
         }
-    }    
+    }
+    
+    public void DoCount()
+    {
+        if(currentCount >= 9)
+        {
+            currentCount = 0;
+            foreach(GameObject cube in yellowCount)
+            {
+                if(cube.activeInHierarchy == true)
+                {
+                    cube.SetActive(false);
+                }
+            }
+            foreach (GameObject cube in pinkCount)
+            {
+                if (cube.activeInHierarchy == true)
+                {
+                    cube.SetActive(false);
+                }
+            }
+            foreach (GameObject cube in blueCount)
+            {
+                if (cube.activeInHierarchy == true)
+                {
+                    cube.SetActive(false);
+                }
+            }
+        }
+        else
+        {
+            currentCount++;
+        }
+    }
+
+    public void SetCubeActive(CountColour cubeColour)
+    {
+        switch(cubeColour){
+            case CountColour.Yellow:
+                yellowCount[currentCount].SetActive(true);
+                break;
+            case CountColour.Blue:
+                blueCount[currentCount].SetActive(true);
+                break;
+            case CountColour.Pink:
+                pinkCount[currentCount].SetActive(true);
+                break;
+        }
+    }
 }

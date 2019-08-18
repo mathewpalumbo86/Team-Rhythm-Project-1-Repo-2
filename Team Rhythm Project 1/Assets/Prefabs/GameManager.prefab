@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 1138429999460788662}
   m_Layer: 0
   m_Name: ObjectActivatorVolume
-  m_TagString: Untagged
+  m_TagString: ObjectActivator
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -67,15 +67,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnPosX: 0
-  spawnRangeXMin: 4
-  spawnRangeXMax: 28
+  spawnRangeXMin: 6
+  spawnRangeXMax: 26
   spawnPosY: 0
-  spawnRangeYMin: 3
-  spawnRangeYMax: 5
-  collectableSpawnPos_1: {x: 0, y: 0, z: 0}
-  collectableSpawnPos_2: {x: 0, y: 0, z: 0}
-  collectableSpawnPos_3: {x: 0, y: 0, z: 0}
+  spawnRangeYMin: 4
+  spawnRangeYMax: 8
+  collectableSpawnPos_1: {x: 4, y: 2.5, z: 280}
+  collectableSpawnPos_2: {x: 16, y: 2.5, z: 240}
+  collectableSpawnPos_3: {x: 28, y: 2.5, z: 200}
   obstacleSpawnPosition: {fileID: 0}
+  levelPieceSpawn: {fileID: 0}
   obstacleSpawnOffset: 64
 --- !u!1 &1138429999582449771
 GameObject:
@@ -565,7 +566,7 @@ GameObject:
   - component: {fileID: 1138429999815051586}
   - component: {fileID: 3152449501993201804}
   m_Layer: 0
-  m_Name: Background Music (Cyber 1)
+  m_Name: Background Music
   m_TagString: MusicSource
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -594,7 +595,7 @@ AudioSource:
   m_GameObject: {fileID: 1138429999815051584}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 243913585631957250, guid: 7754d5b55524da347b428d23de16efe8,
+  OutputAudioMixerGroup: {fileID: 243632104537817266, guid: 7754d5b55524da347b428d23de16efe8,
     type: 2}
   m_audioClip: {fileID: 8300000, guid: def7fb36e3e16484382989a81a022947, type: 3}
   m_PlayOnAwake: 1
@@ -689,7 +690,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1138429999815051584}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 915e659bd97f0024b8bf83e5016635bb, type: 3}
   m_Name: 
@@ -778,64 +779,59 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemsToPool:
-  - objectToPool: {fileID: 7668930546003554456, guid: 7424fee07a7c68b4c80be2c26e290545,
-      type: 3}
-    amountToPool: 20
-    shouldExpand: 1
   - objectToPool: {fileID: 6162229178503756653, guid: cab2eb0260201c64883b78a476d28c32,
       type: 3}
-    amountToPool: 2
-    shouldExpand: 0
+    amountToPool: 6
+    shouldExpand: 1
   - objectToPool: {fileID: 4163970473244015374, guid: 569a1e8116718bb4a8d4a09ea9df842b,
       type: 3}
-    amountToPool: 4
-    shouldExpand: 0
+    amountToPool: 6
+    shouldExpand: 1
   - objectToPool: {fileID: 7600275035907700517, guid: f0e5b7d274837ce44909343b28c5c5aa,
       type: 3}
-    amountToPool: 8
-    shouldExpand: 0
+    amountToPool: 6
+    shouldExpand: 1
   - objectToPool: {fileID: 7716653341273902950, guid: 835c4bf803e0360488d001cac9e90a20,
       type: 3}
     amountToPool: 3
     shouldExpand: 1
   pooledObjects:
-  - {fileID: 7668930546003554456, guid: 7424fee07a7c68b4c80be2c26e290545, type: 3}
-  - {fileID: 7668930546003554456, guid: 7424fee07a7c68b4c80be2c26e290545, type: 3}
-  - {fileID: 7668930546003554456, guid: 7424fee07a7c68b4c80be2c26e290545, type: 3}
-  - {fileID: 7668930546003554456, guid: 7424fee07a7c68b4c80be2c26e290545, type: 3}
-  - {fileID: 7668930546003554456, guid: 7424fee07a7c68b4c80be2c26e290545, type: 3}
-  - {fileID: 7668930546003554456, guid: 7424fee07a7c68b4c80be2c26e290545, type: 3}
-  - {fileID: 7668930546003554456, guid: 7424fee07a7c68b4c80be2c26e290545, type: 3}
-  - {fileID: 7668930546003554456, guid: 7424fee07a7c68b4c80be2c26e290545, type: 3}
-  - {fileID: 7668930546003554456, guid: 7424fee07a7c68b4c80be2c26e290545, type: 3}
-  - {fileID: 7668930546003554456, guid: 7424fee07a7c68b4c80be2c26e290545, type: 3}
-  - {fileID: 7668930546003554456, guid: 7424fee07a7c68b4c80be2c26e290545, type: 3}
-  - {fileID: 7668930546003554456, guid: 7424fee07a7c68b4c80be2c26e290545, type: 3}
-  - {fileID: 7668930546003554456, guid: 7424fee07a7c68b4c80be2c26e290545, type: 3}
-  - {fileID: 7668930546003554456, guid: 7424fee07a7c68b4c80be2c26e290545, type: 3}
-  - {fileID: 7668930546003554456, guid: 7424fee07a7c68b4c80be2c26e290545, type: 3}
-  - {fileID: 7668930546003554456, guid: 7424fee07a7c68b4c80be2c26e290545, type: 3}
-  - {fileID: 7668930546003554456, guid: 7424fee07a7c68b4c80be2c26e290545, type: 3}
-  - {fileID: 7668930546003554456, guid: 7424fee07a7c68b4c80be2c26e290545, type: 3}
-  - {fileID: 7668930546003554456, guid: 7424fee07a7c68b4c80be2c26e290545, type: 3}
-  - {fileID: 7668930546003554456, guid: 7424fee07a7c68b4c80be2c26e290545, type: 3}
-  - {fileID: 7668930546003554456, guid: 7424fee07a7c68b4c80be2c26e290545, type: 3}
-  - {fileID: 7668930546003554456, guid: 7424fee07a7c68b4c80be2c26e290545, type: 3}
-  - {fileID: 7668930546003554456, guid: 7424fee07a7c68b4c80be2c26e290545, type: 3}
-  - {fileID: 7668930546003554456, guid: 7424fee07a7c68b4c80be2c26e290545, type: 3}
-  - {fileID: 7668930546003554456, guid: 7424fee07a7c68b4c80be2c26e290545, type: 3}
-  - {fileID: 7668930546003554456, guid: 7424fee07a7c68b4c80be2c26e290545, type: 3}
-  - {fileID: 7668930546003554456, guid: 7424fee07a7c68b4c80be2c26e290545, type: 3}
-  - {fileID: 7668930546003554456, guid: 7424fee07a7c68b4c80be2c26e290545, type: 3}
-  - {fileID: 7668930546003554456, guid: 7424fee07a7c68b4c80be2c26e290545, type: 3}
-  - {fileID: 7668930546003554456, guid: 7424fee07a7c68b4c80be2c26e290545, type: 3}
-  - {fileID: 7668930546003554456, guid: 7424fee07a7c68b4c80be2c26e290545, type: 3}
-  - {fileID: 7668930546003554456, guid: 7424fee07a7c68b4c80be2c26e290545, type: 3}
-  - {fileID: 7668930546003554456, guid: 7424fee07a7c68b4c80be2c26e290545, type: 3}
-  - {fileID: 7668930546003554456, guid: 7424fee07a7c68b4c80be2c26e290545, type: 3}
-  - {fileID: 7668930546003554456, guid: 7424fee07a7c68b4c80be2c26e290545, type: 3}
-  - {fileID: 7668930546003554456, guid: 7424fee07a7c68b4c80be2c26e290545, type: 3}
-  - {fileID: 7668930546003554456, guid: 7424fee07a7c68b4c80be2c26e290545, type: 3}
+  - {fileID: 6162229178503756653, guid: cab2eb0260201c64883b78a476d28c32, type: 3}
+  - {fileID: 6162229178503756653, guid: cab2eb0260201c64883b78a476d28c32, type: 3}
+  - {fileID: 6162229178503756653, guid: cab2eb0260201c64883b78a476d28c32, type: 3}
+  - {fileID: 6162229178503756653, guid: cab2eb0260201c64883b78a476d28c32, type: 3}
+  - {fileID: 6162229178503756653, guid: cab2eb0260201c64883b78a476d28c32, type: 3}
+  - {fileID: 6162229178503756653, guid: cab2eb0260201c64883b78a476d28c32, type: 3}
+  - {fileID: 6162229178503756653, guid: cab2eb0260201c64883b78a476d28c32, type: 3}
+  - {fileID: 6162229178503756653, guid: cab2eb0260201c64883b78a476d28c32, type: 3}
+  - {fileID: 6162229178503756653, guid: cab2eb0260201c64883b78a476d28c32, type: 3}
+  - {fileID: 6162229178503756653, guid: cab2eb0260201c64883b78a476d28c32, type: 3}
+  - {fileID: 6162229178503756653, guid: cab2eb0260201c64883b78a476d28c32, type: 3}
+  - {fileID: 6162229178503756653, guid: cab2eb0260201c64883b78a476d28c32, type: 3}
+  - {fileID: 6162229178503756653, guid: cab2eb0260201c64883b78a476d28c32, type: 3}
+  - {fileID: 6162229178503756653, guid: cab2eb0260201c64883b78a476d28c32, type: 3}
+  - {fileID: 6162229178503756653, guid: cab2eb0260201c64883b78a476d28c32, type: 3}
+  - {fileID: 6162229178503756653, guid: cab2eb0260201c64883b78a476d28c32, type: 3}
+  - {fileID: 6162229178503756653, guid: cab2eb0260201c64883b78a476d28c32, type: 3}
+  - {fileID: 6162229178503756653, guid: cab2eb0260201c64883b78a476d28c32, type: 3}
+  - {fileID: 6162229178503756653, guid: cab2eb0260201c64883b78a476d28c32, type: 3}
+  - {fileID: 6162229178503756653, guid: cab2eb0260201c64883b78a476d28c32, type: 3}
+  - {fileID: 6162229178503756653, guid: cab2eb0260201c64883b78a476d28c32, type: 3}
+  - {fileID: 6162229178503756653, guid: cab2eb0260201c64883b78a476d28c32, type: 3}
+  - {fileID: 6162229178503756653, guid: cab2eb0260201c64883b78a476d28c32, type: 3}
+  - {fileID: 6162229178503756653, guid: cab2eb0260201c64883b78a476d28c32, type: 3}
+  - {fileID: 6162229178503756653, guid: cab2eb0260201c64883b78a476d28c32, type: 3}
+  - {fileID: 6162229178503756653, guid: cab2eb0260201c64883b78a476d28c32, type: 3}
+  - {fileID: 6162229178503756653, guid: cab2eb0260201c64883b78a476d28c32, type: 3}
+  - {fileID: 6162229178503756653, guid: cab2eb0260201c64883b78a476d28c32, type: 3}
+  - {fileID: 6162229178503756653, guid: cab2eb0260201c64883b78a476d28c32, type: 3}
+  - {fileID: 6162229178503756653, guid: cab2eb0260201c64883b78a476d28c32, type: 3}
+  - {fileID: 6162229178503756653, guid: cab2eb0260201c64883b78a476d28c32, type: 3}
+  - {fileID: 6162229178503756653, guid: cab2eb0260201c64883b78a476d28c32, type: 3}
+  - {fileID: 6162229178503756653, guid: cab2eb0260201c64883b78a476d28c32, type: 3}
+  - {fileID: 6162229178503756653, guid: cab2eb0260201c64883b78a476d28c32, type: 3}
+  - {fileID: 6162229178503756653, guid: cab2eb0260201c64883b78a476d28c32, type: 3}
+  - {fileID: 6162229178503756653, guid: cab2eb0260201c64883b78a476d28c32, type: 3}
 --- !u!114 &1138429999932720859
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -848,12 +844,49 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b1c58a8eb337fa741bdec237c558b98b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  yellowCount:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  blueCount:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  pinkCount:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  colourOfCube: 0
   totalCollected: 0
   collectablesPerIncrement: 10
   collectableMax: 300
-  pitchIncrement: 0.02
+  pitchIncrement: 0.01
   musicSource: {fileID: 0}
-  terrainSpeedIncrease: 0
+  audioMixer: {fileID: 24100000, guid: 7754d5b55524da347b428d23de16efe8, type: 2}
+  mixerPitch: 1
+  mixerPitchIncrement: 0.01
+  terrainSpeedIncrease: 20
   boatSpeedUpAudio: {fileID: 0}
   VOSource: {fileID: 0}
   speedUpParticle: {fileID: 0}
@@ -889,7 +922,8 @@ AudioSource:
   m_GameObject: {fileID: 1138429999932720856}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 243642738393311284, guid: 7754d5b55524da347b428d23de16efe8,
+    type: 2}
   m_audioClip: {fileID: 8300000, guid: 5a59e66bf23cdb2469e9ff6195baed03, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
@@ -1003,8 +1037,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1138430000349111494}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 16, y: 0, z: -100}
-  m_LocalScale: {x: 100, y: 20, z: 1}
+  m_LocalPosition: {x: 16, y: 0, z: -547.1}
+  m_LocalScale: {x: 100, y: 20, z: 150}
   m_Children: []
   m_Father: {fileID: 1138429999932720858}
   m_RootOrder: 2
@@ -1134,12 +1168,12 @@ GameObject:
   - component: {fileID: 1138430000911418592}
   - component: {fileID: 1138430000911418593}
   m_Layer: 0
-  m_Name: Collectable Effects (Cyber 2)
+  m_Name: Collectable Effects
   m_TagString: CollectableEffect_1
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1138430000911418623
 Transform:
   m_ObjectHideFlags: 0
@@ -1163,7 +1197,7 @@ AudioSource:
   m_GameObject: {fileID: 1138430000911418622}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 243299984534028642, guid: 7754d5b55524da347b428d23de16efe8,
+  OutputAudioMixerGroup: {fileID: 243546862087459298, guid: 7754d5b55524da347b428d23de16efe8,
     type: 2}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
@@ -1597,7 +1631,7 @@ AudioSource:
   m_GameObject: {fileID: 2761565092336991802}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 243493601978613288, guid: 7754d5b55524da347b428d23de16efe8,
+  OutputAudioMixerGroup: {fileID: 243305782383738400, guid: 7754d5b55524da347b428d23de16efe8,
     type: 2}
   m_audioClip: {fileID: 8300000, guid: 1a4cf1dadcfee3f4aa4eaff7b1dcd585, type: 3}
   m_PlayOnAwake: 0
@@ -1825,7 +1859,7 @@ GameObject:
   - component: {fileID: 3417735220398595132}
   - component: {fileID: 5989620193660028198}
   m_Layer: 0
-  m_Name: Collectable VO Effects  (Cyber 3)
+  m_Name: Collectable Voice Over
   m_TagString: CollectableVOEffects
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1854,7 +1888,7 @@ AudioSource:
   m_GameObject: {fileID: 7261039418371177265}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 243712144124900140, guid: 7754d5b55524da347b428d23de16efe8,
+  OutputAudioMixerGroup: {fileID: 243129290573096176, guid: 7754d5b55524da347b428d23de16efe8,
     type: 2}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0

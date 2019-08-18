@@ -27,6 +27,11 @@ public class CollectableAudioEffects : MonoBehaviour
     // Plays a random clip from an array
     public void PlayCollectableEffect()
     {
+        // this is to remove a console error
+        if(gameObject.activeInHierarchy == false)
+        {
+            gameObject.SetActive(true);
+        }
         StartCoroutine(WaitForAudioToFinish());
     }
 
@@ -38,7 +43,7 @@ public class CollectableAudioEffects : MonoBehaviour
         // AudioSource.PlayClipAtPoint(collisionClip, collisionPosition.position);
         audioSource.PlayOneShot(collisionClip);
 
-        yield return new WaitWhile(() => audioSource.isPlaying);
+        yield return new WaitForSeconds(collisionClip.length + 2f);
 
         gameObject.SetActive(false);
 
